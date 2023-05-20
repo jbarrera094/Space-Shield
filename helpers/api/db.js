@@ -21,6 +21,7 @@ async function initialize() {
 
     // init models and add them to the exported db object
     db.User = userModel(sequelize);
+    db.License = licensesModel(sequelize);
 
     // sync all models with database
     await sequelize.sync({ alter: true });
@@ -32,10 +33,12 @@ async function initialize() {
 
 function userModel(sequelize) {
     const attributes = {
+        id_user: { type: DataTypes.BIGINT, allowNull: false, autoIncrement: true, primaryKey: true },
         email: { type: DataTypes.STRING, allowNull: false },
         hash: { type: DataTypes.STRING, allowNull: false },
         firstName: { type: DataTypes.STRING, allowNull: false },
-        lastName: { type: DataTypes.STRING, allowNull: false }
+        lastName: { type: DataTypes.STRING, allowNull: false },
+        paid: { type: DataTypes.BOOLEAN, allowNull: true, defaultValue: false },
     };
 
     const options = {
@@ -50,4 +53,26 @@ function userModel(sequelize) {
     };
 
     return sequelize.define('User', attributes, options);
+}
+
+function licensesModel(sequelize) {
+    const attributes = {
+        id_license: { type: DataTypes.BIGINT, allowNull: false, autoIncrement: true, primaryKey: true },
+        id_user: { type: DataTypes.BIGINT, allowNull: false },
+        user: { type: DataTypes.STRING, allowNull: false },
+        hash: { type: DataTypes.STRING, allowNull: false },
+    };
+
+    const options = {
+        defaultScope: {
+            // exclude password hash by default
+            attributes: { exclude: ['hash'] }
+        },
+        scopes: {
+            // include hash with this scope
+            withHash: { attributes: {}, }
+        }
+    };
+
+    return sequelize.define('License', attributes, options);
 }

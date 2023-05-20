@@ -3,11 +3,11 @@ const nextConfig = {
     reactStrictMode: true,
     serverRuntimeConfig: {
         dbConfig: {
-            host: '188.40.63.41',
+            host: '127.0.0.1',
             port: 3306,
-            user: 'bsenergy_space_shield',
-            password: 'space_shield2023*', // @@@
-            database: 'bsenergy_LCheck'
+            user: 'client',
+            password: '123456', // @@@
+            database: 'bsenergy_lcheck'
         },
         secret: 'THIS IS USED TO SIGN AND VERIFY JWT TOKENS, REPLACE IT WITH YOUR OWN SECRET, IT CAN BE ANY STRING'
     },

@@ -15,7 +15,7 @@ function Document() {
 
 
             <body>
-                <NavBar/>
+                <NavBar />
                 <Main />
                 <NextScript />
                 {/* footer */}

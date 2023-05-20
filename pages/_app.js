@@ -49,13 +49,13 @@ function App({ Component, pageProps }) {
     }
 
     return (
-        <>
+        <>  
+            <Nav />
             <Head>
                 <title>Space Shield</title>
             </Head>
 
             <div className={`app-container ${user ? 'bg-light' : ''}`}>
-                <Nav />
                 <Alert />
                 {authorized &&
                     <Component {...pageProps} />

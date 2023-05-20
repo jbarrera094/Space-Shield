@@ -6,11 +6,11 @@ export default NavBar;
 
 function NavBar() {
   return (
-    <nav className="navbar navbar-expand-lg bg-light size-screen-nav">
+    <nav className="navbar navbar-expand-lg bg-light size-screen-nav py-2">
       <div className="container-fluid">
-        <a className="navbar-brand" href="/">
+        <Link className="navbar-brand" href="/">
           Space Shield
-        </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -24,21 +24,13 @@ function NavBar() {
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="/">
-                Home
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/account/login">
-                Login
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/account/register">
-                Register
-              </a>
-            </li>
+            <Link className="nav-item nav-link" href="/account/login">
+              Login
+            </Link>
+            <Link className="nav-item nav-link" href="/account/register">
+              Register
+            </Link>
+            <button onClick={userService.logout} className="btn btn-link nav-item nav-link">Logout</button>
           </ul>
           
           <button className="btn btn-outline-success" type="submit">

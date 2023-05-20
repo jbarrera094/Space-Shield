@@ -3,12 +3,12 @@
 }
 
 .size-screen-main {
-    max-height: 95vh;
+    max-height: 92vh;
     overflow: hidden;
 }
 
 .size-screen-nav {
-    max-height: 5vh;
+    max-height: 8vh;
     overflow: hidden;
 }
 
