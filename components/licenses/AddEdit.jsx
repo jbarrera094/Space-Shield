@@ -14,12 +14,8 @@ function AddEdit(props) {
 
     // form validation rules 
     const validationSchema = Yup.object().shape({
-        firstName: Yup.string()
-            .required('First Name is required'),
-        lastName: Yup.string()
-            .required('Last Name is required'),
-        email: Yup.string()
-            .required('email is required'),
+        user: Yup.string()
+            .required('User is required'),
         password: Yup.string()
             .transform(x => x === '' ? undefined : x)
             // password optional in edit mode
@@ -44,14 +40,14 @@ function AddEdit(props) {
             let message;
             if (user) {
                 await userService.update(user.id, data);
-                message = 'User updated';
+                message = 'Licence updated';
             } else {
                 await userService.register(data);
-                message = 'User added';
+                message = 'License added';
             }
 
             // redirect to user list with success message
-            router.push('/users');
+            router.push('/licenses');
             alertService.success(message, true);
         } catch (error) {
             alertService.error(error);
@@ -64,21 +60,11 @@ function AddEdit(props) {
             <div className="row">
                 <div className="mb-3 col">
                     <label className="form-label">First Name</label>
-                    <input name="firstName" type="text" {...register('firstName')} className={`form-control ${errors.firstName ? 'is-invalid' : ''}`} />
-                    <div className="invalid-feedback">{errors.firstName?.message}</div>
-                </div>
-                <div className="mb-3 col">
-                    <label className="form-label">Last Name</label>
-                    <input name="lastName" type="text" {...register('lastName')} className={`form-control ${errors.lastName ? 'is-invalid' : ''}`} />
-                    <div className="invalid-feedback">{errors.lastName?.message}</div>
+                    <input name="user" type="text" {...register('user')} className={`form-control ${errors.user ? 'is-invalid' : ''}`} />
+                    <div className="invalid-feedback">{errors.user?.message}</div>
                 </div>
             </div>
             <div className="row">
-                <div className="mb-3 col">
-                    <label className="form-label">email</label>
-                    <input name="email" type="text" {...register('email')} className={`form-control ${errors.email ? 'is-invalid' : ''}`} />
-                    <div className="invalid-feedback">{errors.email?.message}</div>
-                </div>
                 <div className="mb-3 col">
                     <label className="form-label">
                         Password
@@ -94,7 +80,7 @@ function AddEdit(props) {
                     Save
                 </button>
                 <button onClick={() => reset(formOptions.defaultValues)} type="button" disabled={formState.isSubmitting} className="btn btn-secondary">Reset</button>
-                <Link href="/users" className="btn btn-link">Cancel</Link>
+                <Link href="/licenses" className="btn btn-link">Cancel</Link>
             </div>
         </form>
     );

@@ -21,7 +21,7 @@ async function initialize() {
 
     // init models and add them to the exported db object
     db.User = userModel(sequelize);
-    db.License = licensesModel(sequelize);
+    db.License = licenseModel(sequelize);
 
     // sync all models with database
     await sequelize.sync({ alter: true });
@@ -55,7 +55,7 @@ function userModel(sequelize) {
     return sequelize.define('User', attributes, options);
 }
 
-function licensesModel(sequelize) {
+function licenseModel(sequelize) {
     const attributes = {
         id_license: { type: DataTypes.BIGINT, allowNull: false, autoIncrement: true, primaryKey: true },
         id_user: { type: DataTypes.BIGINT, allowNull: false },
@@ -66,11 +66,11 @@ function licensesModel(sequelize) {
     const options = {
         defaultScope: {
             // exclude password hash by default
-            attributes: { exclude: ['hash'] }
+            // attributes: { exclude: ['hash'] }
         },
         scopes: {
             // include hash with this scope
-            withHash: { attributes: {}, }
+            // withHash: { attributes: {}, }
         }
     };
 

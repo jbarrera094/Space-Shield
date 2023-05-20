@@ -36,7 +36,7 @@ async function authenticate({ email, password }) {
 }
 
 async function getAll() {
-    return await db.User.findAll();
+    return await db.License.findAll();
 }
 
 async function getById(id) {

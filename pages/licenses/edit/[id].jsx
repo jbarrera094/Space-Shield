@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 
-import { Layout, AddEdit } from 'components/users';
+import { Layout, AddEdit } from 'components/licenses';
 import { Spinner } from 'components';
 import { userService, alertService } from 'services';
 

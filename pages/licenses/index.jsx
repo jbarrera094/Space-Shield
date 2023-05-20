@@ -2,51 +2,49 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 
 import { Spinner } from 'components';
-import { Layout } from 'components/users';
+import { Layout } from 'components/licenses';
 import { userService } from 'services';
 
 export default Index;
 
 function Index() {
-    const [users, setUsers] = useState(null);
+    const [licenses, setLicenses] = useState(null);
 
     useEffect(() => {
-        userService.getAll().then(x => setUsers(x));
+        userService.getAll().then(x => setLicenses(x));
     }, []);
 
-    function deleteUser(id) {
+    function deleteLicense(id) {
         setUsers(users.map(x => {
             if (x.id === id) { x.isDeleting = true; }
             return x;
         }));
-        userService.delete(id).then(() => {
+        licenseService.delete(id).then(() => {
             setUsers(users => users.filter(x => x.id !== id));
         });
     }
 
     return (
         <Layout>
-            <h1>Users</h1>
-            <Link href="/users/add" className="btn btn-sm btn-success mb-2">Add User</Link>
+            <h1>Licenses</h1>
+            <Link href="/licenses/add" className="btn btn-sm btn-success mb-2">Add License</Link>
             <table className="table table-striped">
                 <thead>
                     <tr>
-                        <th style={{ width: '30%' }}>First Name</th>
-                        <th style={{ width: '30%' }}>Last Name</th>
-                        <th style={{ width: '30%' }}>email</th>
-                        <th style={{ width: '10%' }}></th>
+                        <th style={{ width: '45%' }}>User</th>
+                        <th style={{ width: '45%' }}>Password</th>
+                        <th style={{ width: '10%' }}>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {users && users.map(user =>
-                        <tr key={user.id}>
-                            <td>{user.firstName}</td>
-                            <td>{user.lastName}</td>
-                            <td>{user.email}</td>
+                    {licenses && licenses.map(license =>
+                        <tr key={license.id}>
+                            <td>{license.firstName}</td>
+                            <td>{license.lastName}</td>
                             <td style={{ whiteSpace: 'nowrap' }}>
-                                <Link href={`/users/edit/${user.id}`} className="btn btn-sm btn-primary me-1">Edit</Link>
-                                <button onClick={() => deleteUser(user.id)} className="btn btn-sm btn-danger btn-delete-user" style={{ width: '60px' }} disabled={user.isDeleting}>
-                                    {user.isDeleting
+                                <Link href={`/licenses/edit/${license.id}`} className="btn btn-sm btn-primary me-1">Edit</Link>
+                                <button onClick={() => deleteLicense(license.id)} className="btn btn-sm btn-danger btn-delete-license" style={{ width: '60px' }} disabled={license.isDeleting}>
+                                    {license.isDeleting
                                         ? <span className="spinner-border spinner-border-sm"></span>
                                         : <span>Delete</span>
                                     }
@@ -54,17 +52,17 @@ function Index() {
                             </td>
                         </tr>
                     )}
-                    {!users &&
+                    {!licenses &&
                         <tr>
                             <td colSpan="4">
                                 <Spinner />
                             </td>
                         </tr>
                     }
-                    {users && !users.length &&
+                    {licenses && !licenses.length &&
                         <tr>
                             <td colSpan="4" className="text-center">
-                                <div className="p-2">No Users To Display</div>
+                                <div className="p-2">No Licenses To Display</div>
                             </td>
                         </tr>
                     }
