@@ -14,14 +14,20 @@ function Nav() {
     }, []);
 
     // only show nav when logged in
-    if (!user) return null;
+    // if (!user) return null;
 
     return (
         <nav className="navbar navbar-expand navbar-dark bg-dark px-3">
             <div className="navbar-nav">
                 <NavLink href="/" exact className="nav-item nav-link">Home</NavLink>
                 <NavLink href="/licenses" className="nav-item nav-link">Licencias</NavLink>
-                <button onClick={userService.logout} className="btn btn-link nav-item nav-link">Logout</button>
+                <button onClick={userService.logout} className={!user ? "d-none" : "btn btn-link nav-item nav-link"}>Logout</button>
+                <NavLink className={user ? "d-none" : "btn btn-link nav-item nav-link"} href="/account/login">
+                    Login
+                </NavLink>
+                <NavLink className={user ? "d-none" : "btn btn-link nav-item nav-link"} href="/account/register">
+                    Register
+                </NavLink>
             </div>
         </nav>
     );

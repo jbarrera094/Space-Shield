@@ -12,8 +12,6 @@ const userSubject = new BehaviorSubject(typeof window !== 'undefined' && JSON.pa
 export const licenseService = {
     user: userSubject.asObservable(),
     get userValue() { return userSubject.value },
-    login,
-    logout,
     register,
     getAll,
     getById,
@@ -21,28 +19,12 @@ export const licenseService = {
     delete: _delete
 };
 
-async function login(email, password) {
-    const user = await fetchWrapper.post(`${baseUrl}/authenticate`, { email, password });
-
-    // publish user to subscribers and store in local storage to stay logged in between page refreshes
-    userSubject.next(user);
-    localStorage.setItem('user', JSON.stringify(user));
-}
-
-function logout() {
-    alertService.clear();
-    // remove user from local storage, publish null to user subscribers and redirect to login page
-    localStorage.removeItem('user');
-    userSubject.next(null);
-    Router.push('/');
-}
-
 async function register(user) {
     await fetchWrapper.post(`${baseUrl}/register`, user);
 }
 
-async function getAll() {
-    return await fetchWrapper.get(baseUrl);
+async function getAll(id_user) {
+    return await fetchWrapper.post(baseUrl, id_user);
 }
 
 async function getById(id) {

@@ -1,9 +1,11 @@
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
+import moment from 'moment';
+
 
 import { Spinner } from 'components';
 import { Layout } from 'components/licenses';
-import { userService } from 'services';
+import { licenseService, userService } from 'services';
 
 export default Index;
 
@@ -11,7 +13,7 @@ function Index() {
     const [licenses, setLicenses] = useState(null);
 
     useEffect(() => {
-        userService.getAll().then(x => setLicenses(x));
+        licenseService.getAll({id_user: userService.userValue?.id_user}).then(x => setLicenses(x));
     }, []);
 
     function deleteLicense(id) {
@@ -31,16 +33,18 @@ function Index() {
             <table className="table table-striped">
                 <thead>
                     <tr>
-                        <th style={{ width: '45%' }}>User</th>
-                        <th style={{ width: '45%' }}>Password</th>
+                        <th style={{ width: '30%' }}>User</th>
+                        <th style={{ width: '30%' }}>Password</th>
+                        <th style={{ width: '30%' }}>Expiration Date</th>
                         <th style={{ width: '10%' }}>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
                     {licenses && licenses.map(license =>
-                        <tr key={license.id}>
-                            <td>{license.firstName}</td>
-                            <td>{license.lastName}</td>
+                        <tr key={license.id_license}>
+                            <td>{license.user}</td>
+                            <td>{license.hash}</td>
+                            <td>{moment(license.expiration_date).format('LLLL')}</td>
                             <td style={{ whiteSpace: 'nowrap' }}>
                                 <Link href={`/licenses/edit/${license.id}`} className="btn btn-sm btn-primary me-1">Edit</Link>
                                 <button onClick={() => deleteLicense(license.id)} className="btn btn-sm btn-danger btn-delete-license" style={{ width: '60px' }} disabled={license.isDeleting}>

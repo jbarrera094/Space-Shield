@@ -41,6 +41,10 @@ async function register(user) {
     await fetchWrapper.post(`${baseUrl}/register`, user);
 }
 
+async function registerLicense(user) {
+    await fetchWrapper.post(`${baseUrl}/register/license`, user);
+}
+
 async function getAll() {
     return await fetchWrapper.get(baseUrl);
 }

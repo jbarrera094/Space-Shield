@@ -61,6 +61,10 @@ function licenseModel(sequelize) {
         id_user: { type: DataTypes.BIGINT, allowNull: false },
         user: { type: DataTypes.STRING, allowNull: false },
         hash: { type: DataTypes.STRING, allowNull: false },
+        expiration_date: { type: DataTypes.DATE, allowNull: false, defaultValue: (new Date())},
+        date_last_registration: { type: DataTypes.DATE, allowNull: true },
+        info_device: { type: DataTypes.STRING, allowNull: true },
+        days_remaining: { type: DataTypes.INTEGER, allowNull: true },
     };
 
     const options = {

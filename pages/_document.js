@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-sync-scripts */
-import NavBar from 'components/NavBar';
 import { Html, Head, Main, NextScript } from 'next/document'
 
 export default Document;
@@ -15,7 +14,6 @@ function Document() {
 
 
             <body>
-                <NavBar />
                 <Main />
                 <NextScript />
                 {/* footer */}
