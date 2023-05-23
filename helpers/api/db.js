@@ -39,6 +39,7 @@ function userModel(sequelize) {
         firstName: { type: DataTypes.STRING, allowNull: false },
         lastName: { type: DataTypes.STRING, allowNull: false },
         paid: { type: DataTypes.BOOLEAN, allowNull: true, defaultValue: false },
+        licenses_available: { type: DataTypes.INTEGER, allowNull: false, defaultValue: 0 },
     };
 
     const options = {

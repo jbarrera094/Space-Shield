@@ -4,12 +4,12 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
 
-import { userService, alertService } from 'services';
+import { licenseService, alertService, userService } from 'services';
 
 export { AddEdit };
 
 function AddEdit(props) {
-    const user = props?.user;
+    const license = props?.license;
     const router = useRouter();
 
     // form validation rules 
@@ -19,14 +19,14 @@ function AddEdit(props) {
         password: Yup.string()
             .transform(x => x === '' ? undefined : x)
             // password optional in edit mode
-            .concat(user ? null : Yup.string().required('Password is required'))
+            .concat(license ? null : Yup.string().required('Password is required'))
             .min(6, 'Password must be at least 6 characters')
     });
     const formOptions = { resolver: yupResolver(validationSchema) };
 
     // set default form values if in edit mode
-    if (user) {
-        formOptions.defaultValues = props.user;
+    if (license) {
+        formOptions.defaultValues = props.license;
     }
 
     // get functions to build form with useForm() hook
@@ -34,15 +34,15 @@ function AddEdit(props) {
     const { errors } = formState;
 
     async function onSubmit(data) {
-        alertService.clear();
         try {
             // create or update user based on user prop
             let message;
-            if (user) {
-                await userService.update(user.id, data);
-                message = 'Licence updated';
+            if (license) {
+                await licenseService.update(license.id_license, data);
+                message = 'license updated';
             } else {
-                await userService.register(data);
+                data['id_user'] = userService.userValue?.id_user;
+                await licenseService.register(data);
                 message = 'License added';
             }
 
@@ -59,7 +59,7 @@ function AddEdit(props) {
         <form onSubmit={handleSubmit(onSubmit)}>
             <div className="row">
                 <div className="mb-3 col">
-                    <label className="form-label">First Name</label>
+                    <label className="form-label">User Name</label>
                     <input name="user" type="text" {...register('user')} className={`form-control ${errors.user ? 'is-invalid' : ''}`} />
                     <div className="invalid-feedback">{errors.user?.message}</div>
                 </div>
@@ -68,7 +68,7 @@ function AddEdit(props) {
                 <div className="mb-3 col">
                     <label className="form-label">
                         Password
-                        {user && <em className="ms-1">(Leave blank to keep the same password)</em>}
+                        {license && <em className="ms-1">(Leave blank to keep the same password)</em>}
                     </label>
                     <input name="password" type="password" {...register('password')} className={`form-control ${errors.password ? 'is-invalid' : ''}`} />
                     <div className="invalid-feedback">{errors.password?.message}</div>

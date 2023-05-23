@@ -16,6 +16,10 @@
     min-height: 7vh;    
 }
 
+.h-video-auto {
+    height: 34vw;
+}
+
 /*
  *  STYLE scrollbar
  */

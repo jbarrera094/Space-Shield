@@ -3,28 +3,28 @@ import { useRouter } from 'next/router';
 
 import { Layout, AddEdit } from 'components/licenses';
 import { Spinner } from 'components';
-import { userService, alertService } from 'services';
+import { licenseService, alertService } from 'services';
 
 export default Edit;
 
 function Edit() {
     const router = useRouter();
-    const [user, setUser] = useState(null);
+    const [license, setLicense] = useState(null);
 
     useEffect(() => {
         const { id } = router.query;
         if (!id) return;
 
         // fetch user and set default form values if in edit mode
-        userService.getById(id)
-            .then(x => setUser(x))
+        licenseService.getById(id)
+            .then(x => setLicense(x))
             .catch(alertService.error)
     }, [router]);
 
     return (
         <Layout>
-            <h1>Edit User</h1>
-            {user ? <AddEdit user={user} /> : <Spinner />}
+            <h1>Edit License</h1>
+            {license ? <AddEdit license={license} /> : <Spinner />}
         </Layout>
     );
 }

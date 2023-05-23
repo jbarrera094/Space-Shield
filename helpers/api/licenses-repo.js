@@ -18,50 +18,73 @@ async function getAll(params) {
 }
 
 async function getById(id) {
-    return await db.User.findByPk(id);
+    return await db.License.findByPk(id);
 }
 
 async function create(params) {
     // validate
-    if (await db.User.findOne({ where: { email: params.email } })) {
-        throw 'email "' + params.email + '" is already taken';
+    // Primero consultar cuantas licencias lleva registradas el administrador
+    const admin = await db.User.findByPk(params.id_user);
+    if (!admin) throw 'User not found';
+
+    if (admin.licenses_available > 0){
+        // Validar  si ese mismo nombre de usuario ya existe en las licencias del administrador
+        if (await db.License.findOne({ where: { id_user: params.id_user, user: params.user } })) {
+            throw 'user "' + params.user + '" is already taken';
+        }
+        const license = new db.License(params);
+    
+        // hash password
+        /* if (params.password) {
+            license.hash = bcrypt.hashSync(params.password, 10);
+        }*/
+        license.hash = params.password;
+    
+        // save license
+        await license.save();
+
+        // restarle una licencia al admin
+        admin.licenses_available = admin.licenses_available - 1;
+        await admin.save();
+    } else {
+        throw 'No Licenses Available';
     }
-
-    const user = new db.User(params);
-
-    // hash password
-    if (params.password) {
-        user.hash = bcrypt.hashSync(params.password, 10);
-    }
-
-    // save user
-    await user.save();
 }
 
 async function update(id, params) {
-    const user = await db.User.findByPk(id);
+    const license = await db.License.findByPk(id);
 
     // validate
-    if (!user) throw 'User not found';
-    if (user.email !== params.email && await db.User.findOne({ where: { email: params.email } })) {
-        throw 'email "' + params.email + '" is already taken';
+    if (!license) throw 'License not found';
+    if (await db.License.findOne({ where: { user: params.user } })) {
+        throw 'User "' + params.user + '" is already taken';
     }
 
     // hash password if it was entered
-    if (params.password) {
+    /*if (params.password) {
         params.hash = bcrypt.hashSync(params.password, 10);
-    }
+    }*/
+    params.hash = params.password ? params.password : license.hash;
 
     // copy params properties to user
-    Object.assign(user, params);
+    Object.assign(license, params);
 
-    await user.save();
+    await license.save();
 }
 
-async function _delete(id) {
-    const user = await db.User.findByPk(id);
-    if (!user) throw 'User not found';
+async function _delete(id_license) {
+    const license = await db.License.findByPk(id_license);
+    if (!license) throw 'License not found';
 
-    // delete user
-    await user.destroy();
+    // sum available license to this user
+    const id_user = license.id_user;
+    const admin = await db.User.findByPk(id_user);
+    if (!admin) throw 'User not found';
+    admin.licenses_available = admin.licenses_available + 1;
+    await admin.save();
+
+    // delete license
+    await license.destroy();
+
+    
 }
