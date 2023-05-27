@@ -1,4 +1,4 @@
-import { apiHandler, LicensesRepo } from 'helpers/api';
+import { apiHandler, PacksRepo } from 'helpers/api';
 
 export default apiHandler({
     get: getById,
@@ -7,7 +7,7 @@ export default apiHandler({
 });
 
 async function getById(req, res) {
-    const user = await LicensesRepo.getById(req.query.id);
+    const user = await PacksRepo.getById(req.query.id);
 
     if (!user) throw 'User Not Found';
 
@@ -15,11 +15,11 @@ async function getById(req, res) {
 }
 
 async function update(req, res) {
-    await LicensesRepo.update(req.query.id, req.body);
+    await PacksRepo.update(req.query.id, req.body);
     return res.status(200).json({});
 }
 
 async function _delete(req, res) {
-    await LicensesRepo.delete(req.query.id);
+    await PacksRepo.delete(req.query.id);
     return res.status(200).json({});
 }

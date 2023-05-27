@@ -21,13 +21,13 @@ async function getById(id) {
 
 async function create(params) {
     // validate
-    // Primero consultar cuantas licencias lleva registradas el administrador
-    const admin = await db.User.findByPk(params.id_user);
-    if (!admin) throw 'User not found';
+    // Primero consultar cuantas licencias lleva registradas el pack
+    const pack = await db.Pack.findByPk(params.id_pack);
+    if (!pack) throw 'Pack not found';
 
-    if (admin.licenses_available > 0){
+    if (pack.licenses_available > 0){
         // Validar  si ese mismo nombre de usuario ya existe en las licencias del administrador
-        if (await db.License.findOne({ where: { id_user: params.id_user, user: params.user } })) {
+        if (await db.License.findOne({ where: { id_pack: params.id_pack, user: params.user } })) {
             throw 'user "' + params.user + '" is already taken';
         }
         const license = new db.License(params);
@@ -41,9 +41,9 @@ async function create(params) {
         // save license
         await license.save();
 
-        // restarle una licencia al admin
-        admin.licenses_available = admin.licenses_available - 1;
-        await admin.save();
+        // restarle una licencia al pack
+        pack.licenses_available = pack.licenses_available - 1;
+        await pack.save();
     } else {
         throw 'No Licenses Available';
     }

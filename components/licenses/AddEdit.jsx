@@ -4,12 +4,13 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
 
-import { licenseService, alertService, userService } from 'services';
+import { licenseService, alertService } from 'services';
 
 export { AddEdit };
 
 function AddEdit(props) {
     const license = props?.license;
+    const pack = props?.pack;
     const router = useRouter();
 
     // form validation rules 
@@ -41,7 +42,8 @@ function AddEdit(props) {
                 await licenseService.update(license.id_license, data);
                 message = 'license updated';
             } else {
-                data['id_user'] = userService.userValue?.id_user;
+                data['id_pack'] = pack.id_pack;
+                data['user'] = pack.alias + '_' + data['user'];
                 await licenseService.register(data);
                 message = 'License added';
             }
@@ -59,8 +61,11 @@ function AddEdit(props) {
         <form onSubmit={handleSubmit(onSubmit)}>
             <div className="row">
                 <div className="mb-3 col">
-                    <label className="form-label">User Name</label>
-                    <input name="user" type="text" {...register('user')} className={`form-control ${errors.user ? 'is-invalid' : ''}`} />
+                    <label className="form-label" for="user">User Name</label>
+                    <div className="input-group mb-3">
+                        <span className="input-group-text" id="basic-addon3">{pack.alias}_</span>
+                        <input type="text" name="user" {...register('user')}  className={`form-control ${errors.user ? 'is-invalid' : ''}`} aria-describedby="basic-addon3" />
+                    </div>
                     <div className="invalid-feedback">{errors.user?.message}</div>
                 </div>
             </div>

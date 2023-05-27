@@ -5,21 +5,21 @@ import moment from 'moment';
 
 import { Spinner } from 'components';
 import { Layout } from 'components/licenses';
-import DropdownButton from 'react-bootstrap/DropdownButton';
-import Dropdown from 'react-bootstrap/Dropdown'
 import { licenseService, userService, packService } from 'services';
 
 export default Index;
 
 function Index() {
-    const [licenses, setLicenses] = useState(null);
-    const [licensesAvailable, setLicensesAvailable] = useState(0);
+    const [ licenses, setLicenses ] = useState(null);
+    const [ licensesAvailable, setLicensesAvailable ] = useState(0);
     const [ packs, setPacks ] = useState(null);
+    const [ idPack, setIdPack ] = useState(0);
 
     useEffect(() => {
         packService.getAll({id_user: userService.userValue?.id_user}).then(x  => {
             setPacks(x);
             setLicensesAvailable(x[0].licenses_available);
+            setIdPack(x[0].id_pack)
             licenseService.getAll({id_pack: x[0].id_pack}).then(x => setLicenses(x));
         });
     }, []);
@@ -35,13 +35,21 @@ function Index() {
     }
 
     const handleSelect = (e) => {
-        let id_pack = e.target.value;
+        // Update Id Pack
+        setIdPack(e.target.value)
+
+        // Enable loader
+        setLicenses(null);
+
+        // Search pack without looking fro database
         packs.map(pack => {
-            if(pack.id_pack == id_pack){
+            if(pack.id_pack == e.target.value){
                 setLicensesAvailable(pack.licenses_available);
             }
         });
-        licenseService.getAll({id_pack: id_pack}).then(x => setLicenses(x));
+
+        // Get licenses available for this Pack
+        licenseService.getAll({id_pack: e.target.value}).then(x => setLicenses(x));
     }
 
     return (
@@ -59,7 +67,7 @@ function Index() {
                 <button type="button" className="btn btn-outline-secondary" disabled>Update Alias</button>
             </div>
             <div className="d-flex justify-content-between">
-                <Link href="/licenses/add" className={ licensesAvailable > 0 ? "btn btn-sm btn-success mb-2" : " btn btn-sm btn-success mb-2 disabled"}>Add License ({licensesAvailable})</Link>
+                <Link href={`/licenses/add/${idPack}`} className={ licensesAvailable > 0 ? "btn btn-sm btn-success mb-2" : " btn btn-sm btn-success mb-2 disabled"}>Add License ({licensesAvailable})</Link>
                 <span>Licenses Avalilable {licensesAvailable}</span>
             </div>
             <table className="table table-striped">

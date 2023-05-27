@@ -7,11 +7,8 @@ import { alertService } from './alert.service';
 
 const { publicRuntimeConfig } = getConfig();
 const baseUrl = `${publicRuntimeConfig.apiUrl}/licenses`;
-const userSubject = new BehaviorSubject(typeof window !== 'undefined' && JSON.parse(localStorage.getItem('user')));
 
 export const licenseService = {
-    user: userSubject.asObservable(),
-    get userValue() { return userSubject.value },
     register,
     getAll,
     getById,
