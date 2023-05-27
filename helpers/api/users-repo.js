@@ -17,6 +17,10 @@ export const usersRepo = {
 async function authenticate({ email, password }) {
     const user = await db.User.scope('withHash').findOne({ where: { email } });
 
+    console.log("************************************");
+    console.log(user);
+    console.log("************************************");
+
     if (!(user && bcrypt.compareSync(password, user.hash))) {
         throw 'email or password is incorrect';
     }

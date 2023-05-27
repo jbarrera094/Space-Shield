@@ -6,10 +6,10 @@ import { fetchWrapper } from 'helpers';
 import { alertService } from './alert.service';
 
 const { publicRuntimeConfig } = getConfig();
-const baseUrl = `${publicRuntimeConfig.apiUrl}/licenses`;
+const baseUrl = `${publicRuntimeConfig.apiUrl}/packs`;
 const userSubject = new BehaviorSubject(typeof window !== 'undefined' && JSON.parse(localStorage.getItem('user')));
 
-export const licenseService = {
+export const packService = {
     user: userSubject.asObservable(),
     get userValue() { return userSubject.value },
     register,
@@ -23,8 +23,8 @@ async function register(user) {
     await fetchWrapper.post(`${baseUrl}/register`, user);
 }
 
-async function getAll(id_pack) {
-    return await fetchWrapper.post(baseUrl, id_pack);
+async function getAll(id_user) {
+    return await fetchWrapper.post(baseUrl, id_user);
 }
 
 async function getById(id) {

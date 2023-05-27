@@ -5,17 +5,23 @@ import moment from 'moment';
 
 import { Spinner } from 'components';
 import { Layout } from 'components/licenses';
-import { licenseService, userService } from 'services';
+import DropdownButton from 'react-bootstrap/DropdownButton';
+import Dropdown from 'react-bootstrap/Dropdown'
+import { licenseService, userService, packService } from 'services';
 
 export default Index;
 
 function Index() {
     const [licenses, setLicenses] = useState(null);
     const [licensesAvailable, setLicensesAvailable] = useState(0);
+    const [ packs, setPacks ] = useState(null);
 
     useEffect(() => {
-        licenseService.getAll({id_user: userService.userValue?.id_user}).then(x => setLicenses(x));
-        userService.getById(userService.userValue?.id_user).then(x => setLicensesAvailable(x.licenses_available));
+        packService.getAll({id_user: userService.userValue?.id_user}).then(x  => {
+            setPacks(x);
+            setLicensesAvailable(x[0].licenses_available);
+            licenseService.getAll({id_pack: x[0].id_pack}).then(x => setLicenses(x));
+        });
     }, []);
 
     function deleteLicense(id_license) {
@@ -28,9 +34,30 @@ function Index() {
         });
     }
 
+    const handleSelect = (e) => {
+        let id_pack = e.target.value;
+        packs.map(pack => {
+            if(pack.id_pack == id_pack){
+                setLicensesAvailable(pack.licenses_available);
+            }
+        });
+        licenseService.getAll({id_pack: id_pack}).then(x => setLicenses(x));
+    }
+
     return (
         <Layout>
             <h1>Licenses</h1>
+            <span>Please select a license package</span>
+            <div className="d-flex mb-3">
+
+                <select className="form-select me-3" aria-label="Default select packages" onChange={handleSelect}>
+                    { packs && packs.map(pack => 
+                        <option key={pack.id_pack} value={pack.id_pack}>{pack.alias}</option>
+                    ) }
+                </select>
+
+                <button type="button" className="btn btn-outline-secondary" disabled>Update Alias</button>
+            </div>
             <div className="d-flex justify-content-between">
                 <Link href="/licenses/add" className={ licensesAvailable > 0 ? "btn btn-sm btn-success mb-2" : " btn btn-sm btn-success mb-2 disabled"}>Add License ({licensesAvailable})</Link>
                 <span>Licenses Avalilable {licensesAvailable}</span>

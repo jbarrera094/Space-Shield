@@ -3,7 +3,7 @@ import { db } from 'helpers/api';
 
 const { serverRuntimeConfig } = getConfig();
 
-export const LicensesRepo = {
+export const PacksRepo = {
     getAll,
     getById,
     create,
@@ -12,11 +12,11 @@ export const LicensesRepo = {
 };
 
 async function getAll(params) {
-    return await db.License.findAll({ where: { id_pack: params.id_pack } });
+    return await db.Pack.findAll({ where: { id_user: params.id_user } });
 }
 
 async function getById(id) {
-    return await db.License.findByPk(id);
+    return await db.Pack.findByPk(id);
 }
 
 async function create(params) {
