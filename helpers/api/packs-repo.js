@@ -12,7 +12,7 @@ export const PacksRepo = {
 };
 
 async function getAll(params) {
-    return await db.Pack.findAll({ where: { id_user: params.id_user } });
+    return await db.Pack.findAll({ where: { id_user: params.id_user, paid: true } });
 }
 
 async function getById(id) {
@@ -21,11 +21,14 @@ async function getById(id) {
 
 async function create(params) {
     // Validar  si ese mismo nombre de usuario ya existe en las licencias del administrador
-    if (await db.Pack.findByPk(params.id_pack)) {
+    if (await db.Pack.findOne({ where: { alias: params.alias } })) {
         throw 'pack "' + params.alias + '" is already taken';
     }
 
     const pack = new db.Pack(params);
+
+    // Update licenses available
+    pack.licenses_available = params.typePack == 1 ? 1 : 5;
     
     // save license
     await pack.save();

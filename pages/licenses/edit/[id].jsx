@@ -19,9 +19,8 @@ function Edit() {
         // fetch user and set default form values if in edit mode
         licenseService.getById(id)
             .then(x => {
+                x.user = x.user.split("_")[1];
                 setLicense(x);
-
-                
 
                 packService.getById(x.id_pack)
                 .then(x => setPack(x))

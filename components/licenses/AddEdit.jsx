@@ -61,7 +61,7 @@ function AddEdit(props) {
         <form onSubmit={handleSubmit(onSubmit)}>
             <div className="row">
                 <div className="mb-3 col">
-                    <label className="form-label" for="user">User Name</label>
+                    <label className="form-label" htmlFor="user">User Name</label>
                     <div className="input-group mb-3">
                         <span className="input-group-text" id="basic-addon3">{pack.alias}_</span>
                         <input type="text" name="user" {...register('user')}  className={`form-control ${errors.user ? 'is-invalid' : ''}`} aria-describedby="basic-addon3" />

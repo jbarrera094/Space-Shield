@@ -10,6 +10,7 @@ export { AddEdit };
 
 function AddEdit(props) {
     const pack = props?.pack;
+    const typePack = props?.typePack;
     const router = useRouter();
 
     // form validation rules 
@@ -30,11 +31,6 @@ function AddEdit(props) {
             if (pack) {
                 await packService.update(pack.id_pack, data);
                 message = 'Pack updated';
-            } else {
-                data['id_user'] = userService.userValue?.id_user;
-                data['id_pack'] = pack.id_pack;
-                await packService.register(data);
-                message = 'License added';
             }
 
             // redirect to user list with success message
@@ -46,23 +42,61 @@ function AddEdit(props) {
         }
     }
 
-    return (
-        <form onSubmit={handleSubmit(onSubmit)}>
-            <div className="row">
-                <div className="mb-3 col">
-                    <label className="form-label" for="alias">Alias</label>
-                    <input type="text" name="alias" {...register('alias')}  className={`form-control ${errors.alias ? 'is-invalid' : ''}`} aria-describedby="basic-addon3" />
-                    <div className="invalid-feedback">{errors.alias?.message}</div>
+    async function onCreate(data) {
+        try {
+            // create or update user based on user prop
+            let message;
+            data['id_user'] = userService.userValue?.id_user;
+            data['typePack'] = typePack;
+            await packService.register(data);
+            message = 'License added';
+
+            // redirect to user list with success message
+            router.push('/dashboard');
+            alertService.success(message, true);
+        } catch (error) {
+            alertService.error(error);
+            console.error(error);
+        }
+    }
+
+    if(typePack){
+        return (
+            <form onSubmit={handleSubmit(onCreate)}>
+                <div className="row">
+                    <div className="mb-3 col">
+                        <label className="form-label" htmlFor="alias">Alias</label>
+                        <input type="text" name="alias" {...register('alias')}  className={`form-control ${errors.alias ? 'is-invalid' : ''}`} aria-describedby="basic-addon3" />
+                        <div className="invalid-feedback">{errors.alias?.message}</div>
+                    </div>
                 </div>
-            </div>
-            <div className="mb-3">
-                <button type="submit" disabled={formState.isSubmitting} className="btn btn-primary me-2">
-                    {formState.isSubmitting && <span className="spinner-border spinner-border-sm me-1"></span>}
-                    Save
-                </button>
-                <button onClick={() => reset(formOptions.defaultValues)} type="button" disabled={formState.isSubmitting} className="btn btn-secondary">Reset</button>
-                <Link href="/licenses" className="btn btn-link">Cancel</Link>
-            </div>
-        </form>
-    );
+                <div className="mb-3">
+                    <button type="submit" disabled={formState.isSubmitting} className="btn btn-warning me-2">
+                        {formState.isSubmitting && <span className="spinner-border spinner-border-sm me-1"></span>}
+                        Buy Now!
+                    </button>
+                </div>
+            </form>
+        );
+    }else{
+        return (
+            <form onSubmit={handleSubmit(onSubmit)}>
+                <div className="row">
+                    <div className="mb-3 col">
+                        <label className="form-label" htmlFor="alias">Alias</label>
+                        <input type="text" name="alias" {...register('alias')}  className={`form-control ${errors.alias ? 'is-invalid' : ''}`} aria-describedby="basic-addon3" />
+                        <div className="invalid-feedback">{errors.alias?.message}</div>
+                    </div>
+                </div>
+                <div className="mb-3">
+                    <button type="submit" disabled={formState.isSubmitting} className="btn btn-primary me-2">
+                        {formState.isSubmitting && <span className="spinner-border spinner-border-sm me-1"></span>}
+                        Save
+                    </button>
+                    <button onClick={() => reset(formOptions.defaultValues)} type="button" disabled={formState.isSubmitting} className="btn btn-secondary">Reset</button>
+                    <Link href="/licenses" className="btn btn-link">Cancel</Link>
+                </div>
+            </form>
+        );
+    }
 }

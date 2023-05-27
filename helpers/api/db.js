@@ -59,7 +59,7 @@ function packModel(sequelize) {
     const attributes = {
         id_pack: { type: DataTypes.BIGINT, allowNull: false, autoIncrement: true, primaryKey: true },
         id_user: { type: DataTypes.BIGINT, allowNull: false},
-        alias: { type: DataTypes.STRING, allowNull: false, unique: true },
+        alias: { type: DataTypes.STRING, allowNull: false },
         paid: { type: DataTypes.BOOLEAN, allowNull: true, defaultValue: false },
         licenses_available: { type: DataTypes.INTEGER, allowNull: false, defaultValue: 1 },
         expiration_date: { type: DataTypes.DATE, allowNull: false, defaultValue: (new Date())},
