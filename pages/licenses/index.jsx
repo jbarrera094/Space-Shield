@@ -31,6 +31,7 @@ function Index() {
         }));
         licenseService.delete(id_license).then(() => {
             setLicenses(licenses => licenses.filter(x => x.id_license !== id_license));
+            setLicensesAvailable(licensesAvailable + 1);
         });
     }
 
@@ -56,6 +57,9 @@ function Index() {
         <Layout>
             <h1>Licenses</h1>
             <span>Please select a license package</span>
+
+            {/** -------------------------------------- Select Pack of Licenses -------------------------------------- */}
+
             <div className="d-flex mb-3">
 
                 <select className="form-select me-3" aria-label="Default select packages" onChange={handleSelect}>
@@ -64,12 +68,11 @@ function Index() {
                     ) }
                 </select>
 
-                <button type="button" className="btn btn-outline-secondary" disabled>Update Alias</button>
+                <Link href={`/packs/edit/${idPack}`} className="btn btn-outline-primary">Update Alias</Link>
             </div>
-            <div className="d-flex justify-content-between">
-                <Link href={`/licenses/add/${idPack}`} className={ licensesAvailable > 0 ? "btn btn-sm btn-success mb-2" : " btn btn-sm btn-success mb-2 disabled"}>Add License ({licensesAvailable})</Link>
-                <span>Licenses Avalilable {licensesAvailable}</span>
-            </div>
+
+            {/** --------------------------------------  Manager Licenses -------------------------------------- */}
+
             <table className="table table-striped">
                 <thead>
                     <tr>
@@ -112,6 +115,10 @@ function Index() {
                     }
                 </tbody>
             </table>
+
+            <div className="d-flex">
+                <Link href={`/licenses/add/${idPack}`} className={ licensesAvailable > 0 ? "btn btn-outline-primary w-100" : "btn btn-outline-primary w-100 disabled"}>Add License ({licensesAvailable})</Link>                
+            </div>
         </Layout>
     );
 }

@@ -10,8 +10,6 @@ const baseUrl = `${publicRuntimeConfig.apiUrl}/packs`;
 const userSubject = new BehaviorSubject(typeof window !== 'undefined' && JSON.parse(localStorage.getItem('user')));
 
 export const packService = {
-    user: userSubject.asObservable(),
-    get userValue() { return userSubject.value },
     register,
     getAll,
     getById,

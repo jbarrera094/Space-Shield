@@ -74,12 +74,12 @@ async function _delete(id_license) {
     const license = await db.License.findByPk(id_license);
     if (!license) throw 'License not found';
 
-    // sum available license to this user
-    const id_user = license.id_user;
-    const admin = await db.User.findByPk(id_user);
-    if (!admin) throw 'User not found';
-    admin.licenses_available = admin.licenses_available + 1;
-    await admin.save();
+    // sum available license to this pack
+    const id_pack = license.id_pack;
+    const pack = await db.Pack.findByPk(id_pack);
+    if (!pack) throw 'Pack not found';
+    pack.licenses_available = pack.licenses_available + 1;
+    await pack.save();
 
     // delete license
     await license.destroy();

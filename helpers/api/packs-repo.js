@@ -20,54 +20,37 @@ async function getById(id) {
 }
 
 async function create(params) {
-    // validate
-    // Primero consultar cuantas licencias lleva registradas el administrador
-    const admin = await db.User.findByPk(params.id_user);
-    if (!admin) throw 'User not found';
-
-    if (admin.licenses_available > 0){
-        // Validar  si ese mismo nombre de usuario ya existe en las licencias del administrador
-        if (await db.License.findOne({ where: { id_user: params.id_user, user: params.user } })) {
-            throw 'user "' + params.user + '" is already taken';
-        }
-        const license = new db.License(params);
-    
-        // hash password
-        /* if (params.password) {
-            license.hash = bcrypt.hashSync(params.password, 10);
-        }*/
-        license.hash = params.password;
-    
-        // save license
-        await license.save();
-
-        // restarle una licencia al admin
-        admin.licenses_available = admin.licenses_available - 1;
-        await admin.save();
-    } else {
-        throw 'No Licenses Available';
+    // Validar  si ese mismo nombre de usuario ya existe en las licencias del administrador
+    if (await db.Pack.findByPk(params.id_pack)) {
+        throw 'pack "' + params.alias + '" is already taken';
     }
+
+    const pack = new db.Pack(params);
+    
+    // save license
+    await pack.save();
 }
 
 async function update(id, params) {
-    const license = await db.License.findByPk(id);
+    const pack = await db.Pack.findByPk(id);
 
     // validate
-    if (!license) throw 'License not found';
-    if (await db.License.findOne({ where: { user: params.user } })) {
-        throw 'User "' + params.user + '" is already taken';
+    if (!pack) throw 'Pack not found';
+    if (await db.Pack.findOne({ where: { alias: params.alias } })) {
+        throw 'Pack "' + params.alias + '" is already taken';
     }
 
-    // hash password if it was entered
-    /*if (params.password) {
-        params.hash = bcrypt.hashSync(params.password, 10);
-    }*/
-    params.hash = params.password ? params.password : license.hash;
-
     // copy params properties to user
-    Object.assign(license, params);
+    Object.assign(pack, params);
 
-    await license.save();
+    // Update All Licences for this Pack
+    const licenses = await db.License.findAll({ where: { id_pack: id } });
+    licenses.map(async (license) => {
+        license.user = params.alias + "_" + license.user.split("_")[1];
+        await license.save();
+    });
+
+    await pack.save();
 }
 
 async function _delete(id_license) {
