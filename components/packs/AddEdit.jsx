@@ -26,9 +26,9 @@ function AddEdit(props) {
 
     async function onSubmit(data) {
         try {
-            // create or update user based on user prop
             let message;
             if (pack) {
+                data['id_user'] = userService.userValue?.id_user;
                 await packService.update(pack.id_pack, data);
                 message = 'Pack updated';
             }
@@ -44,7 +44,6 @@ function AddEdit(props) {
 
     async function onCreate(data) {
         try {
-            // create or update user based on user prop
             let message;
             data['id_user'] = userService.userValue?.id_user;
             data['typePack'] = typePack;
@@ -52,7 +51,8 @@ function AddEdit(props) {
             message = 'License added';
 
             // redirect to user list with success message
-            router.push('/dashboard');
+            // router.push('/dashboard');
+            window.location.href = 'https://www.mercadopago.com.co/subscriptions/checkout?preapproval_plan_id=2c93808488610f63018864704a4e00f8';
             alertService.success(message, true);
         } catch (error) {
             alertService.error(error);

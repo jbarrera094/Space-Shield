@@ -19,19 +19,30 @@ async function getById(id) {
     return await db.Pack.findByPk(id);
 }
 
+/**
+ * Validaciones:: Si el paquete(alias) existe si NO existe CREARLA, si existe entonces validar si es del usuario actual, si no ERROR(Paquete ocupado)
+ * En caso de serlo validar si fue pagada, si ya se pago entonces ERROR (Paquete ya fue adquirido), si no
+ * Proseguir con el pago sin crear la licencia
+ */
 async function create(params) {
-    // Validar  si ese mismo nombre de usuario ya existe en las licencias del administrador
-    if (await db.Pack.findOne({ where: { alias: params.alias } })) {
-        throw 'pack "' + params.alias + '" is already taken';
-    }
-
-    const pack = new db.Pack(params);
-
-    // Update licenses available
-    pack.licenses_available = params.typePack == 1 ? 1 : 5;
+    const tempPack = await db.Pack.findOne({ where: { alias: params.alias } });
+    if(tempPack){
+        if(tempPack.id_user == params.id_user){
+            if(tempPack.paid){
+                throw 'Pack "' + params.alias + '" is already in your library';
+            }
+        }else{
+            throw 'Pack "' + params.alias + '" is already taken';
+        }
+    }else{
+        const pack = new db.Pack(params);
     
-    // save license
-    await pack.save();
+        // Update licenses available
+        pack.licenses_available = params.typePack == 1 ? 1 : 5;
+        
+        // save license
+        await pack.save();
+    }
 }
 
 async function update(id, params) {
@@ -39,7 +50,7 @@ async function update(id, params) {
 
     // validate
     if (!pack) throw 'Pack not found';
-    if (await db.Pack.findOne({ where: { alias: params.alias } })) {
+    if (await db.Pack.findOne({ where: { alias: params.alias, id_user: params.id_user } })) {
         throw 'Pack "' + params.alias + '" is already taken';
     }
 
