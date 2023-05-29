@@ -20,6 +20,12 @@
     height: 34vw;
 }
 
+@media (max-width: 767px) {
+    .d-hiden-movile {
+      display: none;
+    }
+  }
+
 /*
  *  STYLE scrollbar
  */

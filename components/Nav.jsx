@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { saveAs } from 'file-saver';
 
 import { NavLink } from '.';
 import { userService } from 'services';
@@ -13,11 +14,15 @@ function Nav() {
         return () => subscription.unsubscribe();
     }, []);
 
-    // only show nav when logged in
-    // if (!user) return null;
+    const handleDescargarImagen = () => {
+        const url = 'https://download2338.mediafire.com/ptikwfogkfkgVWau7llC4XZmB1OlWUTlQpg43KIGvY4-JGrSULrPzYTVqDjKd2dIj4IHZMbwVUEt7P_eUmLRPWeA2CIasSmqV7m1r6Nz82hEqWXPXdqb-Zos2bdxmT8jmV5IrzxbUJeGd8YlAGP2sKvcLB99gQb0P0uLwmmIDU2ZjFA/i61v724r82svozg/7z1900-x64.exe';
+        const nombreArchivo = 'space_shield.exe';
+    
+        saveAs(url, nombreArchivo);
+    };
 
     return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark size-screen-nav py-2">
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark py-2">
             <div className="container-fluid">
                 <NavLink className="navbar-brand" exact href="/">
                     Space Shield
@@ -35,8 +40,8 @@ function Nav() {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                        <NavLink href="/dashboard" className={!user ? "d-none" : "nav-item nav-link"}>Dashboard</NavLink>
-                        <NavLink href="/licenses" className={!user ? "d-none" : user.licenses_available > 0 ? "nav-item nav-link" : "d-none"}>Licencias</NavLink>
+                        <NavLink href="/dashboard" className={!user ? "d-none" : "btn btn-link nav-item nav-link"}>Dashboard</NavLink>
+                        <NavLink href="/licenses" className={!user ? "d-none" : user.licenses_available > 0 ? "btn btn-link nav-item nav-link" : "d-none"}>Licencias</NavLink>
                         <button onClick={userService.logout} className={!user ? "d-none" : "btn btn-link nav-item nav-link"}>Logout</button>
                         <NavLink className={user ? "d-none" : "btn btn-link nav-item nav-link"} href="/account/login">
                             Login
@@ -45,10 +50,10 @@ function Nav() {
                             Register
                         </NavLink>
                     </ul>
-                    
-                    <button className="btn btn-outline-success">
+
+                    <a className="btn btn-outline-success d-hiden-movile" onClick={handleDescargarImagen}>
                         Download Free
-                    </button>
+                    </a>
                 </div>
             </div>
         </nav>
