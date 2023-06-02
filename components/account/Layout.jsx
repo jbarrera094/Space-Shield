@@ -16,7 +16,7 @@ function Layout({ children }) {
     }, []);
 
     return (
-        <div className="container pt-5">
+        <div className="container pt-5 bg-dark">
             {children}
         </div>
     );

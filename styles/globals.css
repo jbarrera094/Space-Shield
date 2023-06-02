@@ -3,7 +3,7 @@
 }
 
 .size-screen-main {
-    max-height: 92vh;
+    max-height: 100vh;
     overflow: hidden;
 }
 
@@ -19,12 +19,28 @@
 .h-video-auto {
     height: 34vw;
 }
+.z-index-10 {
+    z-index: 10;
+}
+.footer-icon-size{
+    width: 2rem;
+    height: auto;
+}
+.features-icon-size{
+    width: 4rem;
+    height: auto;
+}
 
 @media (max-width: 767px) {
     .d-hiden-movile {
       display: none;
     }
-  }
+
+    .bg-transparent-custom {
+        --bs-bg-opacity: 1;
+        background-color: #212529!important;
+    }
+}
 
 /*
  *  STYLE scrollbar

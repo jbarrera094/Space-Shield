@@ -1,4 +1,6 @@
 import Carousel from "components/Carousel";
+import { faCircleDollarToSlot, faGaugeHigh, faStar } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default Home;
 
@@ -15,7 +17,8 @@ function Home() {
                     <div className="row d-flex justify-content-center justify-content-md-between">
                         <div className="card text-center col-10 col-md-3 shadow">
                             <div className="card-body">
-                                <h5 className="card-title pb-3">Special title treatment</h5>
+                                <FontAwesomeIcon icon={faCircleDollarToSlot} className='features-icon-size text-info'/>
+                                <h5 className="card-title pb-1">Optimize Costs</h5>
                                 <p className="card-text">
                                     With supporting text below as a natural lead-in to additional
                                     content.
@@ -25,21 +28,23 @@ function Home() {
 
                         <div className="card text-center col-10 col-md-3 shadow">
                             <div className="card-body">
-                            <h5 className="card-title pb-3">Special title treatment</h5>
-                            <p className="card-text">
-                                With supporting text below as a natural lead-in to additional
-                                content.
-                            </p>
+                                <FontAwesomeIcon icon={faGaugeHigh} className='features-icon-size text-info'/>
+                                <h5 className="card-title pb-1">Increases Performance</h5>
+                                <p className="card-text">
+                                    With supporting text below as a natural lead-in to additional
+                                    content.
+                                </p>
                             </div>
                         </div>
 
                         <div className="card text-center col-10 col-md-3 shadow">
                             <div className="card-body">
-                            <h5 className="card-title pb-3">Special title treatment</h5>
-                            <p className="card-text">
-                                With supporting text below as a natural lead-in to additional
-                                content.
-                            </p>
+                                <FontAwesomeIcon icon={faStar} className='features-icon-size text-info'/>
+                                <h5 className="card-title pb-1">Higher Quality</h5>
+                                <p className="card-text">
+                                    With supporting text below as a natural lead-in to additional
+                                    content.
+                                </p>
                             </div>
                         </div>
                     </div>                    

@@ -5,4 +5,3 @@ export * from './jwt-middleware';
 export * from './users-repo';
 export * from './packs-repo';
 export * from './licenses-repo';
-export * from './mercadopago';

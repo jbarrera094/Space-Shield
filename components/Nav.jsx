@@ -22,9 +22,9 @@ function Nav() {
     };
 
     return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark py-2">
+        <nav className="navbar navbar-expand-lg bg-transparent bg-transparent-custom py-2 px-md-5 position-absolute top-0 start-0 z-index-10 w-100">
             <div className="container-fluid">
-                <NavLink className="navbar-brand" exact href="/">
+                <NavLink className="navbar-brand text-white" exact href="/">
                     Space Shield
                 </NavLink>
                 <button
@@ -40,13 +40,13 @@ function Nav() {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                        <NavLink href="/dashboard" className={!user ? "d-none" : "btn btn-link nav-item nav-link"}>Dashboard</NavLink>
-                        <NavLink href="/licenses" className={!user ? "d-none" : user.licenses_available > 0 ? "btn btn-link nav-item nav-link" : "d-none"}>Licencias</NavLink>
-                        <button onClick={userService.logout} className={!user ? "d-none" : "btn btn-link nav-item nav-link"}>Logout</button>
-                        <NavLink className={user ? "d-none" : "btn btn-link nav-item nav-link"} href="/account/login">
+                        <NavLink href="/dashboard" className={!user ? "d-none" : "btn btn-link nav-item nav-link text-white"}>Dashboard</NavLink>
+                        <NavLink href="/licenses" className={!user ? "d-none" : user.licenses_available > 0 ? "btn btn-link nav-item nav-link text-white" : "d-none"}>Licencias</NavLink>
+                        <button onClick={userService.logout} className={!user ? "d-none" : "btn btn-link nav-item nav-link text-white"}>Logout</button>
+                        <NavLink className={user ? "d-none" : "btn btn-link nav-item nav-link text-white"} href="/account/login">
                             Login
                         </NavLink>
-                        <NavLink className={user ? "d-none" : "btn btn-link nav-item nav-link"} href="/account/register">
+                        <NavLink className={user ? "d-none" : "btn btn-link nav-item nav-link text-white"} href="/account/register">
                             Register
                         </NavLink>
                     </ul>
