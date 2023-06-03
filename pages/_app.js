@@ -3,6 +3,7 @@ import Head from 'next/head';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 
+import 'bootstrap/dist/css/bootstrap.css';
 import 'styles/globals.css';
 
 import { userService } from 'services';
@@ -16,6 +17,9 @@ function App({ Component, pageProps }) {
     const [authorized, setAuthorized] = useState(false);
 
     useEffect(() => {
+        
+        import("bootstrap/dist/js/bootstrap");
+
         // on initial load - run auth check 
         authCheck(router.asPath);
 
