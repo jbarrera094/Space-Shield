@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default Carousel;
 
 function Carousel() {
@@ -5,13 +7,13 @@ function Carousel() {
     <div id="carouselExampleAutoplaying" className="carousel slide size-screen-main" data-bs-ride="carousel">
       <div className="carousel-inner">
         <div className="carousel-item active">
-          <img src="https://wallpapercave.com/wp/wp3027283.jpg" className="d-block w-100" alt="..."/>
+          <img src="/bg-auth.jpg" className="d-block w-100" alt="..."/>
         </div>
         <div className="carousel-item">
-          <img src="https://wallpapercave.com/wp/wp2922967.jpg" className="d-block w-100" alt="..."/>
+          <img src="/bg-auth.jpg" className="d-block w-100" alt="..."/>
         </div>
         <div className="carousel-item">
-          <img src="https://wallpapercave.com/wp/wp3027283.jpg" className="d-block w-100" alt="..."/>
+          <img src="/bg-auth.jpg" className="d-block w-100" alt="..."/>
         </div>
       </div>
       <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
