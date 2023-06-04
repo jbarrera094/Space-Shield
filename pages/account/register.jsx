@@ -22,7 +22,9 @@ function Register() {
             .required('email is required'),
         password: Yup.string()
             .required('Password is required')
-            .min(6, 'Password must be at least 6 characters')
+            .min(6, 'Password must be at least 6 characters'),
+        checkTermCondition: Yup.boolean()
+            .oneOf([true], "It's necessary to accept terms and conditions")            
     });
     const formOptions = { resolver: yupResolver(validationSchema) };
 
@@ -41,38 +43,44 @@ function Register() {
 
     return (
         <Layout>
-            <div className="card">
-                <h4 className="card-header">Register</h4>
+            <div className="card bg-blur p-4">
                 <div className="card-body">
+                    <h1 className='text-center fs-2 mb-4 text-white'>Regiser Here</h1>
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="mb-3">
-                            <label className="form-label">First Name</label>
-                            <input name="firstName" type="text" {...register('firstName')} className={`form-control ${errors.firstName ? 'is-invalid' : ''}`} />
+                            <input placeholder='First Name' name="firstName" type="text" {...register('firstName')} className={`form-control ${errors.firstName ? 'is-invalid' : ''}`} />
                             <div className="invalid-feedback">{errors.firstName?.message}</div>
                         </div>
                         <div className="mb-3">
-                            <label className="form-label">Last Name</label>
-                            <input name="lastName" type="text" {...register('lastName')} className={`form-control ${errors.lastName ? 'is-invalid' : ''}`} />
+                            <input placeholder='Last Name' name="lastName" type="text" {...register('lastName')} className={`form-control ${errors.lastName ? 'is-invalid' : ''}`} />
                             <div className="invalid-feedback">{errors.lastName?.message}</div>
                         </div>
                         <div className="mb-3">
-                            <label className="form-label">email</label>
-                            <input name="email" type="text" {...register('email')} className={`form-control ${errors.email ? 'is-invalid' : ''}`} />
+                            <input placeholder='Email' name="email" type="text" {...register('email')} className={`form-control ${errors.email ? 'is-invalid' : ''}`} />
                             <div className="invalid-feedback">{errors.email?.message}</div>
                         </div>
                         <div className="mb-3">
-                            <label className="form-label">Password</label>
-                            <input name="password" type="password" {...register('password')} className={`form-control ${errors.password ? 'is-invalid' : ''}`} />
+                            <input placeholder='Password' name="password" type="password" {...register('password')} className={`form-control ${errors.password ? 'is-invalid' : ''}`} />
                             <div className="invalid-feedback">{errors.password?.message}</div>
                         </div>
-                        <button disabled={formState.isSubmitting} className="btn btn-primary">
+                        <div className="form-check mb-3">
+                            <input name='checkTermCondition' type="checkbox" {...register('checkTermCondition')} className={`form-check-input ${errors.password ? 'is-invalid' : ''}`} />
+                            <label className="form-check-label text-white" htmlFor="checkTermCondition">
+                                I accept terms and conditions
+                            </label>
+                            <div className="invalid-feedback">{errors.checkTermCondition?.message}</div>
+                        </div>
+                        <button disabled={formState.isSubmitting} className="d-block btn btn-light w-100 fw-bold mb-2">
                             {formState.isSubmitting && <span className="spinner-border spinner-border-sm me-1"></span>}
-                            Register
+                            Sing Up
                         </button>
-                        <Link href="/account/login" className="btn btn-link">Cancel</Link>
+                        <div className="d-flex">
+                            <span className='text-white me-2'>already have an account?</span>
+                            <Link href="/account/login" className="text-decoration-none">Sign In</Link>
+                        </div>
                     </form>
                 </div>
-            </div>
+            </div>            
         </Layout>
     );
 }

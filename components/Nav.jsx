@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import { saveAs } from 'file-saver';
 
 import { NavLink } from '.';
@@ -8,6 +9,16 @@ export { Nav };
 
 function Nav() {
     const [user, setUser] = useState(null);
+    const router = useRouter();
+    const customBg = [
+        '/',
+        '/account/login', 
+        '/account/register',
+        '/packs/add/[id]',
+        '/packs/edit/[id]',
+        '/licenses/add/[id]',
+        '/licenses/edit/[id]'
+    ];
 
     useEffect(() => {
         const subscription = userService.user.subscribe(x => setUser(x));
@@ -22,7 +33,7 @@ function Nav() {
     };
 
     return (
-        <nav className="navbar navbar-expand-lg bg-transparent bg-transparent-custom py-2 px-md-5 position-absolute top-0 start-0 z-index-10 w-100">
+        <nav className={`navbar navbar-expand-lg py-2 px-md-5 position-absolute top-0 start-0 z-index-10 w-100 ${customBg.includes(router.pathname) ?'bg-transparent bg-transparent-md' : 'bg-main-nav'}`}>
             <div className="container-fluid">
                 <NavLink className="navbar-brand text-white" exact href="/">
                     Space Shield
@@ -51,7 +62,7 @@ function Nav() {
                         </NavLink>
                     </ul>
 
-                    <a className="btn btn-outline-success d-hiden-movile" onClick={handleDescargarImagen}>
+                    <a className="btn btn-outline-success d-hiden-movile" href='/space_shield.zip'>
                         Download Free
                     </a>
                 </div>

@@ -62,41 +62,56 @@ function AddEdit(props) {
 
     if(typePack){
         return (
-            <form onSubmit={handleSubmit(onCreate)}>
-                <div className="row">
-                    <div className="mb-3 col">
-                        <label className="form-label" htmlFor="alias">Alias</label>
-                        <input type="text" name="alias" {...register('alias')}  className={`form-control ${errors.alias ? 'is-invalid' : ''}`} aria-describedby="basic-addon3" />
-                        <div className="invalid-feedback">{errors.alias?.message}</div>
-                    </div>
+            <div className="card bg-blur p-4">
+                <div className="card-body">
+                    <h1 className='text-center fs-2 mb-4 text-white'>Create Pack</h1>
+                    <p className='border border-warning p-2 rounded text-white lh-1 fs-6 text-center'>To create a package, it is necessary to enter a unique identification, such as an alias, which will allow us to identify the licenses of your organization and also provide order to your license library. This alias cannot contain spaces or special characters.</p>
+                    <form onSubmit={handleSubmit(onCreate)}>
+                        <div className="row">
+                            <div className="mb-3 col">
+                                <input placeholder='Alias' type="text" name="alias" {...register('alias')}  className={`form-control ${errors.alias ? 'is-invalid' : ''}`} aria-describedby="basic-addon3" 
+                                    onKeyPress={(e) => {
+                                        if (new RegExp(/[A-Za-z0-9]+$/).test(e.key)) {
+                                        } else e.preventDefault();
+                                    }} />
+                                <div className="invalid-feedback">{errors.alias?.message}</div>
+                            </div>
+                        </div>
+                        <button type="submit" disabled={formState.isSubmitting} className="d-block btn btn-warning w-100 fw-bold">
+                            {formState.isSubmitting && <span className="spinner-border spinner-border-sm me-1"></span>}
+                            Buy Now!
+                        </button>
+                    </form>
                 </div>
-                <div className="mb-3">
-                    <button type="submit" disabled={formState.isSubmitting} className="btn btn-warning me-2">
-                        {formState.isSubmitting && <span className="spinner-border spinner-border-sm me-1"></span>}
-                        Buy Now!
-                    </button>
-                </div>
-            </form>
+            </div>            
         );
     }else{
         return (
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <div className="row">
-                    <div className="mb-3 col">
-                        <label className="form-label" htmlFor="alias">Alias</label>
-                        <input type="text" name="alias" {...register('alias')}  className={`form-control ${errors.alias ? 'is-invalid' : ''}`} aria-describedby="basic-addon3" />
-                        <div className="invalid-feedback">{errors.alias?.message}</div>
-                    </div>
+            <div className="card bg-blur p-4">
+                <div className="card-body">
+                    <h1 className='text-center fs-2 mb-4 text-white'>Update Pack</h1>
+                    <p className='border border-warning p-2 rounded text-white lh-1 fs-6 text-center'>Remember: You cannot use blank spaces or special characters.</p>
+                    <form onSubmit={handleSubmit(onSubmit)}>
+                        <div className="row">
+                            <div className="mb-3 col">
+                                <input placeholder='Alias' type="text" name="alias" {...register('alias')}  className={`form-control ${errors.alias ? 'is-invalid' : ''}`} aria-describedby="basic-addon3" 
+                                    onKeyPress={(e) => {
+                                        if (new RegExp(/[A-Za-z0-9]+$/).test(e.key)) {
+                                        } else e.preventDefault();
+                                    }} />
+                                <div className="invalid-feedback">{errors.alias?.message}</div>
+                            </div>
+                        </div>
+                        <div className="d-flex flex-column">
+                            <button type="submit" disabled={formState.isSubmitting} className="btn btn-primary mb-1">
+                                {formState.isSubmitting && <span className="spinner-border spinner-border-sm me-1"></span>}
+                                Save
+                            </button>
+                            <Link href="/licenses" className="btn btn-outline-danger">Cancel</Link>
+                        </div>
+                    </form>
                 </div>
-                <div className="mb-3">
-                    <button type="submit" disabled={formState.isSubmitting} className="btn btn-primary me-2">
-                        {formState.isSubmitting && <span className="spinner-border spinner-border-sm me-1"></span>}
-                        Save
-                    </button>
-                    <button onClick={() => reset(formOptions.defaultValues)} type="button" disabled={formState.isSubmitting} className="btn btn-secondary">Reset</button>
-                    <Link href="/licenses" className="btn btn-link">Cancel</Link>
-                </div>
-            </form>
+            </div>
         );
     }
 }

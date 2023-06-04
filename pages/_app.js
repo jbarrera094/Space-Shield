@@ -15,6 +15,14 @@ function App({ Component, pageProps }) {
     const router = useRouter();
     const [user, setUser] = useState(null);
     const [authorized, setAuthorized] = useState(false);
+    const customBg = [
+        '/account/login', 
+        '/account/register',
+        '/packs/add/[id]',
+        '/packs/edit/[id]',
+        '/licenses/add/[id]',
+        '/licenses/edit/[id]'
+    ];
 
     useEffect(() => {
         
@@ -60,7 +68,7 @@ function App({ Component, pageProps }) {
                 <title>Space Shield</title>
             </Head>
 
-            <div className={`app-container ${user ? 'bg-light' : ''}`}>
+            <div className={`app-container ${customBg.includes(router.pathname) ?'bg-auth' : 'bg-light'}`}>
                 <Alert />
                 {authorized &&
                     <Component {...pageProps} />

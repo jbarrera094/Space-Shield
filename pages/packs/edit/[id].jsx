@@ -23,7 +23,6 @@ function Edit() {
 
     return (
         <Layout>
-            <h1>Edit Pack</h1>
             { pack ? <AddEdit pack={pack} /> : <Spinner /> }
         </Layout>
     );

@@ -11,7 +11,6 @@ export default Login;
 
 function Login() {
     const router = useRouter();
-    const emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
     // form validation rules 
     const validationSchema = Yup.object().shape({
@@ -38,25 +37,26 @@ function Login() {
 
     return (
         <Layout>
-            <div className="card">
-                <h4 className="card-header">Login</h4>
+            <div className="card bg-blur p-4">
                 <div className="card-body">
+                    <h1 className='text-center fs-2 mb-4 text-white'>Login Here</h1>
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="mb-3">
-                            <label className="form-label">email</label>
-                            <input name="email" type="text" {...register('email')} className={`form-control ${errors.email ? 'is-invalid' : ''}`} />
+                            <input name="email" type="text" {...register('email')} className={`form-control ${errors.email ? 'is-invalid' : ''}`} placeholder='Email'/>
                             <div className="invalid-feedback">{errors.email?.message}</div>
                         </div>
-                        <div className="mb-3">
-                            <label className="form-label">Password</label>
-                            <input name="password" type="password" {...register('password')} className={`form-control ${errors.password ? 'is-invalid' : ''}`} />
+                        <div className="mb-4">
+                            <input name="password" type="password" {...register('password')} className={`form-control ${errors.password ? 'is-invalid' : ''}`} placeholder='Password' />
                             <div className="invalid-feedback">{errors.password?.message}</div>
                         </div>
-                        <button disabled={formState.isSubmitting} className="btn btn-primary">
+                        <button disabled={formState.isSubmitting} className="d-block btn btn-light w-100 fw-bold mb-2">
                             {formState.isSubmitting && <span className="spinner-border spinner-border-sm me-1"></span>}
-                            Login
+                            Sing In
                         </button>
-                        <Link href="/account/register" className="btn btn-link">Register</Link>
+                        <div className="d-flex">
+                            <span className='text-white me-2'>not registered yet?</span>
+                            <Link href="/account/register" className="text-decoration-none">Sing In!</Link>
+                        </div>
                     </form>
                 </div>
             </div>

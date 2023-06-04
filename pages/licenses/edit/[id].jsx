@@ -31,7 +31,6 @@ function Edit() {
 
     return (
         <Layout>
-            <h1>Edit License</h1>
             {license ? pack ? <AddEdit license={license} pack={pack} /> : <Spinner /> : <Spinner />}
         </Layout>
     );

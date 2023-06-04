@@ -24,7 +24,6 @@ function Add() {
 
     return (
         <Layout>
-            <h1>Add License</h1>
             {pack ? <AddEdit pack={pack} /> : <Spinner />}
         </Layout>
     );

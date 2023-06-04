@@ -26,7 +26,7 @@ function Alert() {
 
     return (
         <div className="container">
-            <div className="m-3">
+            <div className="pt-5">
                 <div className={`alert alert-dismissible ${alert.type}`}>
                     {alert.message}
                     <button type="button" className="btn-close" onClick={() => alertService.clear()}></button>

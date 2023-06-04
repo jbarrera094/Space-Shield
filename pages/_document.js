@@ -17,15 +17,17 @@ function Document() {
                 <Main />
                 <NextScript />
                 {/* footer */}
-                <footer className="bg-dark p-4 text-white size-footer">
-                    <div className="container d-flex justify-content-between">
-                        <span className='my-auto'>
-                        © Copyright {new Date().getFullYear()} Space Shield.
-                        </span>
-                        <div className="d-flex">
-                            <Link href={'#'}>
-                                <FontAwesomeIcon icon={faYoutube} className='footer-icon-size'/>
-                            </Link>
+                <footer className="bg-dark text-white">
+                    <div className='d-flex flex-column justify-content-center size-footer'>
+                        <div className="px-2 px-md-5 d-flex justify-content-between">
+                            <span className='my-auto'>
+                            © Copyright {new Date().getFullYear()} Space Shield.
+                            </span>
+                            <div className="d-flex">
+                                <Link href={'#'}>
+                                    <FontAwesomeIcon icon={faYoutube} className='footer-icon-size'/>
+                                </Link>
+                            </div>
                         </div>
                     </div>
                 </footer> 

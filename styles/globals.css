@@ -1,5 +1,5 @@
 .app-container {
-    min-height: 88vh;
+    min-height: 93vh;
 }
 
 .size-screen-main {
@@ -30,13 +30,22 @@
     width: 4rem;
     height: auto;
 }
+.bg-auth {
+    background-image: url("/bg-auth.jpg");
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-size: cover; /* Resizes the image to cover the container */
+    background-position: center; /* Centers the image within the container */
+}
+.bg-main-nav {
+    background-color: #212529;
+}
 
 @media (max-width: 767px) {
     .d-hiden-movile {
       display: none;
     }
 
-    .bg-transparent-custom {
+    .bg-transparent-md {
         --bs-bg-opacity: 1;
         background-color: #212529!important;
     }
@@ -64,4 +73,27 @@
     border-radius: 10px;
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
     background-color: #555;
+}
+
+/*
+ * FORM LOGIN/REGISTER
+ */
+.bg-blur {
+    width: 25rem;
+    background-color: rgba(255,255,255,0.13);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+}
+.bg-blur input {
+    background-color: rgba(255,255,255,0.07);
+    color: #fff;
+}
+.bg-blur input::placeholder {
+    color: #fff;
+}
+
+.tiny-placeholder::placeholder {
+    font-size: 0.8rem;
 }

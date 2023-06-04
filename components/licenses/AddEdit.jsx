@@ -39,6 +39,7 @@ function AddEdit(props) {
             // create or update user based on user prop
             let message;
             if (license) {
+                data['user'] = pack.alias + '_' + data['user'];
                 await licenseService.update(license.id_license, data);
                 message = 'license updated';
             } else {
@@ -58,35 +59,39 @@ function AddEdit(props) {
     }
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)}>
-            <div className="row">
-                <div className="mb-3 col">
-                    <label className="form-label" htmlFor="user">User Name</label>
-                    <div className="input-group mb-3">
-                        <span className="input-group-text" id="basic-addon3">{pack.alias}_</span>
-                        <input type="text" name="user" {...register('user')}  className={`form-control ${errors.user ? 'is-invalid' : ''}`} aria-describedby="basic-addon3" />
-                    </div>
-                    <div className="invalid-feedback">{errors.user?.message}</div>
+        <div className="card bg-blur p-4">
+                <div className="card-body">
+                    <h1 className='text-center fs-2 mb-4 text-white'>Manage License</h1>
+                    <p className='border border-warning p-2 rounded text-white lh-1 fs-6 text-center'>User Name cannot contain spaces or special characters.</p>
+                    <form onSubmit={handleSubmit(onSubmit)}>
+                        <div className="row">
+                            <div className="mb-2 col">
+                                <div className="input-group ">
+                                    <span className="input-group-text" id="basic-addon3">{pack.alias}_</span>
+                                    <input placeholder='UserName' type="text" name="user" {...register('user')}  className={`form-control ${errors.user ? 'is-invalid' : ''}`} aria-describedby="basic-addon3" 
+                                        onKeyPress={(e) => {
+                                            if (new RegExp(/[A-Za-z0-9]+$/).test(e.key)) {
+                                            } else e.preventDefault();
+                                        }} />
+                                </div>
+                                <div className="invalid-feedback">{errors.user?.message}</div>
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="mb-3 col">
+                                <input placeholder={`Password ${license ? "(Leave blank to keep the same password)" : ""}`} name="password" type="password" {...register('password')} className={`form-control tiny-placeholder ${errors.password ? 'is-invalid' : ''}`} />
+                                <div className="invalid-feedback">{errors.password?.message}</div>
+                            </div>
+                        </div>
+                        <div className="d-flex flex-column">
+                            <button type="submit" disabled={formState.isSubmitting} className="btn btn-primary mb-1">
+                                {formState.isSubmitting && <span className="spinner-border spinner-border-sm me-1"></span>}
+                                Save
+                            </button>
+                            <Link href="/licenses" className="btn btn-outline-danger">Cancel</Link>
+                        </div>
+                    </form>
                 </div>
             </div>
-            <div className="row">
-                <div className="mb-3 col">
-                    <label className="form-label">
-                        Password
-                        {license && <em className="ms-1">(Leave blank to keep the same password)</em>}
-                    </label>
-                    <input name="password" type="password" {...register('password')} className={`form-control ${errors.password ? 'is-invalid' : ''}`} />
-                    <div className="invalid-feedback">{errors.password?.message}</div>
-                </div>
-            </div>
-            <div className="mb-3">
-                <button type="submit" disabled={formState.isSubmitting} className="btn btn-primary me-2">
-                    {formState.isSubmitting && <span className="spinner-border spinner-border-sm me-1"></span>}
-                    Save
-                </button>
-                <button onClick={() => reset(formOptions.defaultValues)} type="button" disabled={formState.isSubmitting} className="btn btn-secondary">Reset</button>
-                <Link href="/licenses" className="btn btn-link">Cancel</Link>
-            </div>
-        </form>
     );
 }
