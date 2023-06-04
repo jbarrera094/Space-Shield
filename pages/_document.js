@@ -19,11 +19,12 @@ function Document() {
                 {/* footer */}
                 <footer className="bg-dark text-white">
                     <div className='d-flex flex-column justify-content-center size-footer'>
-                        <div className="px-2 px-md-5 d-flex justify-content-between">
-                            <span className='my-auto'>
+                        <div className="px-2 px-md-5 row w-100">
+                            <span className='my-auto col-12 col-md-4 text-center text-md-start'>
                             © Copyright {new Date().getFullYear()} Space Shield.
                             </span>
-                            <div className="d-flex">
+                            <span className='my-auto col-12 col-md-4 text-center'>soporte@bsenergy.co / (+57) 3XX XXX XXXX</span>
+                            <div className="d-flex col-12 col-md-4 d-flex justify-content-center justify-content-md-end">
                                 <Link href={'#'}>
                                     <FontAwesomeIcon icon={faYoutube} className='footer-icon-size'/>
                                 </Link>
