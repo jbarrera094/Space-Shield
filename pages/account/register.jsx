@@ -23,6 +23,8 @@ function Register() {
         password: Yup.string()
             .required('Password is required')
             .min(6, 'Password must be at least 6 characters'),
+        passwordConfirmation: Yup.string()
+            .oneOf([Yup.ref('password'), null], 'Passwords must match'),
         checkTermCondition: Yup.boolean()
             .oneOf([true], "It's necessary to accept terms and conditions")            
     });
@@ -62,6 +64,10 @@ function Register() {
                         <div className="mb-3">
                             <input placeholder='Password' name="password" type="password" {...register('password')} className={`form-control ${errors.password ? 'is-invalid' : ''}`} />
                             <div className="invalid-feedback">{errors.password?.message}</div>
+                        </div>
+                        <div className="mb-3">
+                            <input placeholder='Confirm Password' name="passwordConfirmation" type="password" {...register('passwordConfirmation')} className={`form-control ${errors.passwordConfirmation ? 'is-invalid' : ''}`} />
+                            <div className="invalid-feedback">{errors.passwordConfirmation?.message}</div>
                         </div>
                         <div className="form-check mb-3">
                             <input name='checkTermCondition' type="checkbox" {...register('checkTermCondition')} className={`form-check-input ${errors.password ? 'is-invalid' : ''}`} />
