@@ -3,7 +3,7 @@ const nextConfig = {
     reactStrictMode: true,
     serverRuntimeConfig: {
         dbConfig: {
-            host: '127.0.0.1',
+            host: '161.35.112.185',
             port: 3306,
             user: 'root',
             password: 'colombia2023',
