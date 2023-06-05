@@ -5,8 +5,8 @@ const nextConfig = {
         dbConfig: {
             host: '161.35.112.185',
             port: 3306,
-            user: 'root',
-            password: 'colombia2023',
+            user: 'client',
+            password: 'Space2320*',
             database: 'bsenergy_lcheck'
         },
         secret: 'Space shield by BsEnergy and Developer Jey',
