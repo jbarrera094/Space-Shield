@@ -2,9 +2,12 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
+import getConfig from 'next/config';
 import * as Yup from 'yup';
 
 import { alertService, packService, userService } from 'services';
+
+const { publicRuntimeConfig } = getConfig();
 
 export { AddEdit };
 
@@ -52,7 +55,11 @@ function AddEdit(props) {
 
             // redirect to user list with success message
             // router.push('/dashboard');
-            window.location.href = 'https://www.mercadopago.com.co/subscriptions/checkout?preapproval_plan_id=2c938084888a408101888e53f99f01bf';
+            if(typePack == 1){
+                window.location.href = publicRuntimeConfig.pack1;
+            }else{
+                window.location.href = publicRuntimeConfig.pack2;
+            }
             alertService.success(message, true);
         } catch (error) {
             alertService.error(error);
