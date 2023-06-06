@@ -17,7 +17,8 @@ function Nav() {
         '/packs/add/[id]',
         '/packs/edit/[id]',
         '/licenses/add/[id]',
-        '/licenses/edit/[id]'
+        '/licenses/edit/[id]',
+        '/awaitSuccess'
     ];
 
     useEffect(() => {

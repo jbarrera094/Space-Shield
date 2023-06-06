@@ -21,7 +21,8 @@ function App({ Component, pageProps }) {
         '/packs/add/[id]',
         '/packs/edit/[id]',
         '/licenses/add/[id]',
-        '/licenses/edit/[id]'
+        '/licenses/edit/[id]',
+        '/awaitSuccess'
     ];
 
     useEffect(() => {
@@ -48,7 +49,7 @@ function App({ Component, pageProps }) {
     function authCheck(url) {
         // redirect to login page if accessing a private page and not logged in 
         setUser(userService.userValue);
-        const publicPaths = ['/account/login', '/account/register', '/'];
+        const publicPaths = ['/account/login', '/account/register', '/', '/awaitSuccess'];
         const path = url.split('?')[0];
         if (!userService.userValue && !publicPaths.includes(path)) {
             setAuthorized(false);
