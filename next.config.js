@@ -3,11 +3,11 @@ const nextConfig = {
     reactStrictMode: true,
     serverRuntimeConfig: {
         dbConfig: {
-            host: 'space-shield-v1.ck4pmf2u7pja.us-east-2.rds.amazonaws.com',
+            host: '188.40.63.41',
             port: 3306,
-            user: 'admin',
-            password: 'colombia2320',
-            database: 'bsenergy_lcheck'
+            user: 'bsenergy_jey',
+            password: 'Colombia2320*',
+            database: 'bsenergy_LCheck'
         },
         secret: 'Space shield by BsEnergy and Developer Jey',
     },
