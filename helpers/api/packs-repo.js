@@ -35,6 +35,13 @@ async function create(params) {
             throw 'Pack "' + params.alias + '" is already taken';
         }
     }else{
+        // DateTime utC-5 (Colombian Time)
+        const now = new Date();
+        const offset = -5 * 60; // Desplazamiento horario en minutos (UTC-5)
+        const adjustedTime = new Date(now.getTime() + offset * 60000);
+        const formattedDateTime = adjustedTime.toISOString().slice(0, 19).replace('T', ' ');
+        params['createdAtTimeCol'] = formattedDateTime;
+
         const pack = new db.Pack(params);
     
         // Update licenses available

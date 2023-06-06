@@ -52,7 +52,7 @@ function AddEdit(props) {
 
             // redirect to user list with success message
             // router.push('/dashboard');
-            window.location.href = 'https://www.mercadopago.com.co/subscriptions/checkout?preapproval_plan_id=2c93808488610f63018864704a4e00f8';
+            window.location.href = 'https://www.mercadopago.com.co/subscriptions/checkout?preapproval_plan_id=2c938084888a408101888e53f99f01bf';
             alertService.success(message, true);
         } catch (error) {
             alertService.error(error);

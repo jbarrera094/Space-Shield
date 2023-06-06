@@ -21,8 +21,7 @@ function Home() {
                                 <FontAwesomeIcon icon={faCircleDollarToSlot} className='features-icon-size text-info'/>
                                 <h5 className="card-title pb-1">Optimize Costs</h5>
                                 <p className="card-text">
-                                    With supporting text below as a natural lead-in to additional
-                                    content.
+                                Increase productivity, lower infrastructure investment costs, and empower your design professionals.
                                 </p>
                             </div>
                         </div>
@@ -32,8 +31,7 @@ function Home() {
                                 <FontAwesomeIcon icon={faGaugeHigh} className='features-icon-size text-info'/>
                                 <h5 className="card-title pb-1">Increases Performance</h5>
                                 <p className="card-text">
-                                    With supporting text below as a natural lead-in to additional
-                                    content.
+                                Accelerate productivity, speed up design tasks. 
                                 </p>
                             </div>
                         </div>
@@ -43,8 +41,7 @@ function Home() {
                                 <FontAwesomeIcon icon={faStar} className='features-icon-size text-info'/>
                                 <h5 className="card-title pb-1">Higher Quality</h5>
                                 <p className="card-text">
-                                    With supporting text below as a natural lead-in to additional
-                                    content.
+                                Enhance precision, stand out in the market, improve quality, and ensure greater safety for life, goods, and services.
                                 </p>
                             </div>
                         </div>

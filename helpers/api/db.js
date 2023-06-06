@@ -14,6 +14,9 @@ async function initialize() {
     // create db if it doesn't already exist
     const { host, port, user, password, database } = serverRuntimeConfig.dbConfig;
     const connection = await mysql.createConnection({ host, port, user, password });
+    console.log("********************************************************");
+    console.log(await connection);
+    console.log("********************************************************");
     await connection.query(`CREATE DATABASE IF NOT EXISTS \`${database}\`;`);
 
     // connect to db
@@ -64,6 +67,7 @@ function packModel(sequelize) {
         licenses_available: { type: DataTypes.INTEGER, allowNull: false, defaultValue: 1 },
         expiration_date: { type: DataTypes.DATE, allowNull: false, defaultValue: (new Date())},
         days_remaining: { type: DataTypes.INTEGER, allowNull: true },
+        createdAtTimeCol: { type: DataTypes.STRING, allowNull: false },
     };
 
     const options = {};
