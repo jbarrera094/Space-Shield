@@ -55,7 +55,7 @@ function Login() {
                         </button>
                         <div className="d-flex">
                             <span className='text-white me-2'>not registered yet?</span>
-                            <Link href="/account/register" className="text-decoration-none">Sing In!</Link>
+                            <Link href="/account/register" className="text-decoration-none">Sing Up!</Link>
                         </div>
                     </form>
                 </div>

@@ -57,8 +57,10 @@ function AddEdit(props) {
             // router.push('/dashboard');
             if(typePack == 1){
                 window.location.href = publicRuntimeConfig.pack1;
-            }else{
+            }else if(typePack == 2){
                 window.location.href = publicRuntimeConfig.pack2;
+            }else{
+                window.location.href = publicRuntimeConfig.pack3;
             }
             alertService.success(message, true);
         } catch (error) {

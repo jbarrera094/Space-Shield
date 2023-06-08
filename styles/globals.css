@@ -26,6 +26,10 @@
     width: 2rem;
     height: auto;
 }
+.icon-nav-size {
+    width: 1.5rem;
+    height: auto;
+}
 .features-icon-size{
     width: 4rem;
     height: auto;
@@ -39,6 +43,9 @@
 .bg-main-nav {
     background-color: #212529;
 }
+.custom-w-card {
+    max-width: 33%;
+}
 
 @media (max-width: 767px) {
     .d-hiden-movile {
@@ -48,6 +55,10 @@
     .bg-transparent-md {
         --bs-bg-opacity: 1;
         background-color: #212529!important;
+    }
+
+    .custom-w-card {
+        max-width: 100%;
     }
 }
 

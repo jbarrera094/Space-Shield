@@ -13,13 +13,13 @@ function Home() {
             <section className="bg-white w-100 py-5">
                 <div className="container">
                     <div className="d-flex justify-content-center">
-                        <h4>FEATURES</h4>
+                        <h4 className="fw-bold">FEATURES</h4>
                     </div>
                     <div className="row d-flex justify-content-center justify-content-md-between">
                         <div className="card text-center col-10 col-md-3 shadow">
                             <div className="card-body">
                                 <FontAwesomeIcon icon={faCircleDollarToSlot} className='features-icon-size text-info'/>
-                                <h5 className="card-title pb-1">Optimize Costs</h5>
+                                <h5 className="card-title fw-bold pb-1">Optimize Costs</h5>
                                 <p className="card-text">
                                 Increase productivity, lower infrastructure investment costs, and empower your design professionals.
                                 </p>
@@ -29,7 +29,7 @@ function Home() {
                         <div className="card text-center col-10 col-md-3 shadow">
                             <div className="card-body">
                                 <FontAwesomeIcon icon={faGaugeHigh} className='features-icon-size text-info'/>
-                                <h5 className="card-title pb-1">Increases Performance</h5>
+                                <h5 className="card-title fw-bold pb-1">Increases Performance</h5>
                                 <p className="card-text">
                                 Accelerate productivity, speed up design tasks. 
                                 </p>
@@ -39,7 +39,7 @@ function Home() {
                         <div className="card text-center col-10 col-md-3 shadow">
                             <div className="card-body">
                                 <FontAwesomeIcon icon={faStar} className='features-icon-size text-info'/>
-                                <h5 className="card-title pb-1">Higher Quality</h5>
+                                <h5 className="card-title fw-bold pb-1">Higher Quality</h5>
                                 <p className="card-text">
                                 Enhance precision, stand out in the market, improve quality, and ensure greater safety for life, goods, and services.
                                 </p>

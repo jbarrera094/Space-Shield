@@ -45,7 +45,7 @@ async function create(params) {
         const pack = new db.Pack(params);
     
         // Update licenses available
-        pack.licenses_available = params.typePack == 1 ? 1 : 5;
+        pack.licenses_available = params.typePack == 1 ? 1 : params.typePack == 2 ? 5 : 10;
         
         // save license
         await pack.save();

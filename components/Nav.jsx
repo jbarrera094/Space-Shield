@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { saveAs } from 'file-saver';
+import { faCircleUser } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { NavLink } from '.';
 import { userService } from 'services';
@@ -34,9 +36,9 @@ function Nav() {
     };
 
     return (
-        <nav className={`navbar navbar-expand-lg py-2 px-md-5 position-absolute top-0 start-0 z-index-10 w-100 ${customBg.includes(router.pathname) ?'bg-transparent bg-transparent-md' : 'bg-main-nav'}`}>
+        <nav className={`navbar navbar-expand-lg py-2 px-md-5 position-absolute top-0 start-0 z-index-10 w-100 ${customBg.includes(router.pathname) ?'bg-dark bg-opacity-50' : 'bg-main-nav'}`}>
             <div className="container-fluid">
-                <NavLink className="navbar-brand text-white" exact href="/">
+                <NavLink className="navbar-brand text-white fs-4" exact href="/">
                     Space Shield
                 </NavLink>
                 <button
@@ -52,7 +54,12 @@ function Nav() {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                        <NavLink href="/dashboard" className={!user ? "d-none" : "btn btn-link nav-item nav-link text-white"}>Dashboard</NavLink>
+                        <NavLink href="/dashboard" className={!user ? "d-none" : "btn btn-link nav-item nav-link text-white"}>
+                            <div className="d-flex">
+                                <FontAwesomeIcon icon={faCircleUser} className='me-1 my-auto icon-nav-size' />
+                                <span>Panel</span>
+                            </div>
+                        </NavLink>
                         <NavLink href="/licenses" className={!user ? "d-none" : user.licenses_available > 0 ? "btn btn-link nav-item nav-link text-white" : "d-none"}>Licencias</NavLink>
                         <button onClick={userService.logout} className={!user ? "d-none" : "btn btn-link nav-item nav-link text-white"}>Logout</button>
                         <NavLink className={user ? "d-none" : "btn btn-link nav-item nav-link text-white"} href="/account/login">
@@ -63,7 +70,7 @@ function Nav() {
                         </NavLink>
                     </ul>
 
-                    <a className="btn btn-outline-success d-hiden-movile" href='/space_shield.zip'>
+                    <a className="btn btn-outline-light d-hiden-movile" href='/space_shield.zip'>
                         Download Free
                     </a>
                 </div>

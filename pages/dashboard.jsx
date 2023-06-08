@@ -15,7 +15,7 @@ function Dashboard() {
 
     return (
         <div className="pt-5">
-            <div className="container">
+            <div className="container pt-3">
                 <h1>Hola {userService.userValue?.firstName}!</h1>
                 <hr />
                 {anyPack ? 
@@ -26,7 +26,10 @@ function Dashboard() {
                         <hr className=''/>
                     </div>
                 : <div className=""></div>}
-                <PacksList />
+
+                <div className="mb-4">
+                    <PacksList />
+                </div>
             </div>
         </div>
     );
