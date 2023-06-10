@@ -30,6 +30,11 @@
     width: 2rem;
     height: auto;
 }
+.logo-front {
+    left: 5vw;
+    top: 80vh;
+    z-index: 10;
+}
 .icon-nav-size {
     width: 1.5rem;
     height: auto;

@@ -1,10 +1,13 @@
-import Image from 'next/image';
+import Link from "next/link";
 
 export default Carousel;
 
 function Carousel() {
   return (
     <div id="carouselExampleAutoplaying" className="carousel slide size-screen-main" data-bs-ride="carousel">
+      <Link href='https://www.bsenergy.co/' target='_blank' rel="noopener noreferrer" className="position-absolute text-white logo-front">
+        <img src="/bs_logo_white.png" alt="logo de BsEnergy" />
+      </Link>
       <div className="carousel-inner">
         <div className="carousel-item active">
           <img src="/bg-c2.jpeg" className="d-block w-100" alt="..."/>
