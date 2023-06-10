@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 export default TermConditions;
 
 function TermConditions() {
@@ -9,10 +7,10 @@ function TermConditions() {
                 <h1 className="fs-2 fw-bold">General Terms and Conditions</h1>
                 <h2 className="fs-3 fw-bold">1.	Acceptance</h2>
                 <p>By accepting these General Terms and Conditions during the registration or subscription process of your account, as well as by using or accessing our Services, you confirm your acceptance of these General Terms and Conditions and any other applicable Terms and Conditions, and agree to be bound by this binding contract. If you do not agree to these Terms and Conditions, you should not access or use our Services.</p>
-                <p>You accept these Terms and Conditions on behalf of the company or other legal entity on whose behalf you are acting (e.g., as an employee or contractor), or if there is no such company or legal entity, on your own behalf (in any case, "you" or "your"). You represent and warrant that you have the authority and the power (as well as the capacity, for example, being of sufficient legal age) to act on your own behalf and on behalf of such entity, and to bind it (if applicable).</p>
+                <p>You accept these Terms and Conditions on behalf of the company or other legal entity on whose behalf you are acting (e.g., as an employee or contractor), or if there is no such company or legal entity, on your own behalf (in any case, &quot;you&quot; or &quot;your&quot;). You represent and warrant that you have the authority and the power (as well as the capacity, for example, being of sufficient legal age) to act on your own behalf and on behalf of such entity, and to bind it (if applicable).</p>
                 <h2 className="fs-3 fw-bold">2. Terms and Conditions, Special Offers, Renewals, and Payments</h2>
                 <p>Some offers may be subject to special terms and conditions that are set forth in the Special Terms and Conditions for each offer, if applicable. You agree to the Special Terms and Conditions, if any, of any offer to which you subscribe, access, or use.</p>
-                <p>Each subscription to an offer is for a fixed and limited period of time (the "Offer Period"). The duration of the Offer Period will be indicated in the Offer Identification.</p>
+                <p>Each subscription to an offer is for a fixed and limited period of time (the &quot;Offer Period&quot;). The duration of the Offer Period will be indicated in the Offer Identification.</p>
                 <p>Some subscriptions may automatically renew. If you wish to cancel any automatic renewal, please contact us via email to make the request.</p>
                 <div className="ps-4">
                     <h3 className="fs-4 fw-bold">2.1. Payment processing</h3>
@@ -43,7 +41,7 @@ function TermConditions() {
                 <div className="ps-4">
                     <h3 className="fs-4 fw-bold">9.1 Your Right to Terminate</h3>
                     <p>You may terminate your subscriptions and these Terms and Conditions if Space Shield materially breaches these Terms and Conditions and fails to remedy such breach within 30 days after written notice of the breach.</p>
-                    <h3 className="fs-4 fw-bold">9.2 Space Shield's Right to Cancel or Suspend a Subscription or Account</h3>
+                    <h3 className="fs-4 fw-bold">9.2 Space Shield&apos;s Right to Cancel or Suspend a Subscription or Account</h3>
                     <p>Space Shield may terminate (or disable or suspend your access and use of) any or all subscriptions you have subscribed to or terminate these Terms and Conditions and your account if: (a) you do not have any current paid subscriptions; (b) you have not timely paid any amounts (including fees and taxes) owed to Space Shield; (c) you (including any of your authorized users) otherwise materially breach these Terms and Conditions and fail to remedy such breach within 30 days after written notice of the breach; or (d) you become subject to bankruptcy or insolvency proceedings, are declared insolvent, reach an agreement with your creditors affecting them (including an assignment for the benefit of creditors), or initiate liquidation proceedings. These Terms and Conditions shall be automatically terminated without notice or action by Space Shield if you enter into liquidation. Additionally, Space Shield may immediately disable or suspend access and use of accounts.</p>
                     <h3 className="fs-4 fw-bold">9.3 Effect of Subscription Termination</h3>
                     <p>Upon expiration or termination of a subscription for any reason, your rights with respect to that subscription, including any Software license and related Benefits, will cease. At that time, Space Shield may, if required, delete the accounts associated with your subscription.</p>
@@ -56,7 +54,7 @@ function TermConditions() {
                 <div className="ps-4">
                     <p>Identifiers: such as name, phone number, mailing address and/or email address, IP address, username, and account password.</p>
                     <p>Geolocation information: such as your region, country, state, or postal code.</p>
-                    <p>Electronic information: such as information about operating systems, device types, browsers, automatic updates, technical errors, and information about the user's use of our offers.</p>
+                    <p>Electronic information: such as information about operating systems, device types, browsers, automatic updates, technical errors, and information about the user&apos;s use of our offers.</p>
                 </div>
                 <p>Information that may be considered sensitive under applicable law: such as usernames and passwords used to access your account and precise geolocation information.</p>
             </div>
