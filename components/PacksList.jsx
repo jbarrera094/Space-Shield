@@ -13,7 +13,7 @@ function PacksList() {
             <div className="d-flex flex-column flex-md-row justify-content-between">
                 <div className="card text-start shadow custom-w-card">
                     <div className="card-body py-5 px-4">
-                        <h5 className="card-title text-secondary fs-4 mb-4">Standard plan</h5>
+                        <h5 className="card-title text-secondary fs-4 mb-4">Standard Package</h5>
                         <span className='card-text'>
                             <span className='fw-bold fs-3'>$</span> 
                             <span className='fw-bold fs-1'>750.000</span> 
@@ -58,7 +58,7 @@ function PacksList() {
 
                 <div className="card text-start shadow custom-w-card">
                     <div className="card-body py-5 px-4">
-                        <h5 className="card-title text-secondary fs-4 mb-4">Standard plan</h5>
+                        <h5 className="card-title text-secondary fs-4 mb-4">Corporative Package</h5>
                         <span className='card-text'>
                             <span className='fw-bold fs-4'>$</span> 
                             <span className='fw-bold fs-1'>1.000.000</span> 
@@ -103,7 +103,7 @@ function PacksList() {
 
                 <div className="card text-start shadow custom-w-card">
                     <div className="card-body py-5 px-4">
-                        <h5 className="card-title text-secondary fs-4 mb-4">Standard plan</h5>
+                        <h5 className="card-title text-secondary fs-4 mb-4">Enterprise Package</h5>
                         <span className='card-text'>
                             <span className='fw-bold fs-3'>$</span> 
                             <span className='fw-bold fs-1'>1.680.000</span> 

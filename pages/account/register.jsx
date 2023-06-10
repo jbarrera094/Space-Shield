@@ -72,7 +72,7 @@ function Register() {
                         <div className="form-check mb-3">
                             <input name='checkTermCondition' type="checkbox" {...register('checkTermCondition')} className={`form-check-input ${errors.password ? 'is-invalid' : ''}`} />
                             <label className="form-check-label text-white" htmlFor="checkTermCondition">
-                                I accept terms and conditions
+                                I accept <Link href={'/termConditions'} className='text-decoration-none'>terms and conditions</Link>
                             </label>
                             <div className="invalid-feedback">{errors.checkTermCondition?.message}</div>
                         </div>
