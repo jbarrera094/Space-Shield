@@ -78,7 +78,7 @@ function Index() {
                     <tr>
                         <th style={{ width: '30%' }}>User</th>
                         <th style={{ width: '30%' }}>Password</th>
-                        <th style={{ width: '30%' }}>Expiration Date</th>
+                        <th style={{ width: '30%' }}>Last Update</th>
                         <th style={{ width: '10%' }}>Actions</th>
                     </tr>
                 </thead>
@@ -87,7 +87,7 @@ function Index() {
                         <tr key={license.id_license}>
                             <td>{license.user}</td>
                             <td>{license.hash}</td>
-                            <td>{moment(license.expiration_date).format('LLLL')}</td>
+                            <td>{moment(license.updatedAt).format('LLLL')}</td>
                             <td style={{ whiteSpace: 'nowrap' }}>
                                 <Link href={`/licenses/edit/${license.id_license}`} className="btn btn-sm btn-primary me-1">Edit</Link>
                                 <button onClick={() => deleteLicense(license.id_license)} className="btn btn-sm btn-danger btn-delete-license" style={{ width: '60px' }} disabled={license.isDeleting}>
