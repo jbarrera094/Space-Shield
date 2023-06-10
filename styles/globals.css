@@ -1,3 +1,6 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
 .app-container {
     min-height: 93vh;
 }
@@ -38,6 +41,9 @@
 .icon-nav-size {
     width: 1.5rem;
     height: auto;
+}
+.icon-pack-list-size {
+    width: 1rem;
 }
 .features-icon-size{
     width: 4rem;

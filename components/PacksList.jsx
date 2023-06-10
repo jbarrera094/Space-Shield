@@ -22,33 +22,33 @@ function PacksList() {
                         </span>
                         <div className="mt-4 mb-4 d-flex flex-column">
                             <div className="d-flex mb-2">
-                                <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-primary' />
+                                <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-primary icon-pack-list-size' />
                                 <span className='fs-6 text-secondary fw-normal'>One-year subscription</span>
                             </div>
                             <div className="d-flex mb-2">
-                                <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-primary' />
+                                <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-primary icon-pack-list-size' />
                                 <span className='fs-6 text-secondary fw-normal'>20GB Cloud storage</span>
                             </div>
                             <div className="d-flex mb-2">
-                                <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-primary' />
+                                <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-primary icon-pack-list-size' />
                                 <span className='fs-6 text-secondary fw-normal'>Integration help</span>
                             </div>
 
                             {/* NO INCLUDED IN THIS PACK */}
                             <div className="d-flex mb-2 opacity-50">
-                                <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-secondary' />
+                                <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-secondary icon-pack-list-size' />
                                 <span className='fs-6 fw-normal text-decoration-line-through'>Sketch Files</span>
                             </div>
                             <div className="d-flex mb-2 opacity-50">
-                                <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-secondary' />
+                                <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-secondary icon-pack-list-size' />
                                 <span className='fs-6 fw-normal text-decoration-line-through'>API Access</span>
                             </div>
                             <div className="d-flex mb-2 opacity-50">
-                                <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-secondary' />
+                                <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-secondary icon-pack-list-size' />
                                 <span className='fs-6 fw-normal text-decoration-line-through'>Complete documentation</span>
                             </div>
                             <div className="d-flex mb-2 opacity-50">
-                                <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-secondary' />
+                                <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-secondary icon-pack-list-size' />
                                 <span className='fs-6 fw-normal text-decoration-line-through'>24/7 phone & email support</span>
                             </div>
                         </div>
@@ -67,33 +67,33 @@ function PacksList() {
                         </span>
                         <div className="mt-4 mb-4 d-flex flex-column">
                             <div className="d-flex mb-2">
-                                <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-primary' />
+                                <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-primary icon-pack-list-size' />
                                 <span className='fs-6 text-secondary fw-normal'>One-year subscription</span>
                             </div>
                             <div className="d-flex mb-2">
-                                <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-primary' />
+                                <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-primary icon-pack-list-size' />
                                 <span className='fs-6 text-secondary fw-normal'>20GB Cloud storage</span>
                             </div>
                             <div className="d-flex mb-2">
-                                <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-primary' />
+                                <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-primary icon-pack-list-size' />
                                 <span className='fs-6 text-secondary fw-normal'>Integration help</span>
                             </div>
 
                             {/* NO INCLUDED IN THIS PACK */}
                             <div className="d-flex mb-2 opacity-50">
-                                <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-secondary' />
+                                <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-secondary icon-pack-list-size' />
                                 <span className='fs-6 fw-normal text-decoration-line-through'>Sketch Files</span>
                             </div>
                             <div className="d-flex mb-2 opacity-50">
-                                <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-secondary' />
+                                <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-secondary icon-pack-list-size' />
                                 <span className='fs-6 fw-normal text-decoration-line-through'>API Access</span>
                             </div>
                             <div className="d-flex mb-2 opacity-50">
-                                <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-secondary' />
+                                <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-secondary icon-pack-list-size' />
                                 <span className='fs-6 fw-normal text-decoration-line-through'>Complete documentation</span>
                             </div>
                             <div className="d-flex mb-2 opacity-50">
-                                <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-secondary' />
+                                <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-secondary icon-pack-list-size' />
                                 <span className='fs-6 fw-normal text-decoration-line-through'>24/7 phone & email support</span>
                             </div>
                         </div>
@@ -112,33 +112,33 @@ function PacksList() {
                         </span>
                         <div className="mt-4 mb-4 d-flex flex-column">
                             <div className="d-flex mb-2">
-                                <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-primary' />
+                                <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-primary icon-pack-list-size' />
                                 <span className='fs-6 text-secondary fw-normal'>One-year subscription</span>
                             </div>
                             <div className="d-flex mb-2">
-                                <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-primary' />
+                                <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-primary icon-pack-list-size' />
                                 <span className='fs-6 text-secondary fw-normal'>20GB Cloud storage</span>
                             </div>
                             <div className="d-flex mb-2">
-                                <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-primary' />
+                                <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-primary icon-pack-list-size' />
                                 <span className='fs-6 text-secondary fw-normal'>Integration help</span>
                             </div>
 
                             {/* NO INCLUDED IN THIS PACK */}
                             <div className="d-flex mb-2 opacity-50">
-                                <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-secondary' />
+                                <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-secondary icon-pack-list-size' />
                                 <span className='fs-6 fw-normal text-decoration-line-through'>Sketch Files</span>
                             </div>
                             <div className="d-flex mb-2 opacity-50">
-                                <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-secondary' />
+                                <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-secondary icon-pack-list-size' />
                                 <span className='fs-6 fw-normal text-decoration-line-through'>API Access</span>
                             </div>
                             <div className="d-flex mb-2 opacity-50">
-                                <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-secondary' />
+                                <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-secondary icon-pack-list-size' />
                                 <span className='fs-6 fw-normal text-decoration-line-through'>Complete documentation</span>
                             </div>
                             <div className="d-flex mb-2 opacity-50">
-                                <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-secondary' />
+                                <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-secondary icon-pack-list-size' />
                                 <span className='fs-6 fw-normal text-decoration-line-through'>24/7 phone & email support</span>
                             </div>
                         </div>
