@@ -80,19 +80,20 @@ function licenseModel(sequelize) {
         hash: { type: DataTypes.STRING, allowNull: false },
         date_last_registration: { type: DataTypes.DATE, allowNull: true },
         logedIn: { type: DataTypes.BOOLEAN, allowNull: true, defaultValue: false },
-        sessionRuns: { type: DataTypes.INTEGER, allowNull: true, defaultValue: 0 },
+        sesionRuns: { type: DataTypes.INTEGER, allowNull: true, defaultValue: 0 },
         lastMachine: { type: DataTypes.STRING, allowNull: true },
         lastProid: { type: DataTypes.STRING, allowNull: true },
         lastOs: { type: DataTypes.STRING, allowNull: true },
         lastPronum: { type: DataTypes.STRING, allowNull: true },
         solTime: { type: DataTypes.DATE, allowNull: true },
         nowTime: { type: DataTypes.DATE, allowNull: true },
-        lastIn: { type: DataTypes.DATE, allowNull: true },
+        lastLin: { type: DataTypes.DATE, allowNull: true },
         lastPull: { type: DataTypes.DATE, allowNull: true },
         lastLout: { type: DataTypes.DATE, allowNull: true },
         lastRun: { type: DataTypes.DATE, allowNull: true },
         lastPassCh: { type: DataTypes.DATE, allowNull: true },
         VVig_1: { type: DataTypes.BOOLEAN, allowNull: true, defaultValue: false },
+        DaysLeft: { type: DataTypes.INTEGER, allowNull: true, defaultValue: 45 }
     };
 
     const options = {};
