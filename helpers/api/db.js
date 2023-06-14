@@ -73,6 +73,9 @@ function packModel(sequelize) {
 }
 
 function licenseModel(sequelize) {
+    var fechaAnterior = new Date();
+    fechaAnterior.setDate(fechaActual.getDate() - 1);
+
     const attributes = {
         id_license: { type: DataTypes.BIGINT, allowNull: false, autoIncrement: true, primaryKey: true },
         id_pack: { type: DataTypes.BIGINT, allowNull: false },
@@ -85,13 +88,13 @@ function licenseModel(sequelize) {
         lastProid: { type: DataTypes.STRING, allowNull: true },
         lastOs: { type: DataTypes.STRING, allowNull: true },
         lastPronum: { type: DataTypes.STRING, allowNull: true },
-        solTime: { type: DataTypes.DATE, allowNull: true },
-        nowTime: { type: DataTypes.DATE, allowNull: true },
-        lastLin: { type: DataTypes.DATE, allowNull: true },
-        lastPull: { type: DataTypes.DATE, allowNull: true },
-        lastLout: { type: DataTypes.DATE, allowNull: true },
-        lastRun: { type: DataTypes.DATE, allowNull: true },
-        lastPassCh: { type: DataTypes.DATE, allowNull: true },
+        solTime: { type: DataTypes.DATE, allowNull: true, defaultValue: fechaAnterior },
+        nowTime: { type: DataTypes.DATE, allowNull: true, defaultValue: Date.now() },
+        lastLin: { type: DataTypes.DATE, allowNull: true, defaultValue: fechaAnterior },
+        lastPull: { type: DataTypes.DATE, allowNull: true, defaultValue: fechaAnterior },
+        lastLout: { type: DataTypes.DATE, allowNull: true, defaultValue: fechaAnterior },
+        lastRun: { type: DataTypes.DATE, allowNull: true, defaultValue: fechaAnterior },
+        lastPassCh: { type: DataTypes.DATE, allowNull: true, defaultValue: fechaAnterior },
         VVig_1: { type: DataTypes.BOOLEAN, allowNull: true, defaultValue: false },
         DaysLeft: { type: DataTypes.INTEGER, allowNull: true, defaultValue: 45 }
     };
