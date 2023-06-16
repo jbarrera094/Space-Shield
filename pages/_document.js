@@ -23,8 +23,8 @@ function Document() {
                 <footer className="bg-dark text-white">
                     <div className='d-flex flex-column justify-content-center size-footer'>
                         <div className="px-2 px-md-5 row w-100">
-                            
-                            <div className='my-auto col-12 col-md-4 d-flex justify-content-center justify-content-md-end'>
+
+                            <div className='my-auto col-12 col-md-4 d-flex justify-content-center justify-content-md-start'>
                                 <Link href='mailto:sps@bsenergy.co' target='_blank' rel="noopener noreferrer" className='d-flex flex-column justify-content-center text-decoration-none w-fit-contain'>
                                     <FontAwesomeIcon icon={faEnvelope} className='footer-icon-social-size my-auto mx-auto'/>
                                     <span>sps@bsenergy.co</span>

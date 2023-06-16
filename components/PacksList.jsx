@@ -15,7 +15,7 @@ function PacksList() {
                     <div className="card-body py-5 px-4">
                         <h5 className="card-title text-secondary fs-4 mb-4">Standard Package</h5>
                         <span className='card-text'>
-                            <span className='fw-bold fs-3'>$</span> 
+                            <span className='fw-bold fs-3'>&euro;</span> 
                             <span className='fw-bold fs-1'>150</span> 
                             <span className='fw-bold fs-4'>EUR</span>
                             <span className='text-secondary fw-semibold fs-5'>/month</span>
@@ -66,7 +66,7 @@ function PacksList() {
                     <div className="card-body py-5 px-4">
                         <h5 className="card-title text-secondary fs-4 mb-4">Corporative Package</h5>
                         <span className='card-text'>
-                            <span className='fw-bold fs-4'>$</span> 
+                            <span className='fw-bold fs-4'>&euro;</span> 
                             <span className='fw-bold fs-1'>199</span> 
                             <span className='fw-bold fs-4'>EUR</span>
                             <span className='text-secondary fw-semibold fs-6'>/month</span>
@@ -115,7 +115,7 @@ function PacksList() {
                     <div className="card-body py-5 px-4">
                         <h5 className="card-title text-secondary fs-4 mb-4">Enterprise Package</h5>
                         <span className='card-text'>
-                            <span className='fw-bold fs-3'>$</span> 
+                            <span className='fw-bold fs-3'>&euro;</span> 
                             <span className='fw-bold fs-1'>329</span> 
                             <span className='fw-bold fs-4'>EUR</span>
                             <span className='text-secondary fw-semibold fs-5'>/month</span>
