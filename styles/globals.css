@@ -2,7 +2,7 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 .app-container {
-    min-height: 93vh;
+    min-height: 85vh;
 }
 
 .size-screen-main {
@@ -16,7 +16,7 @@ body {
 }
 
 .size-footer {
-    min-height: 7vh;    
+    min-height: 15vh;    
 }
 
 .h-video-auto {
@@ -59,7 +59,10 @@ body {
     background-color: #212529;
 }
 .custom-w-card {
-    max-width: 33%;
+    max-width: 31%;
+}
+.w-fit-contain {
+    width: fit-content;
 }
 
 @media (max-width: 767px) {

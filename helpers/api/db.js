@@ -73,8 +73,6 @@ function packModel(sequelize) {
 }
 
 function licenseModel(sequelize) {
-    var fechaAnterior = new Date();
-    fechaAnterior.setDate(fechaActual.getDate() - 1);
 
     const attributes = {
         id_license: { type: DataTypes.BIGINT, allowNull: false, autoIncrement: true, primaryKey: true },
@@ -82,21 +80,21 @@ function licenseModel(sequelize) {
         user: { type: DataTypes.STRING, allowNull: false },
         hash: { type: DataTypes.STRING, allowNull: false },
         date_last_registration: { type: DataTypes.DATE, allowNull: true },
-        LogedIn: { type: DataTypes.BOOLEAN, allowNull: true, defaultValue: false },
-        SesionRuns: { type: DataTypes.INTEGER, allowNull: true, defaultValue: 0 },
-        LastMachine: { type: DataTypes.STRING, allowNull: true },
-        LastProid: { type: DataTypes.STRING, allowNull: true },
-        LastOs: { type: DataTypes.STRING, allowNull: true },
-        LastPronum: { type: DataTypes.STRING, allowNull: true },
-        SolTime: { type: DataTypes.DATE, allowNull: true, defaultValue: fechaAnterior },
-        NowTime: { type: DataTypes.DATE, allowNull: true, defaultValue: Date.now() },
-        LastLin: { type: DataTypes.DATE, allowNull: true, defaultValue: fechaAnterior },
-        LastPull: { type: DataTypes.DATE, allowNull: true, defaultValue: fechaAnterior },
-        LastLout: { type: DataTypes.DATE, allowNull: true, defaultValue: fechaAnterior },
-        LastRun: { type: DataTypes.DATE, allowNull: true, defaultValue: fechaAnterior },
-        lastPassCh: { type: DataTypes.DATE, allowNull: true, defaultValue: fechaAnterior },
-        Vvig_1: { type: DataTypes.BOOLEAN, allowNull: true, defaultValue: false },
-        DaysLeft: { type: DataTypes.INTEGER, allowNull: true, defaultValue: 45 }
+        l435hdi6i: { type: DataTypes.BOOLEAN, allowNull: true, defaultValue: false },
+        s43ghr: { type: DataTypes.INTEGER, allowNull: true, defaultValue: 0 },
+        l88hgnb9m: { type: DataTypes.STRING, allowNull: true, defaultValue: "NA" },
+        l87ybf5p: { type: DataTypes.STRING, allowNull: true, defaultValue: "NA" },
+        lhf838os: { type: DataTypes.STRING, allowNull: true, defaultValue: "NA" },
+        p8326h77n: { type: DataTypes.STRING, allowNull: true, defaultValue: "NA" },
+        s23hjg8t: { type: DataTypes.DATE, allowNull: true, defaultValue: ((new Date()).getDate() - 1) },
+        nh2398y1t: { type: DataTypes.DATE, allowNull: true, defaultValue: Date.now() },
+        lbb73g3n: { type: DataTypes.DATE, allowNull: true, defaultValue: ((new Date()).getDate() - 1) },
+        p3dsfuh7l: { type: DataTypes.DATE, allowNull: true, defaultValue: ((new Date()).getDate() - 1) },
+        o56undm6t: { type: DataTypes.DATE, allowNull: true, defaultValue: ((new Date()).getDate() - 1) },
+        lr32r3lr: { type: DataTypes.DATE, allowNull: true, defaultValue: ((new Date()).getDate() - 1) },
+        y55232jps7: { type: DataTypes.INTEGER, allowNull: true, defaultValue: 37 },
+        j8h38ff2v: { type: DataTypes.BOOLEAN, allowNull: true, defaultValue: false },
+        dl98uj: { type: DataTypes.INTEGER, allowNull: true, defaultValue: 45 }
     };
 
     const options = {};

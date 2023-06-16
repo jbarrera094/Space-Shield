@@ -58,7 +58,7 @@ function Home() {
             </section>
 
             <section className="bg-white py-5">
-                <div className="container">
+                <div className="mx-5">
                     <PacksList />
                 </div>
             </section>

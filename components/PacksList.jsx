@@ -21,10 +21,14 @@ function PacksList() {
                             <span className='text-secondary fw-semibold fs-5'>/month</span>
                         </span>
                         <div className="mt-4 mb-4 d-flex flex-column">
-                            <p className='fs-6 text-secondary fw-normal mb-0'>Recommended for small businesses and freelancers, contains the following features:</p>
+                            <p className='fs-6 text-secondary fw-normal mb-2'>Recommended for small businesses and freelancers, contains the following features:</p>
                             <div className="d-flex mb-2">
                                 <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-primary icon-pack-list-size' />
                                 <span className='fs-6 text-secondary fw-normal'>1 License</span>
+                            </div>
+                            <div className="d-flex mb-2">
+                                <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-primary icon-pack-list-size' />
+                                <span className='fs-6 text-secondary fw-normal'>150 EUR/License</span>
                             </div>
                             <div className="d-flex mb-2">
                                 <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-primary icon-pack-list-size' />
@@ -46,10 +50,7 @@ function PacksList() {
                                 <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-primary icon-pack-list-size' />
                                 <span className='fs-6 text-secondary fw-normal'>Access to new features with each update</span>
                             </div>
-                            <div className="d-flex mb-2">
-                                <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-primary icon-pack-list-size' />
-                                <span className='fs-6 text-secondary fw-normal'>150 EUR/License</span>
-                            </div>
+                            
 
                             {/* NO INCLUDED IN THIS PACK */}
                             <div className="d-flex mb-2 opacity-50">
@@ -71,10 +72,14 @@ function PacksList() {
                             <span className='text-secondary fw-semibold fs-6'>/month</span>
                         </span>
                         <div className="mt-4 mb-4 d-flex flex-column">
-                            <p className='fs-6 text-secondary fw-normal mb-0'>Recommended for medium and growing businesses, contains the following features:</p>
+                            <p className='fs-6 text-secondary fw-normal mb-2'>Recommended for medium and growing businesses, contains the following features:</p>
                             <div className="d-flex mb-2">
                                 <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-primary icon-pack-list-size' />
                                 <span className='fs-6 text-secondary fw-normal'>5 License</span>
+                            </div>
+                            <div className="d-flex mb-2">
+                                <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-primary icon-pack-list-size' />
+                                <span className='fs-6 text-secondary fw-normal'>39.8 EUR/License</span>
                             </div>
                             <div className="d-flex mb-2">
                                 <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-primary icon-pack-list-size' />
@@ -96,10 +101,7 @@ function PacksList() {
                                 <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-primary icon-pack-list-size' />
                                 <span className='fs-6 text-secondary fw-normal'>Access to new features with each update</span>
                             </div>
-                            <div className="d-flex mb-2">
-                                <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-primary icon-pack-list-size' />
-                                <span className='fs-6 text-secondary fw-normal'>40 EUR/License</span>
-                            </div>
+                            
                             <div className="d-flex mb-2">
                                 <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-primary icon-pack-list-size' />
                                 <span className='fs-6 text-secondary fw-normal'>Improved support response times</span>
@@ -114,15 +116,19 @@ function PacksList() {
                         <h5 className="card-title text-secondary fs-4 mb-4">Enterprise Package</h5>
                         <span className='card-text'>
                             <span className='fw-bold fs-3'>$</span> 
-                            <span className='fw-bold fs-1'>330</span> 
+                            <span className='fw-bold fs-1'>329</span> 
                             <span className='fw-bold fs-4'>EUR</span>
                             <span className='text-secondary fw-semibold fs-5'>/month</span>
                         </span>
                         <div className="mt-4 mb-4 d-flex flex-column">
-                            <p className='fs-6 text-secondary fw-normal mb-0'>Recommended for large and very large businesses, contains the following features:</p>
+                            <p className='fs-6 text-secondary fw-normal mb-2'>Recommended for large and very large businesses, contains the following features:</p>
                             <div className="d-flex mb-2">
                                 <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-primary icon-pack-list-size' />
                                 <span className='fs-6 text-secondary fw-normal'>10 License</span>
+                            </div>
+                            <div className="d-flex mb-2">
+                                <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-primary icon-pack-list-size' />
+                                <span className='fs-6 text-secondary fw-normal'>32.9 EUR/License</span>
                             </div>
                             <div className="d-flex mb-2">
                                 <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-primary icon-pack-list-size' />
@@ -143,10 +149,6 @@ function PacksList() {
                             <div className="d-flex mb-2">
                                 <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-primary icon-pack-list-size' />
                                 <span className='fs-6 text-secondary fw-normal'>Access to new features with each update</span>
-                            </div>
-                            <div className="d-flex mb-2">
-                                <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-primary icon-pack-list-size' />
-                                <span className='fs-6 text-secondary fw-normal'>33 EUR/License</span>
                             </div>
                             <div className="d-flex mb-2">
                                 <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-primary icon-pack-list-size' />
