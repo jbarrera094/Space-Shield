@@ -27,7 +27,47 @@ async function initialize() {
     // sync all models with database
     await sequelize.sync({ alter: true });
 
+    createViewPacks(sequelize);
+    createViewLicenses(sequelize);
+    await sequelize.sync({ alter: true });
+
     db.initialized = true;
+}
+
+function createViewPacks(sequelize){
+    // Definir una consulta SQL para crear la vista
+    const createViewQuery = `
+        CREATE OR REPLACE VIEW view_packs AS
+        SELECT *,
+            DATEDIFF(expiration_date, CURDATE()) AS dl98uj
+        FROM packs p ;
+    `;
+
+    // Ejecutar la consulta SQL utilizando Sequelize
+    sequelize.query(createViewQuery)
+        .then(() => {
+            console.log('Vista de Packs creada exitosamente.');
+        })
+        .catch(err => {
+            console.error('Error al crear la vista:', err);
+        });
+}
+
+function createViewLicenses(sequelize){
+    // Definir una consulta SQL para crear la vista
+    const createViewQuery = `
+        CREATE OR REPLACE VIEW view_licenses AS
+        SELECT l.id_license, l.id_pack, l.user, l.hash, l.date_last_registration, l.l435hdi6i, l.s43ghr, l.l88hgnb9m, l.l87ybf5p, l.lhf838os, l.p8326h77n, l.s23hjg8t, l.lbb73g3n, l.p3dsfuh7l, l.o56undm6t, l.lr32r3lr, l.j8h38ff2v, l.createdAt, l.updatedAt, l.nh2398y1t, l.y55232jps7, vp.dl98uj FROM licenses l LEFT JOIN view_packs vp ON l.id_pack = vp.id_pack;
+    `;
+
+    // Ejecutar la consulta SQL utilizando Sequelize
+    sequelize.query(createViewQuery)
+        .then(() => {
+            console.log('Vista de Licenses creada exitosamente.');
+        })
+        .catch(err => {
+            console.error('Error al crear la vista:', err);
+        });
 }
 
 // sequelize models with schema definitions
@@ -56,14 +96,14 @@ function userModel(sequelize) {
 }
 
 function packModel(sequelize) {
+
     const attributes = {
         id_pack: { type: DataTypes.BIGINT, allowNull: false, autoIncrement: true, primaryKey: true },
         id_user: { type: DataTypes.BIGINT, allowNull: false},
         alias: { type: DataTypes.STRING, allowNull: false },
         paid: { type: DataTypes.BOOLEAN, allowNull: true, defaultValue: false },
         licenses_available: { type: DataTypes.INTEGER, allowNull: false, defaultValue: 1 },
-        expiration_date: { type: DataTypes.DATE, allowNull: false, defaultValue: (new Date())},
-        days_remaining: { type: DataTypes.INTEGER, allowNull: true },
+        expiration_date: { type: DataTypes.DATE, allowNull: false, defaultValue: Sequelize.literal(`DATE_ADD(CURRENT_DATE, INTERVAL 1 MONTH)`)},
         createdAtTimeCol: { type: DataTypes.STRING, allowNull: false },
     };
 
@@ -93,8 +133,7 @@ function licenseModel(sequelize) {
         o56undm6t: { type: DataTypes.DATE, allowNull: true, defaultValue: new Date(new Date().getTime() - (24 * 60 * 60 * 1000)) },
         lr32r3lr: { type: DataTypes.DATE, allowNull: true, defaultValue: new Date(new Date().getTime() - (24 * 60 * 60 * 1000)) },
         y55232jps7: { type: DataTypes.INTEGER, allowNull: true, defaultValue: 37 },
-        j8h38ff2v: { type: DataTypes.BOOLEAN, allowNull: true, defaultValue: false },
-        dl98uj: { type: DataTypes.INTEGER, allowNull: true, defaultValue: 45 }
+        j8h38ff2v: { type: DataTypes.BOOLEAN, allowNull: true, defaultValue: false }
     };
 
     const options = {};
