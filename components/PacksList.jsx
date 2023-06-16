@@ -63,6 +63,11 @@ function PacksList() {
                 </div>
 
                 <div className="card text-start shadow custom-w-card">
+
+                    <div className='position-absolute fix-pos-award'>
+                        <img src="/award.png" alt="award" className='w-100' />
+                    </div>
+                    
                     <div className="card-body py-5 px-4">
                         <h5 className="card-title text-secondary fs-4 mb-4">Corporative Package</h5>
                         <span className='card-text'>
@@ -71,6 +76,14 @@ function PacksList() {
                             <span className='fw-bold fs-4'>EUR</span>
                             <span className='text-secondary fw-semibold fs-6'>/month</span>
                         </span>
+                        <br></br>
+                        <span className='card-text text-secondary text-decoration-line-through'>
+                            <span className='fw-bold fs-6'>&euro;</span> 
+                            <span className='fw-bold fs-6'>300</span> 
+                            <span className='fw-bold fs-6'>EUR</span>
+                            <span className='fw-semibold fs-6'>/month</span>
+                        </span>
+
                         <div className="mt-4 mb-4 d-flex flex-column">
                             <p className='fs-6 text-secondary fw-normal mb-2'>Recommended for medium and growing businesses, contains the following features:</p>
                             <div className="d-flex mb-2">
@@ -112,6 +125,11 @@ function PacksList() {
                 </div>
 
                 <div className="card text-start shadow custom-w-card">
+
+                    <div className='position-absolute fix-pos-award'>
+                        <img src="/award.png" alt="award" className='w-100' />
+                    </div>
+
                     <div className="card-body py-5 px-4">
                         <h5 className="card-title text-secondary fs-4 mb-4">Enterprise Package</h5>
                         <span className='card-text'>
@@ -120,6 +138,14 @@ function PacksList() {
                             <span className='fw-bold fs-4'>EUR</span>
                             <span className='text-secondary fw-semibold fs-5'>/month</span>
                         </span>
+                        <br></br>
+                        <span className='card-text text-secondary text-decoration-line-through'>
+                            <span className='fw-bold fs-6'>&euro;</span> 
+                            <span className='fw-bold fs-6'>500</span> 
+                            <span className='fw-bold fs-6'>EUR</span>
+                            <span className='fw-semibold fs-6'>/month</span>
+                        </span>
+
                         <div className="mt-4 mb-4 d-flex flex-column">
                             <p className='fs-6 text-secondary fw-normal mb-2'>Recommended for large and very large businesses, contains the following features:</p>
                             <div className="d-flex mb-2">

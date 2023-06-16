@@ -64,6 +64,11 @@ body {
 .w-fit-contain {
     width: fit-content;
 }
+.fix-pos-award {
+    top: 1rem;
+    right: 1rem;
+    width: 5rem;
+}
 
 @media (max-width: 767px) {
     .d-hiden-movile {
