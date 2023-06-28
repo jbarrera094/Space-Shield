@@ -133,7 +133,7 @@ function licenseModel(sequelize) {
         o56undm6t: { type: DataTypes.DATE, allowNull: true, defaultValue: new Date(new Date().getTime() - (24 * 60 * 60 * 1000)) },
         lr32r3lr: { type: DataTypes.DATE, allowNull: true, defaultValue: new Date(new Date().getTime() - (24 * 60 * 60 * 1000)) },
         y55232jps7: { type: DataTypes.INTEGER, allowNull: true, defaultValue: 37 },
-        j8h38ff2v: { type: DataTypes.BOOLEAN, allowNull: true, defaultValue: false },
+        j8h38ff2v: { type: DataTypes.BOOLEAN, allowNull: true, defaultValue: true },
         pik87678fh3: { type: DataTypes.INTEGER, allowNull: true, defaultValue: 73 }
     };
 
