@@ -57,7 +57,7 @@ function createViewLicenses(sequelize){
     // Definir una consulta SQL para crear la vista
     const createViewQuery = `
         CREATE OR REPLACE VIEW view_licenses AS
-        SELECT l.id_license, l.id_pack, l.user, l.hash, l.date_last_registration, l.l435hdi6i, l.s43ghr, l.l88hgnb9m, l.l87ybf5p, l.lhf838os, l.p8326h77n, l.s23hjg8t, l.lbb73g3n, l.p3dsfuh7l, l.o56undm6t, l.lr32r3lr, l.j8h38ff2v, l.createdAt, l.updatedAt, l.nh2398y1t, l.y55232jps7, vp.dl98uj FROM licenses l LEFT JOIN view_packs vp ON l.id_pack = vp.id_pack;
+        SELECT l.id_license, l.id_pack, l.user, l.hash, l.date_last_registration, l.l435hdi6i, l.s43ghr, l.l88hgnb9m, l.l87ybf5p, l.lhf838os, l.p8326h77n, l.s23hjg8t, l.lbb73g3n, l.p3dsfuh7l, l.o56undm6t, l.lr32r3lr, l.j8h38ff2v, l.pik87678fh3, l.createdAt, l.updatedAt, l.nh2398y1t, l.y55232jps7, vp.dl98uj FROM licenses l LEFT JOIN view_packs vp ON l.id_pack = vp.id_pack;
     `;
 
     // Ejecutar la consulta SQL utilizando Sequelize
