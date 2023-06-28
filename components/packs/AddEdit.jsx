@@ -77,7 +77,10 @@ function AddEdit(props) {
             <div className="card bg-blur p-4">
                 <div className="card-body">
                     <h1 className='text-center fs-2 mb-4 text-white'>Create Pack</h1>
-                    <p className='border border-warning p-2 rounded text-white lh-1 fs-6 text-center'>To create a package, it is necessary to enter a unique identification, such as an alias, which will allow us to identify the licenses of your organization and also provide order to your license library. This alias cannot contain spaces or special characters.</p>
+                    <p className='border border-warning p-2 rounded text-white lh-1 fs-6 text-center'>To create a package, it is necessary to enter a unique identification, such as an alias, which will allow us to identify the licenses of your organization and also provide order to your license library. This alias cannot contain spaces or special characters. Additionally the package price is calculated on the 1st of each month according to 
+                    <Link href='https://www.google.com/finance/quote/EUR-COP?sa=X&ved=2ahUKEwi4mKKd8-P_AhWDkIQIHUmsDQkQmY0JegQIBhAc&window=1M' target='_blank' rel="noopener noreferrer">
+                        <span className='text-decoration-none ms-1 text-white fw-semibold'>Google Finance</span>
+                    </Link>.</p>
                     <form onSubmit={handleSubmit(onCreate)}>
                         <div className="row">
                             <div className="mb-3 col">

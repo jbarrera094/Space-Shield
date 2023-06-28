@@ -84,8 +84,10 @@ function PacksList() {
                             <span className='fw-bold fs-6'>EUR</span>
                             <span className='fw-semibold fs-6'>/month</span>
                         </span>
+                        <br></br>
+                        <span className='fs-6 fw-normal'>An annual recurring payment of &euro;2.028 <b>saving 15%</b>.</span>
 
-                        <div className="mt-4 mb-4 d-flex flex-column">
+                        <div className="mt-3 mb-4 d-flex flex-column">
                             <p className='fs-6 text-secondary fw-normal mb-2'>Recommended for medium and growing businesses, contains the following features:</p>
                             <div className="d-flex mb-2">
                                 <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-primary icon-pack-list-size' />
@@ -155,8 +157,10 @@ function PacksList() {
                             <span className='fw-bold fs-6'>EUR</span>
                             <span className='fw-semibold fs-6'>/month</span>
                         </span>
+                        <br></br>
+                        <span className='fs-6 fw-normal'>An annual recurring payment of &euro;3.348 <b>saving 15%</b>.</span>
 
-                        <div className="mt-4 mb-4 d-flex flex-column">
+                        <div className="mt-3 mb-4 d-flex flex-column">
                             <p className='fs-6 text-secondary fw-normal mb-2'>Recommended for large and very large businesses, contains the following features:</p>
                             <div className="d-flex mb-2">
                                 <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-primary icon-pack-list-size' />

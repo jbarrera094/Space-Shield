@@ -44,7 +44,7 @@ function Dashboard() {
                 </div>
 
             </div>
-            <div className="mb-4 mx-5">
+            <div className="mb-4 container">
                 <PacksList />
             </div>
         </div>
