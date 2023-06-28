@@ -58,7 +58,8 @@ function PacksList() {
                                 <span className='fs-6 fw-normal text-decoration-line-through'>Improved support response times</span>
                             </div>
                         </div>
-                        <Link href={`${ router.asPath == "/" ? defaultURL : "/packs/add/1"}`} className="btn btn-primary py-2 fw-semibold w-100">Choose Plan</Link>
+
+                        <Link href={`${ router.asPath == "/" ? defaultURL : "/packs/add/1"}`} className="btn btn-outline-primary py-2 fw-semibold w-100">Monthly Subscription</Link>
                     </div>
                 </div>
 
@@ -120,7 +121,10 @@ function PacksList() {
                                 <span className='fs-6 text-secondary fw-normal'>Improved support response times</span>
                             </div>
                         </div>
-                        <Link href={`${ router.asPath == "/" ? defaultURL : "/packs/add/2"}`} className="btn btn-primary py-2 fw-semibold w-100">Choose Plan</Link>
+                        <div className="d-flex justify-content-around row">
+                            <Link href={`${ router.asPath == "/" ? defaultURL : "/packs/add/2"}`} className="btn btn-primary py-2 fw-semibold col-12 col-md-5 mb-2 mb-md-0">Annual Subscription</Link>
+                            <Link href={`${ router.asPath == "/" ? defaultURL : "/packs/add/21"}`} className="btn btn-outline-primary py-2 fw-semibold col-12 col-md-5">Monthly Subscription</Link>
+                        </div>
                     </div>
                 </div>
 
@@ -181,7 +185,10 @@ function PacksList() {
                                 <span className='fs-6 text-secondary fw-normal'>Improved support response times</span>
                             </div>
                         </div>
-                        <Link href={`${ router.asPath == "/" ? defaultURL : "/packs/add/3"}`} className="btn btn-primary py-2 fw-semibold w-100">Choose Plan</Link>
+                        <div className="d-flex justify-content-around row">
+                            <Link href={`${ router.asPath == "/" ? defaultURL : "/packs/add/3"}`} className="btn btn-primary py-2 fw-semibold col-12 col-md-5 mb-2 mb-md-0">Annual Subscription</Link>
+                            <Link href={`${ router.asPath == "/" ? defaultURL : "/packs/add/31"}`} className="btn btn-outline-primary py-2 fw-semibold col-12 col-md-5">Monthly Subscription</Link>
+                        </div>
                     </div>
                 </div>
             </div>

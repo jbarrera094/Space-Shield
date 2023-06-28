@@ -51,18 +51,21 @@ function AddEdit(props) {
             data['id_user'] = userService.userValue?.id_user;
             data['typePack'] = typePack;
             await packService.register(data);
-            message = 'License added';
 
-            // redirect to user list with success message
-            // router.push('/dashboard');
+            message = 'License added';
+            alertService.success(message, true);
+
             if(typePack == 1){
                 window.location.href = publicRuntimeConfig.pack1;
             }else if(typePack == 2){
-                window.location.href = publicRuntimeConfig.pack2;
-            }else{
-                window.location.href = publicRuntimeConfig.pack3;
+                window.location.href = publicRuntimeConfig.pack2_annual;
+            }else if(typePack == 3){
+                window.location.href = publicRuntimeConfig.pack3_annual;
+            }else if(typePack == 21){
+                window.location.href = publicRuntimeConfig.pack2_monthly;
+            }else if(typePack == 31){
+                window.location.href = publicRuntimeConfig.pack3_monthly;
             }
-            alertService.success(message, true);
         } catch (error) {
             alertService.error(error);
             console.error(error);

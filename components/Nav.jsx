@@ -70,7 +70,7 @@ function Nav() {
                         </NavLink>
                     </ul>
 
-                    <a className="btn btn-outline-light d-hiden-movile" href='/space_shield.zip'>
+                    <a className="btn btn-light d-hiden-movile" href='/space_shield.zip'>
                         Download Free
                     </a>
                 </div>

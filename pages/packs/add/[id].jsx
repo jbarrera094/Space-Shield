@@ -20,7 +20,6 @@ function Add() {
 
     return (
         <Layout>
-            <h1>Create Pack</h1>
             { typePack ? <AddEdit typePack={typePack} /> : <Spinner /> }
         </Layout>
     );
