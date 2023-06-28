@@ -125,6 +125,12 @@ function PacksList() {
                             <Link href={`${ router.asPath == "/" ? defaultURL : "/packs/add/2"}`} className="btn btn-primary py-2 fw-semibold col-12 col-md-5 mb-2 mb-md-0">Annual Subscription</Link>
                             <Link href={`${ router.asPath == "/" ? defaultURL : "/packs/add/21"}`} className="btn btn-outline-primary py-2 fw-semibold col-12 col-md-5">Monthly Subscription</Link>
                         </div>
+
+                        <div className="d-flex justify-content-center mt-2 fw-bold">
+                            <Link href='https://wa.me/573202864969?text=Hi! I would like to schedule a demo of Space shield.' target='_blank' rel="noopener noreferrer">
+                                <span>Schedule a demo</span>
+                            </Link>                            
+                        </div>
                     </div>
                 </div>
 
@@ -188,6 +194,12 @@ function PacksList() {
                         <div className="d-flex justify-content-around row">
                             <Link href={`${ router.asPath == "/" ? defaultURL : "/packs/add/3"}`} className="btn btn-primary py-2 fw-semibold col-12 col-md-5 mb-2 mb-md-0">Annual Subscription</Link>
                             <Link href={`${ router.asPath == "/" ? defaultURL : "/packs/add/31"}`} className="btn btn-outline-primary py-2 fw-semibold col-12 col-md-5">Monthly Subscription</Link>
+                        </div>
+
+                        <div className="d-flex justify-content-center mt-2 fw-bold">
+                            <Link href='https://wa.me/573202864969?text=Hi! I would like to schedule a demo of Space shield.' target='_blank' rel="noopener noreferrer">
+                                <span>Schedule a demo</span>
+                            </Link>                            
                         </div>
                     </div>
                 </div>
