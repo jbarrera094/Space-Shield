@@ -13,7 +13,9 @@ function PacksList() {
             <div className="d-flex flex-column flex-md-row justify-content-between">
                 <div className="card text-start shadow custom-w-card">
                     <div className="card-body pb-3 px-4">
-                        <h5 className="card-title text-secondary fs-4 mb-4">Standard Package Subscription</h5>
+                        <div className="d-flex row">
+                            <h5 className="card-title text-secondary fs-4 mb-4 col-10">Standard Package Subscription</h5>
+                        </div>
                         <span className='card-text'>
                             <span className='fw-bold fs-3'>&euro;</span> 
                             <span className='fw-bold fs-1'>150</span> 
