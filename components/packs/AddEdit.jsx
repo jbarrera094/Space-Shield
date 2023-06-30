@@ -93,7 +93,7 @@ function AddEdit(props) {
                             {formState.isSubmitting && <span className="spinner-border spinner-border-sm me-1"></span>}
                             Buy Now!
                         </button>
-                        <p className='text-white lh-1 fs-7 mt-2 text-justify'>The subscription price is based on EUR and is updated monthly according to
+                        <p className='text-white lh-1 fs-7 mt-2 text-justify'>The subscription price is based on EUR and is updated every sunday according to
                             <Link href='https://www.google.com/finance/quote/EUR-COP?sa=X&ved=2ahUKEwi4mKKd8-P_AhWDkIQIHUmsDQkQmY0JegQIBhAc&window=1M' target='_blank' rel="noopener noreferrer">
                                 <span className='text-decoration-none ms-1 text-white fw-semibold'>Google Finance</span>
                             </Link>.
