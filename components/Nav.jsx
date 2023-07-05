@@ -70,8 +70,12 @@ function Nav() {
                         </NavLink>
                     </ul>
 
-                    <a className="btn btn-light d-hiden-movile" href='/SpS.rar'>
+                    <a className="btn btn-outline-light d-hiden-movile me-2" href='/SpS.rar'>
                         Download Free
+                    </a>
+
+                    <a className="btn btn-light d-hiden-movile" href='/packages'>
+                        Order Now
                     </a>
                 </div>
             </div>

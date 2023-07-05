@@ -1,6 +1,7 @@
 import { faCircleCheck } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useRouter } from 'next/router';
+import { userService } from 'services';
 import Link from 'next/link';
 
 export default PacksList;
@@ -44,10 +45,7 @@ function PacksList() {
                                 <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-primary icon-pack-list-size' />
                                 <span className='fs-6 text-secondary fw-normal'>NTC 4552 Calculation</span>
                             </div>
-                            <div className="d-flex mb-2">
-                                <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-primary icon-pack-list-size' />
-                                <span className='fs-6 text-secondary fw-normal'>Access to new features with each update</span>
-                            </div>
+                            
                             
 
                             {/* NO INCLUDED IN THIS PACK */}
@@ -57,7 +55,7 @@ function PacksList() {
                             </div>
                         </div>
 
-                        <Link href={`${ router.asPath == "/" ? defaultURL : "/packs/add/1"}`} className="btn btn-outline-primary py-2 fw-semibold w-100">Monthly Subscription</Link>
+                        <Link href={`${ !userService.userValue ? defaultURL : "/packs/add/1"}`} className="btn btn-outline-primary py-2 fw-semibold w-100">Monthly Subscription</Link>
                         <div className="d-flex justify-content-center mt-2 fw-bold">
                             <Link href='https://wa.me/573202864969?text=Hi! I would like to schedule a demo of Space shield.' target='_blank' rel="noopener noreferrer">
                                 <span>Schedule a demo</span>
@@ -114,10 +112,7 @@ function PacksList() {
                                 <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-primary icon-pack-list-size' />
                                 <span className='fs-6 text-secondary fw-normal'>NTC 4552 Calculation</span>
                             </div>
-                            <div className="d-flex mb-2">
-                                <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-primary icon-pack-list-size' />
-                                <span className='fs-6 text-secondary fw-normal'>Access to new features with each update</span>
-                            </div>
+                            
                             
                             <div className="d-flex mb-2">
                                 <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-primary icon-pack-list-size' />
@@ -125,8 +120,8 @@ function PacksList() {
                             </div>
                         </div>
                         <div className="d-flex justify-content-around row">
-                            <Link href={`${ router.asPath == "/" ? defaultURL : "/packs/add/2"}`} className="btn btn-success py-2 fw-semibold col-12 col-md-5 mb-2 mb-md-0">Annual Subscription</Link>
-                            <Link href={`${ router.asPath == "/" ? defaultURL : "/packs/add/21"}`} className="btn btn-primary py-2 fw-semibold col-12 col-md-5">Monthly Subscription</Link>
+                            <Link href={`${ !userService.userValue ? defaultURL : "/packs/add/2"}`} className="btn btn-success py-2 fw-semibold col-12 col-md-5 mb-2 mb-md-0">Annual Subscription</Link>
+                            <Link href={`${ !userService.userValue ? defaultURL : "/packs/add/21"}`} className="btn btn-primary py-2 fw-semibold col-12 col-md-5">Monthly Subscription</Link>
                         </div>
 
                         <div className="d-flex justify-content-center mt-2 fw-bold">
@@ -185,18 +180,15 @@ function PacksList() {
                                 <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-primary icon-pack-list-size' />
                                 <span className='fs-6 text-secondary fw-normal'>NTC 4552 Calculation</span>
                             </div>
-                            <div className="d-flex mb-2">
-                                <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-primary icon-pack-list-size' />
-                                <span className='fs-6 text-secondary fw-normal'>Access to new features with each update</span>
-                            </div>
+                            
                             <div className="d-flex mb-2">
                                 <FontAwesomeIcon icon={faCircleCheck} className='me-2 my-auto text-primary icon-pack-list-size' />
                                 <span className='fs-6 text-secondary fw-normal'>Improved support response times</span>
                             </div>
                         </div>
                         <div className="d-flex justify-content-around row">
-                            <Link href={`${ router.asPath == "/" ? defaultURL : "/packs/add/3"}`} className="btn btn-outline-primary py-2 fw-semibold col-12 col-md-5 mb-2 mb-md-0">Annual Subscription</Link>
-                            <Link href={`${ router.asPath == "/" ? defaultURL : "/packs/add/31"}`} className="btn btn-outline-primary py-2 fw-semibold col-12 col-md-5">Monthly Subscription</Link>
+                            <Link href={`${ !userService.userValue ? defaultURL : "/packs/add/3"}`} className="btn btn-outline-primary py-2 fw-semibold col-12 col-md-5 mb-2 mb-md-0">Annual Subscription</Link>
+                            <Link href={`${ !userService.userValue ? defaultURL : "/packs/add/31"}`} className="btn btn-outline-primary py-2 fw-semibold col-12 col-md-5">Monthly Subscription</Link>
                         </div>
 
                         <div className="d-flex justify-content-center mt-2 fw-bold">
