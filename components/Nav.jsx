@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import { saveAs } from 'file-saver';
 import { faCircleUser } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Link from "next/link";
 
 import { NavLink } from '.';
 import { userService } from 'services';
@@ -74,9 +75,9 @@ function Nav() {
                         Download Free
                     </a>
 
-                    <a className="btn btn-light d-hiden-movile" href='/packages'>
+                    <Link className="btn btn-light d-hiden-movile" href='/packages'>
                         Order Now
-                    </a>
+                    </Link>
                 </div>
             </div>
         </nav>
