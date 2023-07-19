@@ -1,5 +1,13 @@
-# next-js-13-mysql-registration-login-example
+# Space Shield
 
-Next.js 13 + MySQL - User Registration and Login Example
+Next.js 13 + MySQL - User Registration and License Management
 
-Documentation at https://jasonwatmore.com/next-js-13-mysql-user-registration-and-login-tutorial-with-example-app
+It requires a Splash Page that allows you to download the free plugin and also buy the 3 different packages depending on the location for LATAM would be Mercadopago and for the rest of the world Paypal.
+
+The user must be able to manage these licenses by making a complete CRUD.
+
+## Entity Model:
+![https://github.com/jbarrera094](https://raw.githubusercontent.com/jbarrera094/space_shield/main/design_db/space_shield-ME.png)
+
+## Entity-relationship Model:
+![https://github.com/jbarrera094](https://raw.githubusercontent.com/jbarrera094/space_shield/main/design_db/space_shield-MER.png)
