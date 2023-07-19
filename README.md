@@ -7,7 +7,7 @@ It requires a Splash Page that allows you to download the free plugin and also b
 The user must be able to manage these licenses by making a complete CRUD.
 
 ## Entity Model:
-![https://github.com/jbarrera094](https://raw.githubusercontent.com/jbarrera094/space_shield/main/design_db/space_shield-ME.png)
+![https://github.com/jbarrera094](https://raw.githubusercontent.com/jbarrera094/Space-Shield/main/design_db/space_shield-ME.png)
 
 ## Entity-relationship Model:
-![https://github.com/jbarrera094](https://raw.githubusercontent.com/jbarrera094/space_shield/main/design_db/space_shield-MER.png)
+![https://github.com/jbarrera094](https://raw.githubusercontent.com/jbarrera094/Space-Shield/main/design_db/space_shield-MER.png)
