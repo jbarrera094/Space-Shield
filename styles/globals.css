@@ -20,7 +20,11 @@ body {
 }
 
 .h-video-auto {
-  height: 34vw;
+  height: 40vw;
+
+  @media screen and (max-width: 767px) {
+    height: 56vw;
+  }
 }
 .z-index-10 {
   z-index: 10;

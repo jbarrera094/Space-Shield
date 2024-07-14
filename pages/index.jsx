@@ -18,10 +18,10 @@ function Home() {
       <section className="bg-white w-100 py-5">
         <div className="container">
           <div className="d-flex justify-content-center">
-            <h4 className="fw-bold">FEATURES</h4>
+            <h4 className="fw-bold">Features</h4>
           </div>
           <div className="row d-flex justify-content-center justify-content-md-between">
-            <div className="card text-center col-10 col-md-3 shadow">
+            <div className="card text-center col-10 col-md-3 shadow mt-4 mt-md-0">
               <div className="card-body">
                 <FontAwesomeIcon
                   icon={faCircleDollarToSlot}
@@ -35,7 +35,7 @@ function Home() {
               </div>
             </div>
 
-            <div className="card text-center col-10 col-md-3 shadow">
+            <div className="card text-center col-10 col-md-3 shadow mt-4 mt-md-0">
               <div className="card-body">
                 <FontAwesomeIcon
                   icon={faGaugeHigh}
@@ -50,7 +50,7 @@ function Home() {
               </div>
             </div>
 
-            <div className="card text-center col-10 col-md-3 shadow">
+            <div className="card text-center col-10 col-md-3 shadow mt-4 mt-md-0">
               <div className="card-body">
                 <FontAwesomeIcon
                   icon={faStar}
@@ -73,9 +73,12 @@ function Home() {
 
       <section className="bg-white w-100 py-5">
         <div className="container">
+          <h4 className="fw-bold text-center fs-4">
+            Introduction to Space Shield
+          </h4>
           <div className="d-flex justify-content-center">
             <iframe
-              className="w-75 h-video-auto"
+              className="w-md-75 w-100 h-video-auto"
               src="https://www.youtube.com/embed/rSaCQe34qMU"
               title="YouTube video player"
               frameBorder="0"
@@ -90,7 +93,7 @@ function Home() {
         <hr />
       </div>
 
-      <section className="d-flex justify-content-center py-5">
+      {/* <section className="d-flex justify-content-center py-5">
         <Link
           type="button"
           class="btn btn-success d-flex btn-lg fs-2"
@@ -102,6 +105,30 @@ function Home() {
           />
           <span>Decargar y Comprar</span>
         </Link>
+      </section> */}
+
+      <section className="d-flex justify-content-center py-5">
+        <div className="container">
+          <div className="d-flex flex-column text-center">
+            <h4 className="fw-bold fs-4">
+              Ready to increase your productivity?
+            </h4>
+            <p className="fs-5">We can take your project to the next level.</p>
+            <div className="d-flex justify-content-center">
+              <a href="/SpS.rar" className="btn btn-success btn-lg me-2">
+                Download
+              </a>
+              <Link
+                href="mailto:sps@bsenergy.co"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-outline-primary btn-lg"
+              >
+                Contact Us
+              </Link>
+            </div>
+          </div>
+        </div>
       </section>
     </div>
   );
