@@ -47,7 +47,7 @@ function Nav() {
     >
       <div className="container-fluid">
         <NavLink className="navbar-brand text-white fs-4" exact href="/">
-          Space Shield
+          LPS CAD
         </NavLink>
         <button
           className="navbar-toggler"
@@ -63,7 +63,7 @@ function Nav() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <NavLink
-              href="/dashboard"
+              href="/licenses"
               className={
                 !user ? "d-none" : "btn btn-link nav-item nav-link text-white"
               }
@@ -73,7 +73,7 @@ function Nav() {
                   icon={faCircleUser}
                   className="me-1 my-auto icon-nav-size"
                 />
-                <span>Panel</span>
+                <span>Licenses</span>
               </div>
             </NavLink>
             <NavLink
@@ -116,7 +116,7 @@ function Nav() {
 
           <a
             className="btn btn-outline-light d-hiden-movile me-2"
-            href="/SpS.rar"
+            href="/LPS.zip"
           >
             Free Download
           </a>

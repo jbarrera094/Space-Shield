@@ -1,4 +1,4 @@
-# Space Shield
+# LPS CAD
 
 Next.js 13 + MySQL - User Registration and License Management
 

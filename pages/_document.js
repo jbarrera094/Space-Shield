@@ -28,7 +28,7 @@ function Document() {
             <div className="p-2 px-md-5 py-md-1 row w-100 mx-auto">
               <div className="my-auto d-none d-md-block col-md-4 d-flex justify-content-center justify-content-md-start">
                 <Link
-                  href="mailto:sps@bsenergy.co"
+                  href="mailto:lps@bsenergy.co"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="d-flex flex-column justify-content-center text-decoration-none w-fit-contain"
@@ -37,15 +37,12 @@ function Document() {
                     icon={faEnvelope}
                     className="footer-icon-social-size my-auto mx-auto"
                   />
-                  <span>sps@bsenergy.co</span>
+                  <span>lps@bsenergy.co</span>
                 </Link>
               </div>
 
               <div className="my-auto d-none d-md-block col-md-4 text-center">
-                <span>
-                  {" "}
-                  © Copyright {new Date().getFullYear()} Space Shield.
-                </span>
+                <span> © Copyright {new Date().getFullYear()} LPS CAD.</span>
               </div>
 
               <div className="my-auto col-12 col-md-4 my-auto">
@@ -72,7 +69,7 @@ function Document() {
                       />
                     </Link>
                     <Link
-                      href="mailto:sps@bsenergy.co"
+                      href="mailto:lps@bsenergy.co"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="d-md-none"
@@ -86,17 +83,14 @@ function Document() {
                   <p className="text-primary m-0">
                     (+34) 616453084
                     <span className="text-primary ms-1 d-md-none">
-                      - sps@bsenergy.co
+                      - lps@bsenergy.co
                     </span>
                   </p>
                 </div>
               </div>
 
               <div className="my-auto d-md-none text-center">
-                <span>
-                  {" "}
-                  © Copyright {new Date().getFullYear()} Space Shield.
-                </span>
+                <span> © Copyright {new Date().getFullYear()} LPS CAD.</span>
               </div>
 
               {/* <div className="my-auto col-12 col-md-4 d-flex justify-content-center justify-content-md-end">
@@ -110,7 +104,7 @@ function Document() {
                     icon={faYoutube}
                     className="footer-icon-social-size my-auto mx-auto"
                   />
-                  <span>@space shield</span>
+                  <span>@LPS CAD</span>
                 </Link>
               </div> */}
             </div>

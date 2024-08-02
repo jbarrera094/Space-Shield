@@ -9,7 +9,7 @@ function NavBar() {
     <nav className="navbar navbar-expand-lg bg-light size-screen-nav py-2">
       <div className="container-fluid">
         <Link className="navbar-brand" href="/">
-          Space Shield
+          LPS CAD
         </Link>
         <button
           className="navbar-toggler"
@@ -30,9 +30,14 @@ function NavBar() {
             <Link className="nav-item nav-link" href="/account/register">
               Register
             </Link>
-            <button onClick={userService.logout} className="btn btn-link nav-item nav-link">Logout</button>
+            <button
+              onClick={userService.logout}
+              className="btn btn-link nav-item nav-link"
+            >
+              Logout
+            </button>
           </ul>
-          
+
           <button className="btn btn-outline-success" type="submit">
             Download Free
           </button>

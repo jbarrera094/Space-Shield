@@ -73,9 +73,7 @@ function Home() {
 
       <section className="bg-white w-100 py-5">
         <div className="container">
-          <h4 className="fw-bold text-center fs-4">
-            Introduction to Space Shield
-          </h4>
+          <h4 className="fw-bold text-center fs-4">Introduction to LPS CAD</h4>
           <div className="d-flex justify-content-center">
             <iframe
               className="w-md-75 w-100 h-video-auto"
@@ -115,11 +113,11 @@ function Home() {
             </h4>
             <p className="fs-5">We can take your project to the next level.</p>
             <div className="d-flex justify-content-center">
-              <a href="/SpS.rar" className="btn btn-success btn-lg me-2">
+              <a href="/LPS.zip" className="btn btn-success btn-lg me-2">
                 Download
               </a>
               <Link
-                href="mailto:sps@bsenergy.co"
+                href="mailto:lps@bsenergy.co"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-outline-primary btn-lg"

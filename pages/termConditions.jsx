@@ -64,11 +64,11 @@ function TermConditions() {
           </p>
           <h3 className="fs-4 fw-bold">2.3. Taxes and fees</h3>
           <p>
-            Space Shield conducts electronic sales from the Republic of
-            Colombia. BS Energy and Automation is legally obligated to collect
-            value-added tax (VAT). This VAT may not be itemized during the
-            payment process, in which case it is included in the product price
-            (price including VAT).
+            LPS CAD conducts electronic sales from the Republic of Colombia. BS
+            Energy and Automation is legally obligated to collect value-added
+            tax (VAT). This VAT may not be itemized during the payment process,
+            in which case it is included in the product price (price including
+            VAT).
           </p>
           <h3 className="fs-4 fw-bold">2.4. Renewals</h3>
           <p>
@@ -109,7 +109,7 @@ function TermConditions() {
         </p>
         <h2 className="fs-3 fw-bold">5. Privacy</h2>
         <p>
-          Space Shield is committed to protecting your privacy and informing you
+          LPS CAD is committed to protecting your privacy and informing you
           about what will be done with your personal data. The Privacy Statement
           sets out how personal data about you or related to you may be
           collected, used, stored, and processed.
@@ -117,13 +117,13 @@ function TermConditions() {
         <h2 className="fs-3 fw-bold">6. Trial Versions</h2>
         <p>
           Trial versions that enable all the full features of the program are
-          managed directly by Space Shield and must be acquired through email by
+          managed directly by LPS CAD and must be acquired through email by
           using the contact form [Contact Us]. Trial periods and access keys
           will be agreed upon for this purpose.
         </p>
         <h2 className="fs-3 fw-bold">7. Usage Limitations</h2>
         <p>
-          Space Shield is a tool intended solely to assist you with your design,
+          LPS CAD is a tool intended solely to assist you with your design,
           analysis, simulation, estimation, verification, and other activities,
           and it is not a substitute for your professional judgment or your own
           independent design, analysis, simulation, estimation, verification, or
@@ -136,9 +136,9 @@ function TermConditions() {
           appropriate use of the tool, and (c) select the tool and other
           computer programs and materials, in each case, to help achieve the
           intended product or result. You also acknowledge that, between you and
-          Space Shield (BS Energy and Automation), you are solely responsible
-          for (i) your use of the tools (including your authorized users) and
-          any product produced by the tool, including any result, and (ii)
+          LPS CAD (BS Energy and Automation), you are solely responsible for (i)
+          your use of the tools (including your authorized users) and any
+          product produced by the tool, including any result, and (ii)
           establishing the adequacy of independent procedures for testing the
           reliability, safety, accuracy, integrity, compliance with applicable
           legal requirements and industry standards, and other characteristics
@@ -151,15 +151,15 @@ function TermConditions() {
           8. Limited Warranty, Disclaimers, and Limitations of Liability
         </h2>
         <p>
-          Space Shield shall have no liability (directly or indirectly) for
+          LPS CAD shall have no liability (directly or indirectly) for
           incidental, special, indirect, consequential, or punitive damages; for
           loss of profits or revenue; for business interruption or loss of use;
           for the cost of acquiring substitute goods or services or other
           coverage; for failures or defects in the result; for the loss, damage,
           or deletion (or failure to delete) of data or its content; or for
-          damages resulting from force majeure. The liability of Space Shield
-          will in no event exceed the amount paid for the software license,
-          subject to a case study according to what is mentioned in section 3.
+          damages resulting from force majeure. The liability of LPS CAD will in
+          no event exceed the amount paid for the software license, subject to a
+          case study according to what is mentioned in section 3.
         </p>
         <h2 className="fs-3 fw-bold">9. Term, Termination, and Suspension</h2>
         <p>
@@ -172,30 +172,30 @@ function TermConditions() {
           <h3 className="fs-4 fw-bold">9.1 Your Right to Terminate</h3>
           <p>
             You may terminate your subscriptions and these Terms and Conditions
-            if Space Shield materially breaches these Terms and Conditions and
-            fails to remedy such breach within 30 days after written notice of
-            the breach.
+            if LPS CAD materially breaches these Terms and Conditions and fails
+            to remedy such breach within 30 days after written notice of the
+            breach.
           </p>
           <h3 className="fs-4 fw-bold">
-            9.2 Space Shield&apos;s Right to Cancel or Suspend a Subscription or
+            9.2 LPS CAD&apos;s Right to Cancel or Suspend a Subscription or
             Account
           </h3>
           <p>
-            Space Shield may terminate (or disable or suspend your access and
-            use of) any or all subscriptions you have subscribed to or terminate
-            these Terms and Conditions and your account if: (a) you do not have
-            any current paid subscriptions; (b) you have not timely paid any
-            amounts (including fees and taxes) owed to Space Shield; (c) you
-            (including any of your authorized users) otherwise materially breach
-            these Terms and Conditions and fail to remedy such breach within 30
-            days after written notice of the breach; or (d) you become subject
-            to bankruptcy or insolvency proceedings, are declared insolvent,
-            reach an agreement with your creditors affecting them (including an
+            LPS CAD may terminate (or disable or suspend your access and use of)
+            any or all subscriptions you have subscribed to or terminate these
+            Terms and Conditions and your account if: (a) you do not have any
+            current paid subscriptions; (b) you have not timely paid any amounts
+            (including fees and taxes) owed to LPS CAD; (c) you (including any
+            of your authorized users) otherwise materially breach these Terms
+            and Conditions and fail to remedy such breach within 30 days after
+            written notice of the breach; or (d) you become subject to
+            bankruptcy or insolvency proceedings, are declared insolvent, reach
+            an agreement with your creditors affecting them (including an
             assignment for the benefit of creditors), or initiate liquidation
             proceedings. These Terms and Conditions shall be automatically
-            terminated without notice or action by Space Shield if you enter
-            into liquidation. Additionally, Space Shield may immediately disable
-            or suspend access and use of accounts.
+            terminated without notice or action by LPS CAD if you enter into
+            liquidation. Additionally, LPS CAD may immediately disable or
+            suspend access and use of accounts.
           </p>
           <h3 className="fs-4 fw-bold">
             9.3 Effect of Subscription Termination
@@ -203,9 +203,9 @@ function TermConditions() {
           <p>
             Upon expiration or termination of a subscription for any reason,
             your rights with respect to that subscription, including any
-            Software license and related Benefits, will cease. At that time,
-            Space Shield may, if required, delete the accounts associated with
-            your subscription.
+            Software license and related Benefits, will cease. At that time, LPS
+            CAD may, if required, delete the accounts associated with your
+            subscription.
           </p>
           <h3 className="fs-4 fw-bold">
             9.4 Effect of Termination of Terms and Conditions or Account
