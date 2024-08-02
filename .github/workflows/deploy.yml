@@ -50,7 +50,8 @@ jobs:
           key: ${{ secrets.DROPLET_SSH_KEY }}
           port: ${{ secrets.DROPLET_SSH_PORT }}
           script: |
+            docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
             docker pull ${{ secrets.DOCKER_USERNAME }}/space-shield-app:latest
             docker stop space-shield-app || true
             docker rm space-shield-app || true
-            docker run -d --name space-shield-app ${{ secrets.ENVIRONMENT_VARIABLES }} -p 80:3000 ${{ secrets.DOCKER_USERNAME }}/space-shield-app
+            docker run -d --name space-shield-app ${{ secrets.ENVIRONMENT_VARIABLES }} -p 80:3000 ${{ secrets.DOCKER_USERNAME }}/space-shield-app:latest
