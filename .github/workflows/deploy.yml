@@ -54,4 +54,4 @@ jobs:
             docker pull json0021/space-shield-app:latest
             docker stop space-shield-app || true
             docker rm space-shield-app || true
-            docker run -d --name space-shield-app ${{ secrets.ENVIRONMENT_VARIABLES }} -p 80:3000 json0021s/space-shield-app:latest
+            docker run -d --name space-shield-app ${{ secrets.ENVIRONMENT_VARIABLES }} -p 80:3000 json0021/space-shield-app:latest
