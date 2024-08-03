@@ -52,6 +52,6 @@ jobs:
           script: |
             docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
             docker pull ${{ secrets.DOCKER_USERNAME }}/space-shield-app:latest
-            docker stop ${{ secrets.DOCKER_USERNAME }}/space-shield-app:latest || true
-            docker rm ${{ secrets.DOCKER_USERNAME }}/space-shield-app:latest || true
+            docker stop space-shield-app || true
+            docker rm space-shield-app || true
             docker run -d --name space-shield-app -p 80:3000 --env-file /home/.env ${{ secrets.DOCKER_USERNAME }}/space-shield-app:latest
