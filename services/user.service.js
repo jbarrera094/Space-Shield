@@ -5,7 +5,7 @@ import Router from "next/router";
 import { fetchWrapper } from "helpers";
 import { alertService } from "./alert.service";
 
-const { publicRuntimeConfig } = getConfig();
+const { publicRuntimeConfig, serverRuntimeConfig } = getConfig();
 const baseUrl = `${publicRuntimeConfig.apiUrl}/users`;
 
 const userSubject = new BehaviorSubject(
@@ -28,8 +28,11 @@ export const userService = {
 
 async function login(email, password) {
   console.log("login");
+  console.log(publicRuntimeConfig);
   console.log(publicRuntimeConfig.apiUrl);
   console.log(baseUrl);
+  console.log(serverRuntimeConfig);
+  console.log(serverRuntimeConfig.secret);
   const user = await fetchWrapper.post(`${baseUrl}/authenticate`, {
     email,
     password,
