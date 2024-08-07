@@ -54,4 +54,5 @@ jobs:
             docker pull ${{ secrets.DOCKER_USERNAME }}/space-shield-app:latest
             docker stop space-shield-app || true
             docker rm space-shield-app || true
-            docker run -d --name space-shield-app -p 80:3000 --env-file /home/.env ${{ secrets.DOCKER_USERNAME }}/space-shield-app:latest
+            cd /app
+            docker compose up -d
