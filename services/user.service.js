@@ -6,7 +6,8 @@ import { fetchWrapper } from "helpers";
 import { alertService } from "./alert.service";
 
 const { publicRuntimeConfig } = getConfig();
-const baseUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/users`;
+const baseUrl = `${publicRuntimeConfig.apiUrl}/users`;
+
 const userSubject = new BehaviorSubject(
   typeof window !== "undefined" && JSON.parse(localStorage.getItem("user"))
 );
@@ -26,6 +27,9 @@ export const userService = {
 };
 
 async function login(email, password) {
+  console.log("login");
+  console.log(publicRuntimeConfig.apiUrl);
+  console.log(baseUrl);
   const user = await fetchWrapper.post(`${baseUrl}/authenticate`, {
     email,
     password,
