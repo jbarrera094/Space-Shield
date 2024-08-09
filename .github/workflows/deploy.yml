@@ -54,4 +54,4 @@ jobs:
             docker pull ${{ secrets.DOCKER_USERNAME }}/space-shield-app:latest
             docker stop space-shield-app || true
             docker rm space-shield-app || true
-            docker run -d --name space-shield-app -p 80:3000 --env-file /home/.env ${{ secrets.DOCKER_USERNAME }}/space-shield-app:latest
+            docker run -d --name space-shield-app -p 80:3000 --env-file /home/.env --network=nginx-proxy --label "com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy=true" --label "com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy=true" -e VIRTUAL_HOST=lpscad.bsenergy.co,www.lpscad.bsenergy.co -e LETSENCRYPT_HOST=lpscad.bsenergy.co,www.lpscad.bsenergy.co -e LETSENCRYPT_EMAIL=lps@bsenergy.co ${{ secrets.DOCKER_USERNAME }}/space-shield-app:latest
