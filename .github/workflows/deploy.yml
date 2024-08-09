@@ -52,6 +52,5 @@ jobs:
           script: |
             docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
             docker pull ${{ secrets.DOCKER_USERNAME }}/space-shield-app:latest
-            docker stop space-shield-app || true
-            docker rm space-shield-app || true
-            docker compose -f /home/docker-compose.yml up -d
+            docker compose -f /home/docker-compose.yml down
+            docker compose -f /home/docker-compose.yml restart

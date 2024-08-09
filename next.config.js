@@ -14,8 +14,8 @@ const nextConfig = {
     stripe_webhook_secret: process.env.STRIPE_WEBHOOK_SECRET,
   },
   publicRuntimeConfig: {
-    apiUrl: "http://lpscad.bsenergy.co/api",
-    baseUrl: "http://lpscad.bsenergy.co",
+    apiUrl: "https://lpscad.bsenergy.co/api",
+    baseUrl: "https://lpscad.bsenergy.co",
     pack1: process.env.NEXT_PUBLIC_PACK1,
     pack2_monthly: process.env.NEXT_PUBLIC_PACK2_MONTHLY,
     pack3_monthly: process.env.NEXT_PUBLIC_PACK3_MONTHLY,

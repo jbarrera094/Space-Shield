@@ -2,7 +2,7 @@ version: "3"
 
 services:
   nginx-proxy:
-    image: budry/jwilder-nginx-proxy-arm
+    image: jwilder/nginx-proxy
     container_name: nginx-proxy
     restart: always
     ports:
@@ -11,28 +11,24 @@ services:
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock:ro
       - certs:/etc/nginx/certs:ro
-      - confd:/etc/nginx/conf.d
       - vhostd:/etc/nginx/vhost.d
       - html:/usr/share/nginx/html
       - acme:/etc/acme.sh
     labels:
       - com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy
-    networks:
-      - webnet
 
   letsencrypt:
-    image: jrcs/letsencrypt-nginx-proxy-companion:stable
+    image: jrcs/letsencrypt-nginx-proxy-companion
     container_name: letsencrypt
     restart: always
+    environment:
+      - NGINX_PROXY_CONTAINER=nginx-proxy
     volumes:
       - certs:/etc/nginx/certs:rw
-      - confd:/etc/nginx/conf.d
       - vhostd:/etc/nginx/vhost.d
       - html:/usr/share/nginx/html
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - acme:/etc/acme.sh
-    networks:
-      - webnet
 
   space-shield:
     image: json0021/space-shield-app:latest
@@ -49,15 +45,9 @@ services:
     depends_on:
       - nginx-proxy
       - letsencrypt
-    networks:
-      - webnet
 
 volumes:
   certs:
   html:
   vhostd:
-  confd:
   acme:
-
-networks:
-  webnet:
