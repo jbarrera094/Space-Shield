@@ -51,4 +51,5 @@ jobs:
           port: ${{ secrets.DROPLET_SSH_PORT }}
           script: |
             docker compose -f /home/docker-compose.yml down
+            docker image rm json0021/space-shield-app:latest
             docker compose -f /home/docker-compose.yml up -d
