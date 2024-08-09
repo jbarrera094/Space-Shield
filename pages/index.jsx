@@ -7,6 +7,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import VideoTutorial from "./sections/videoTutorial";
 
 export default Home;
 
@@ -72,19 +73,7 @@ function Home() {
       </div>
 
       <section className="bg-white w-100 py-5">
-        <div className="container">
-          <h4 className="fw-bold text-center fs-4">Introduction to LPS CAD</h4>
-          <div className="d-flex justify-content-center">
-            <iframe
-              className="w-md-75 w-100 h-video-auto"
-              src="https://www.youtube.com/embed/rSaCQe34qMU"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            ></iframe>
-          </div>
-        </div>
+        <VideoTutorial />
       </section>
 
       <div className="mx-4">
