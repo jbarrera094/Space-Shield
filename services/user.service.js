@@ -27,12 +27,6 @@ export const userService = {
 };
 
 async function login(email, password) {
-  console.log("login");
-  console.log(publicRuntimeConfig);
-  console.log(publicRuntimeConfig.apiUrl);
-  console.log(baseUrl);
-  console.log(serverRuntimeConfig);
-  console.log(serverRuntimeConfig.secret);
   const user = await fetchWrapper.post(`${baseUrl}/authenticate`, {
     email,
     password,
