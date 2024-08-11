@@ -81,7 +81,7 @@ async function create(params) {
     id_user: saved_user.id_user,
     alias: saved_user.email,
     paid: true,
-    licenses_available: 5,
+    licenses_available: 1,
     expiration_date: futureDate.setFullYear(currentDate.getFullYear() + 5),
     createdAtTimeCol: formattedDateTime,
   });
