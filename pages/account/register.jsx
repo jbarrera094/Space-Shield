@@ -5,7 +5,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 
 import { Layout } from "components/account";
-import { userService, alertService } from "services";
+import { userService, alertService, mailService } from "services";
 
 export default Register;
 
@@ -40,7 +40,8 @@ function Register() {
   function onSubmit(user) {
     return userService
       .register(user)
-      .then(() => {
+      .then(async () => {
+        await mailService.firstContact(user.email);
         alertService.success("Registration successful", true);
         router.push("login");
       })

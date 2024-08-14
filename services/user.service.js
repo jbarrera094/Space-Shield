@@ -5,9 +5,8 @@ import Router from "next/router";
 import { fetchWrapper } from "helpers";
 import { alertService } from "./alert.service";
 
-const { publicRuntimeConfig, serverRuntimeConfig } = getConfig();
+const { publicRuntimeConfig } = getConfig();
 const baseUrl = `${publicRuntimeConfig.apiUrl}/users`;
-
 const userSubject = new BehaviorSubject(
   typeof window !== "undefined" && JSON.parse(localStorage.getItem("user"))
 );
@@ -20,6 +19,8 @@ export const userService = {
   login,
   logout,
   register,
+  passwordRecovery,
+  resetPassword,
   getAll,
   getById,
   update,
@@ -47,6 +48,17 @@ function logout() {
 
 async function register(user) {
   await fetchWrapper.post(`${baseUrl}/register`, user);
+}
+
+async function passwordRecovery(email) {
+  return await fetchWrapper.post(`${baseUrl}/recover`, { email });
+}
+
+async function resetPassword(token, password) {
+  return await fetchWrapper.post(`${baseUrl}/reset-password`, {
+    token,
+    password,
+  });
 }
 
 async function registerLicense(user) {

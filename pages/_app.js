@@ -17,6 +17,8 @@ function App({ Component, pageProps }) {
   const [authorized, setAuthorized] = useState(false);
   const customBg = [
     "/account/login",
+    "/account/recover",
+    "/account/reset-password",
     "/account/register",
     "/packs/add/[id]",
     "/packs/edit/[id]",
@@ -49,9 +51,11 @@ function App({ Component, pageProps }) {
     // redirect to login page if accessing a private page and not logged in
     setUser(userService.userValue);
     const publicPaths = [
-      "/account/login",
-      "/account/register",
       "/",
+      "/account/login",
+      "/account/recover",
+      "/account/reset-password",
+      "/account/register",
       "/awaitSuccess",
       "/termConditions",
       "/packages",
@@ -73,16 +77,6 @@ function App({ Component, pageProps }) {
       <Nav />
       <Head>
         <title>LPS CAD</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="true"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap"
-          rel="stylesheet"
-        />
       </Head>
 
       <div

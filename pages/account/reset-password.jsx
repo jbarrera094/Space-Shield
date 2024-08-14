@@ -1,39 +1,37 @@
 import { useRouter } from "next/router";
-import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 
 import { Layout } from "components/account";
 import { userService, alertService } from "services";
+import { useEffect } from "react";
 
-export default Login;
+export default ResetPassword;
 
-function Login() {
+function ResetPassword() {
   const router = useRouter();
+  const { token } = router.query;
 
-  // form validation rules
   const validationSchema = Yup.object().shape({
-    email: Yup.string()
-      .email("Not a proper email")
-      .required("email is required"),
     password: Yup.string().required("Password is required"),
+    confirmPassword: Yup.string()
+      .oneOf([Yup.ref("password"), null], "Passwords must match")
+      .required("Confirm Password is required"),
   });
   const formOptions = { resolver: yupResolver(validationSchema) };
-
-  // get functions to build form with useForm() hook
   const { register, handleSubmit, formState } = useForm(formOptions);
   const { errors } = formState;
 
-  function onSubmit({ email, password }) {
+  function onSubmit({ password }) {
     alertService.clear();
+
+    if (!token) return alertService.error("Token is required");
+
     return userService
-      .login(email, password)
+      .resetPassword(token, password)
       .then(() => {
-        // get return url from query parameters or default to '/'
-        // const returnUrl = router.query.returnUrl || '/';
-        const returnUrl = "/licenses";
-        router.push(returnUrl);
+        router.push("/account/login");
       })
       .catch(alertService.error);
   }
@@ -42,19 +40,9 @@ function Login() {
     <Layout>
       <div className="card bg-blur p-4">
         <div className="card-body">
-          <h1 className="text-center fs-2 mb-4 text-white">Login Here</h1>
+          <h1 className="text-center fs-2 mb-4 text-white">Reset Password</h1>
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="mb-3">
-              <input
-                name="email"
-                type="text"
-                {...register("email")}
-                className={`form-control ${errors.email ? "is-invalid" : ""}`}
-                placeholder="Email"
-              />
-              <div className="invalid-feedback">{errors.email?.message}</div>
-            </div>
-            <div className="mb-4">
               <input
                 name="password"
                 type="password"
@@ -62,9 +50,23 @@ function Login() {
                 className={`form-control ${
                   errors.password ? "is-invalid" : ""
                 }`}
-                placeholder="Password"
+                placeholder="New Password"
               />
               <div className="invalid-feedback">{errors.password?.message}</div>
+            </div>
+            <div className="mb-4">
+              <input
+                name="confirmPassword"
+                type="password"
+                {...register("confirmPassword")}
+                className={`form-control ${
+                  errors.confirmPassword ? "is-invalid" : ""
+                }`}
+                placeholder="Confirm New Password"
+              />
+              <div className="invalid-feedback">
+                {errors.confirmPassword?.message}
+              </div>
             </div>
             <button
               disabled={formState.isSubmitting}
@@ -73,19 +75,8 @@ function Login() {
               {formState.isSubmitting && (
                 <span className="spinner-border spinner-border-sm me-1"></span>
               )}
-              Sing In
+              Reset Password
             </button>
-            <div className="d-flex">
-              <span className="text-white me-2">not registered yet?</span>
-              <Link href="/account/register" className="text-decoration-none">
-                Sing Up!
-              </Link>
-            </div>
-            <div className="text-center mt-4">
-              <Link href="/account/recover" className="text-decoration-none">
-                Forgot Password?
-              </Link>
-            </div>
           </form>
         </div>
       </div>

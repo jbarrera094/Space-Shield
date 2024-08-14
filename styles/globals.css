@@ -20,11 +20,7 @@ body {
 }
 
 .h-video-auto {
-  height: 40vw;
-
-  @media screen and (max-width: 767px) {
-    height: 56vw;
-  }
+  height: 34vw;
 }
 .z-index-10 {
   z-index: 10;
@@ -42,12 +38,12 @@ body {
   top: 80vh;
   z-index: 10;
 }
-.icon-nav-size {
-  width: 1.5rem;
-  height: auto;
-}
 .icon-download-size {
   width: 3.5rem;
+  height: auto;
+}
+.icon-nav-size {
+  width: 1.5rem;
   height: auto;
 }
 .icon-pack-list-size {

@@ -15,5 +15,6 @@ function errorHandler(err, res) {
 
     // default to 500 server error
     console.error(err);
-    return res.status(500).json({ message: err.message });
+    return res.status(500).json({ message: "Error interno del servidor" });
+    // return res.status(500).json({ message: err.message });
 }

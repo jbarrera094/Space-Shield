@@ -1,6 +1,6 @@
 {
-    "name": "next-js-registration-login-example",
-    "version": "0.1.0",
+    "name": "space_shield",
+    "version": "1.5.0",
     "private": true,
     "scripts": {
         "dev": "next dev",
@@ -17,6 +17,9 @@
         "@hookform/resolvers": "^3.1.0",
         "@mercadopago/sdk-react": "^0.0.10",
         "@popperjs/core": "^2.11.8",
+        "@nestjs-modules/mailer": "^1.9.1",
+        "@stripe/react-stripe-js": "2.1.2",
+        "@stripe/stripe-js": "2.1.0",
         "bcryptjs": "^2.4.3",
         "bootstrap": "^5.3.0",
         "eslint": "8.39.0",
@@ -25,15 +28,22 @@
         "file-saver": "^2.0.5",
         "jsonwebtoken": "^9.0.0",
         "mercadopago": "^1.5.16",
+        "micro": "^10.0.0",
+        "micro-cors": "0.1.1",
         "moment": "^2.29.4",
         "mysql2": "^3.2.3",
         "next": "13.3.1",
+        "nodemailer": "^6.9.5",
         "prop-types": "^15.8.1",
         "react": "18.2.0",
         "react-dom": "18.2.0",
         "react-hook-form": "^7.43.9",
         "rxjs": "^7.8.0",
         "sequelize": "^6.31.0",
+        "stripe": "^8.222.0",
         "yup": "^1.1.1"
+    },
+    "devDependencies": {
+        "@types/react": "18.2.31"
     }
 }

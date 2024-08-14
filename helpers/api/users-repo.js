@@ -11,15 +11,13 @@ export const usersRepo = {
   getById,
   create,
   update,
+  recover,
+  reset,
   delete: _delete,
 };
 
 async function authenticate({ email, password }) {
   const user = await db.User.scope("withHash").findOne({ where: { email } });
-
-  // console.log("************************************");
-  // console.log(user);
-  // console.log("************************************");
 
   if (!(user && bcrypt.compareSync(password, user.hash))) {
     throw "email or password is incorrect";
@@ -118,4 +116,37 @@ async function _delete(id) {
 
   // delete user
   await user.destroy();
+}
+
+async function recover({ email }) {
+  const user = await db.User.findOne({ where: { email } });
+
+  if (!user) {
+    throw "email not found";
+  }
+
+  // create a jwt token that is valid for 1 hour
+  const token = jwt.sign({ sub: user.id_user }, serverRuntimeConfig.secret, {
+    expiresIn: "1h",
+  });
+
+  // return user and jwt
+  return {
+    token,
+  };
+}
+
+async function reset({ token, password }) {
+  const id_user = jwt.decode(token).sub;
+
+  const user = await db.User.findByPk(id_user);
+
+  if (!user) {
+    throw "User not found";
+  }
+
+  // update password and remove reset token
+  user.hash = bcrypt.hashSync(password, 10);
+  await user.save();
+  return { id_user };
 }

@@ -35,6 +35,7 @@ async function initialize() {
   // sync all models with database
   // await sequelize.sync({ alter: true });
 
+  // Created Views
   // createViewPacks(sequelize);
   // createViewLicenses(sequelize);
   // await sequelize.sync({ alter: true });
@@ -126,11 +127,12 @@ function packModel(sequelize) {
       allowNull: false,
       defaultValue: 1,
     },
+    sessionIdStripe: { type: DataTypes.STRING, allowNull: true },
     expiration_date: {
       type: DataTypes.DATE,
       allowNull: false,
       defaultValue: Sequelize.literal(
-        `DATE_ADD(CURRENT_DATE, INTERVAL 1 MONTH)`
+        `DATE_ADD(CURRENT_DATE, INTERVAL 45 DAY)`
       ),
     },
     createdAtTimeCol: { type: DataTypes.STRING, allowNull: false },

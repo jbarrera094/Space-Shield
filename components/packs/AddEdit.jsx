@@ -2,12 +2,9 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import getConfig from "next/config";
 import * as Yup from "yup";
 
 import { alertService, packService, userService } from "services";
-
-const { publicRuntimeConfig } = getConfig();
 
 export { AddEdit };
 
@@ -23,7 +20,7 @@ function AddEdit(props) {
   const formOptions = { resolver: yupResolver(validationSchema) };
 
   // get functions to build form with useForm() hook
-  const { register, handleSubmit, reset, formState } = useForm(formOptions);
+  const { register, handleSubmit, formState } = useForm(formOptions);
   const { errors } = formState;
 
   async function onSubmit(data) {
@@ -49,21 +46,22 @@ function AddEdit(props) {
       let message;
       data["id_user"] = userService.userValue?.id_user;
       data["typePack"] = typePack;
-      await packService.register(data);
+      const pack = await packService.register(data);
 
-      message = "License added";
-      alertService.success(message, true);
-
-      if (typePack == 1) {
-        window.location.href = publicRuntimeConfig.pack1;
-      } else if (typePack == 2) {
-        window.location.href = publicRuntimeConfig.pack2_annual;
-      } else if (typePack == 3) {
-        window.location.href = publicRuntimeConfig.pack3_annual;
-      } else if (typePack == 21) {
-        window.location.href = publicRuntimeConfig.pack2_monthly;
-      } else if (typePack == 31) {
-        window.location.href = publicRuntimeConfig.pack3_monthly;
+      if (pack) {
+        console.log(pack);
+        message = "License added";
+        alertService.success(message, false);
+        router.push(
+          "/api/payment/checkout_sessions?idPack=" +
+            pack.idPack +
+            "&typePack=" +
+            typePack +
+            "&token=" +
+            userService.userValue?.token
+        );
+      } else {
+        alertService.error("Error with payment gateway", true);
       }
     } catch (error) {
       alertService.error(error);
@@ -111,11 +109,20 @@ function AddEdit(props) {
               )}
               Buy Now!
             </button>
-            {/* <p className='text-white lh-1 fs-7 mt-2 text-justify'>The subscription price is based on EUR and is updated every sunday according to
-                            <Link href='https://www.google.com/finance/quote/EUR-COP?sa=X&ved=2ahUKEwi4mKKd8-P_AhWDkIQIHUmsDQkQmY0JegQIBhAc&window=1M' target='_blank' rel="noopener noreferrer">
-                                <span className='text-decoration-none ms-1 text-white fw-semibold'>Google Finance</span>
-                            </Link>.
-                        </p> */}
+            {/* <p className="text-white lh-1 fs-7 mt-2 text-justify">
+              The subscription price is based on EUR and is updated every sunday
+              according to
+              <Link
+                href="https://www.google.com/finance/quote/EUR-COP?sa=X&ved=2ahUKEwi4mKKd8-P_AhWDkIQIHUmsDQkQmY0JegQIBhAc&window=1M"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span className="text-decoration-none ms-1 text-white fw-semibold">
+                  Google Finance
+                </span>
+              </Link>
+              .
+            </p> */}
           </form>
         </div>
       </div>
