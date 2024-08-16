@@ -77,7 +77,7 @@ function Index() {
                 <thead>
                     <tr>
                         <th style={{ width: '30%' }}>User</th>
-                        <th style={{ width: '30%' }}>Password</th>
+                        <th style={{ width: '30%' }}>Key</th>
                         <th style={{ width: '30%' }}>Last Update</th>
                         <th style={{ width: '10%' }}>Actions</th>
                     </tr>
