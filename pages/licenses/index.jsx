@@ -10,17 +10,17 @@ import { licenseService, userService, packService } from 'services';
 export default Index;
 
 function Index() {
-    const [ licenses, setLicenses ] = useState(null);
-    const [ licensesAvailable, setLicensesAvailable ] = useState(0);
-    const [ packs, setPacks ] = useState(null);
-    const [ idPack, setIdPack ] = useState(0);
+    const [licenses, setLicenses] = useState(null);
+    const [licensesAvailable, setLicensesAvailable] = useState(0);
+    const [packs, setPacks] = useState(null);
+    const [idPack, setIdPack] = useState(0);
 
     useEffect(() => {
-        packService.getAll({id_user: userService.userValue?.id_user}).then(x  => {
+        packService.getAll({ id_user: userService.userValue?.id_user }).then(x => {
             setPacks(x);
             setLicensesAvailable(x[0].licenses_available);
             setIdPack(x[0].id_pack)
-            licenseService.getAll({id_pack: x[0].id_pack}).then(x => setLicenses(x));
+            licenseService.getAll({ id_pack: x[0].id_pack }).then(x => setLicenses(x));
         });
     }, []);
 
@@ -44,13 +44,13 @@ function Index() {
 
         // Search pack without looking fro database
         packs.map(pack => {
-            if(pack.id_pack == e.target.value){
+            if (pack.id_pack == e.target.value) {
                 setLicensesAvailable(pack.licenses_available);
             }
         });
 
         // Get licenses available for this Pack
-        licenseService.getAll({id_pack: e.target.value}).then(x => setLicenses(x));
+        licenseService.getAll({ id_pack: e.target.value }).then(x => setLicenses(x));
     }
 
     return (
@@ -63,9 +63,9 @@ function Index() {
             <div className="d-flex mb-3">
 
                 <select className="form-select me-3" aria-label="Default select packages" onChange={handleSelect}>
-                    { packs && packs.map(pack => 
+                    {packs && packs.map(pack =>
                         <option key={pack.id_pack} value={pack.id_pack}>{pack.alias}</option>
-                    ) }
+                    )}
                 </select>
 
                 <Link href={`/packs/edit/${idPack}`} className="btn btn-outline-primary">Update Alias</Link>
@@ -117,7 +117,7 @@ function Index() {
             </table>
 
             <div className="d-flex">
-                <Link href={`/licenses/add/${idPack}`} className={ licensesAvailable > 0 ? "btn btn-outline-primary w-100" : "btn btn-outline-primary w-100 disabled"}>Add License ({licensesAvailable})</Link>                
+                <Link href={`/licenses/add/${idPack}`} className={licensesAvailable > 0 ? "btn btn-outline-primary w-100" : "btn btn-outline-primary w-100 disabled"}>Add License ({licensesAvailable})</Link>
             </div>
         </Layout>
     );

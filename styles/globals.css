@@ -1,6 +1,7 @@
 body {
   font-family: "Roboto", sans-serif;
 }
+
 .app-container {
   min-height: 92dvh;
 }
@@ -22,60 +23,78 @@ body {
 .h-video-auto {
   height: 34vw;
 }
+
 .z-index-10 {
   z-index: 10;
 }
+
 .footer-icon-social-size {
   width: 1.5rem;
   height: auto;
 }
+
 .footer-icon-stream-size {
   width: 2rem;
   height: auto;
 }
+
 .logo-front {
   left: 5vw;
   top: 80vh;
   z-index: 10;
 }
+
 .icon-download-size {
   width: 3.5rem;
   height: auto;
 }
+
 .icon-nav-size {
   width: 1.5rem;
   height: auto;
 }
+
 .icon-pack-list-size {
   width: 1rem;
 }
+
 .features-icon-size {
   width: 4rem;
   height: auto;
 }
+
 .bg-auth {
   background-image: url("/bg-auth.jpg");
-  background-repeat: no-repeat; /* Prevents the image from repeating */
-  background-size: cover; /* Resizes the image to cover the container */
-  background-position: center; /* Centers the image within the container */
+  background-repeat: no-repeat;
+  /* Prevents the image from repeating */
+  background-size: cover;
+  /* Resizes the image to cover the container */
+  background-position: center;
+  /* Centers the image within the container */
 }
+
 .bg-main-nav {
   background-color: #212529;
 }
+
 .custom-w-card {
   max-width: 31%;
 }
+
 .w-fit-contain {
   width: fit-content;
 }
+
 .fix-pos-award {
   top: 1rem;
   right: 1rem;
   width: 4rem;
 }
+
 .fs-7 {
   font-size: 0.8rem;
 }
+
 .text-justify {
   text-align: justify;
 }
@@ -127,10 +146,12 @@ body {
   border: 2px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
 }
+
 .bg-blur input {
   background-color: rgba(255, 255, 255, 0.07);
   color: #fff;
 }
+
 .bg-blur input::placeholder {
   color: #fff;
 }
