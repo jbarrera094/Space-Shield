@@ -4,6 +4,7 @@ import {
   faYoutube,
   faWhatsapp,
   faTelegram,
+  faLinkedin
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -79,6 +80,16 @@ function Document() {
                     >
                       <FontAwesomeIcon
                         icon={faTelegram}
+                        className="footer-icon-social-size my-auto me-2"
+                      />
+                    </Link>
+                    <Link
+                      href="http://www.linkedin.com/in/lpscad"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <FontAwesomeIcon
+                        icon={faLinkedin}
                         className="footer-icon-social-size my-auto me-2"
                       />
                     </Link>

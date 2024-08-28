@@ -64,7 +64,7 @@ async function create(params) {
   const saved_user = await user.save();
 
   // get a saved user
-  console.log(saved_user);
+  // console.log(saved_user);
 
   // create a default package for this user
   const currentDate = new Date();

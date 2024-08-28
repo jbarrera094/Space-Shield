@@ -12,6 +12,10 @@ const nextConfig = {
     secret: process.env.SECRET_PHRASE,
     stripe_secret_key: process.env.STRIPE_SECRET_KEY,
     stripe_webhook_secret: process.env.STRIPE_WEBHOOK_SECRET,
+    mail_service: {
+      email: process.env.EMAIL_SERVICE,
+      password: process.env.PASSWORD_EMAIL_SERVICE,
+    },
   },
   publicRuntimeConfig: {
     apiUrl: "https://lpscad.bsenergy.co/api",

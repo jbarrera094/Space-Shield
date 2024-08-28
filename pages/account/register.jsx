@@ -18,7 +18,14 @@ function Register() {
     lastName: Yup.string().required("Last Name is required"),
     email: Yup.string()
       .email("Not a proper email")
-      .required("email is required"),
+      .required("email is required")
+      .test("valid-domain", "Invalid email domain", (value) => {
+        if (value) {
+          const forbiddenDomainsRegex = /@(lpscad\.|bsenergy\.)/i;
+          return !forbiddenDomainsRegex.test(value);
+        }
+        return true;
+      }),
     password: Yup.string()
       .required("Password is required")
       .min(6, "Password must be at least 6 characters"),
@@ -60,9 +67,8 @@ function Register() {
                 name="firstName"
                 type="text"
                 {...register("firstName")}
-                className={`form-control ${
-                  errors.firstName ? "is-invalid" : ""
-                }`}
+                className={`form-control ${errors.firstName ? "is-invalid" : ""
+                  }`}
               />
               <div className="invalid-feedback">
                 {errors.firstName?.message}
@@ -74,9 +80,8 @@ function Register() {
                 name="lastName"
                 type="text"
                 {...register("lastName")}
-                className={`form-control ${
-                  errors.lastName ? "is-invalid" : ""
-                }`}
+                className={`form-control ${errors.lastName ? "is-invalid" : ""
+                  }`}
               />
               <div className="invalid-feedback">{errors.lastName?.message}</div>
             </div>
@@ -96,9 +101,8 @@ function Register() {
                 name="password"
                 type="password"
                 {...register("password")}
-                className={`form-control ${
-                  errors.password ? "is-invalid" : ""
-                }`}
+                className={`form-control ${errors.password ? "is-invalid" : ""
+                  }`}
               />
               <div className="invalid-feedback">{errors.password?.message}</div>
             </div>
@@ -108,9 +112,8 @@ function Register() {
                 name="passwordConfirmation"
                 type="password"
                 {...register("passwordConfirmation")}
-                className={`form-control ${
-                  errors.passwordConfirmation ? "is-invalid" : ""
-                }`}
+                className={`form-control ${errors.passwordConfirmation ? "is-invalid" : ""
+                  }`}
               />
               <div className="invalid-feedback">
                 {errors.passwordConfirmation?.message}
@@ -121,9 +124,8 @@ function Register() {
                 name="checkTermCondition"
                 type="checkbox"
                 {...register("checkTermCondition")}
-                className={`form-check-input ${
-                  errors.password ? "is-invalid" : ""
-                }`}
+                className={`form-check-input ${errors.password ? "is-invalid" : ""
+                  }`}
               />
               <label
                 className="form-check-label text-white"

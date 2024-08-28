@@ -137,7 +137,7 @@ async function firstContact(params) {
   const data = "";
 
   const mailOptionsTest = {
-    from: "info@spaceshield.co",
+    from: "info@lpscad.bsenergy.co",
     to: params.email,
   };
 
@@ -161,7 +161,7 @@ async function resetPassword(params) {
   };
 
   const mailOptionsTest = {
-    from: "info@spaceshield.co",
+    from: "info@lpscad.bsenergy.co",
     to: params.email,
   };
 

@@ -55,7 +55,7 @@ function Index() {
 
     return (
         <Layout>
-            <h1>Licenses</h1>
+            <h1 className='mt-4'>Licenses</h1>
             <span>Please select a license package</span>
 
             {/** -------------------------------------- Select Pack of Licenses -------------------------------------- */}
