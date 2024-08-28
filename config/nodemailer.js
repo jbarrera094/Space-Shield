@@ -1,7 +1,9 @@
 import nodemailer from "nodemailer";
+import getConfig from "next/config";
 
-const email = process.env.EMAIL_SERVICE;
-const password = process.env.PASSWORD_EMAIL_SERVICE;
+const { serverRuntimeConfig } = getConfig();
+
+const { email, password } = serverRuntimeConfig.mail_service;
 
 
 export const transporter = nodemailer.createTransport({
