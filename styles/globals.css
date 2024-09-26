@@ -114,6 +114,14 @@ body {
   }
 }
 
+.w-10rem {
+  width: 10rem;
+}
+
+.w-20rem {
+  width: 20rem;
+}
+
 /*
  *  STYLE scrollbar
  */
@@ -158,4 +166,43 @@ body {
 
 .tiny-placeholder::placeholder {
   font-size: 0.8rem;
+}
+
+.custom-status-position {
+  position: absolute;
+  z-index: 10;
+  top: 12%;
+  left: 0;
+  width: 100dvw;
+
+  @media screen and (max-width: 767px) {
+    top: 10%;
+  }
+}
+
+.form-switch .form-check-input:checked {
+  background-color: #22C55E;
+  border-color: #22C55E;
+}
+
+.form-switch .form-check-input:focus {
+  border-color: #22C55E;
+}
+
+.form-switch .form-check-input:disabled {
+  opacity: 1;
+}
+
+.form-check-input[disabled]~.form-check-label,
+.form-check-input:disabled~.form-check-label {
+  opacity: 1;
+}
+
+.status-label {
+  font-size: 0.8rem;
+
+  @media screen and (min-width: 767px) {
+    font-size: 1rem;
+    font-weight: 500;
+  }
 }

@@ -13,6 +13,9 @@ function jwtMiddleware(req, res) {
   }).unless({
     path: [
       // public routes that don't require authentication
+      "/api/contentful/news/en-US",
+      "/api/contentful/news/es-CO",
+      "/api/contentful/status",
       "/api/users/register",
       "/api/mails/firstContact",
       "/api/mails/resetPassword",

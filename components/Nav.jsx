@@ -124,7 +124,7 @@ function Nav() {
           </ul>
 
           <div className="dropdown">
-            <button className="btn btn-outline-light d-hiden-movile dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <button className="btn btn-outline-light d-hiden-movile dropdown-toggle w-10rem" type="button" data-bs-toggle="dropdown" aria-expanded="false">
               Free Download
             </button>
             <ul className="dropdown-menu">

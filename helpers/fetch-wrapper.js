@@ -36,9 +36,8 @@ function authHeader(url, body) {
   if (isLoggedIn && isApiUrl) {
     return { Authorization: `Bearer ${user.token}` };
   } else {
-    if (isApiUrl) {
-      const token = body.token;
-      return { Authorization: `Bearer ${token}` };
+    if (isApiUrl && body?.token) {
+      return { Authorization: `Bearer ${body.token}` };
     } else {
       return {};
     }

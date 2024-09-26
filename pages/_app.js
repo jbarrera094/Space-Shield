@@ -80,9 +80,8 @@ function App({ Component, pageProps }) {
       </Head>
 
       <div
-        className={`app-container ${
-          customBg.includes(router.pathname) ? "bg-auth" : "bg-light"
-        }`}
+        className={`app-container ${customBg.includes(router.pathname) ? "bg-auth" : "bg-light"
+          }`}
       >
         <Alert />
         {authorized && <Component {...pageProps} />}

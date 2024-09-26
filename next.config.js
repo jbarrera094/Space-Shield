@@ -16,6 +16,8 @@ const nextConfig = {
       email: process.env.EMAIL_SERVICE,
       password: process.env.PASSWORD_EMAIL_SERVICE,
     },
+    contentful_space_id: process.env.CONTENTFUL_SPACE_ID,
+    contentful_access_token: process.env.CONTENTFUL_ACCESS_TOKEN,
   },
   publicRuntimeConfig: {
     apiUrl: "https://lpscad.bsenergy.co/api",

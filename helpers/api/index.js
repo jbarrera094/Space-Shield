@@ -7,3 +7,4 @@ export * from "./packs-repo";
 export * from "./licenses-repo";
 export * from "./mails-repo";
 export * from "./stripe-repo";
+export * from "./contentful-repo";

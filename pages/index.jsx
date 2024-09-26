@@ -1,13 +1,14 @@
 import Carousel from "components/Carousel";
+import Status from "components/Status";
 import {
   faCircleDollarToSlot,
   faGaugeHigh,
   faStar,
-  faCloudDownload,
 } from "@fortawesome/free-solid-svg-icons";
-import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Link from "next/link";
 import VideoTutorial from "./sections/videoTutorial";
+import News from "./sections/news";
 
 export default Home;
 
@@ -16,6 +17,26 @@ function Home() {
     <div>
       <Carousel />
 
+      <Status />
+
+      <section className="bg-white w-100 py-5">
+        <VideoTutorial />
+      </section>
+
+      <div className="mx-4">
+        <hr />
+      </div>
+
+      {/* News */}
+      <section className="w-100 py-5">
+        <News />
+      </section>
+
+      <div className="mx-4">
+        <hr />
+      </div>
+
+      {/* Features */}
       <section className="bg-white w-100 py-5">
         <div className="container">
           <div className="d-flex justify-content-center">
@@ -71,28 +92,6 @@ function Home() {
       <div className="mx-4">
         <hr />
       </div>
-
-      <section className="bg-white w-100 py-5">
-        <VideoTutorial />
-      </section>
-
-      <div className="mx-4">
-        <hr />
-      </div>
-
-      {/* <section className="d-flex justify-content-center py-5">
-        <Link
-          type="button"
-          class="btn btn-success d-flex btn-lg fs-2"
-          href="/packages"
-        >
-          <FontAwesomeIcon
-            icon={faCloudDownload}
-            className="me-2 my-auto icon-download-size"
-          />
-          <span>Decargar y Comprar</span>
-        </Link>
-      </section> */}
 
       <section className="d-flex justify-content-center py-5">
         <div className="container">
