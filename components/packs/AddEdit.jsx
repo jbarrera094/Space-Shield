@@ -49,16 +49,15 @@ function AddEdit(props) {
       const pack = await packService.register(data);
 
       if (pack) {
-        console.log(pack);
         message = "License added";
         alertService.success(message, false);
         router.push(
           "/api/payment/checkout_sessions?idPack=" +
-            pack.idPack +
-            "&typePack=" +
-            typePack +
-            "&token=" +
-            userService.userValue?.token
+          pack.idPack +
+          "&typePack=" +
+          typePack +
+          "&token=" +
+          userService.userValue?.token
         );
       } else {
         alertService.error("Error with payment gateway", true);

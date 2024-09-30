@@ -59,7 +59,7 @@ body {
 }
 
 .features-icon-size {
-  width: 4rem;
+  width: 3rem;
   height: auto;
 }
 
@@ -173,7 +173,7 @@ body {
   z-index: 10;
   top: 12%;
   left: 0;
-  width: 100dvw;
+  width: 99dvw;
 
   @media screen and (max-width: 767px) {
     top: 10%;
@@ -181,20 +181,20 @@ body {
 }
 
 .form-switch .form-check-input:checked {
-  background-color: #22C55E;
-  border-color: #22C55E;
+  background-color: #22c55e;
+  border-color: #22c55e;
 }
 
 .form-switch .form-check-input:focus {
-  border-color: #22C55E;
+  border-color: #22c55e;
 }
 
 .form-switch .form-check-input:disabled {
   opacity: 1;
 }
 
-.form-check-input[disabled]~.form-check-label,
-.form-check-input:disabled~.form-check-label {
+.form-check-input[disabled] ~ .form-check-label,
+.form-check-input:disabled ~ .form-check-label {
   opacity: 1;
 }
 
@@ -204,5 +204,27 @@ body {
   @media screen and (min-width: 767px) {
     font-size: 1rem;
     font-weight: 500;
+  }
+}
+
+.card-text {
+  font-size: 0.8rem;
+
+  @media screen and (min-width: 1536px) {
+    font-size: 1rem;
+  }
+}
+
+.card-title {
+  font-size: 1.2rem;
+
+  @media screen and (min-width: 1536px) {
+    font-size: 1.5rem;
+  }
+}
+
+.h-md-50 {
+  @media screen and (min-width: 767px) {
+    height: 50%;
   }
 }
