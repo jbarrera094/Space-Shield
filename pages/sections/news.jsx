@@ -110,7 +110,13 @@ export default function News() {
                       >
                         {/* Icono */}
                         {className === "text-warning" ? (
-                          <CalendarStar />
+                          // <CalendarStar />
+                          <Image
+                            src="/star-icon.svg"
+                            width={24}
+                            height={24}
+                            alt="star"
+                          />
                         ) : (
                           <FontAwesomeIcon icon={icon} />
                         )}

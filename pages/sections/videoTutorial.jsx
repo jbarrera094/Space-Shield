@@ -22,14 +22,14 @@ export default function VideoTutorial() {
               <div className="card h-100 text-center shadow">
                 <div className="card-body align-content-center">
                   <FontAwesomeIcon
-                    icon={faShieldHalved}
+                    icon={faGaugeHigh}
                     className="features-icon-size text-info"
                   />
                   <h5 className="card-title fw-bold pb-1">
-                    Increases Performance
+                    Boost Productivity
                   </h5>
                   <p className="card-text">
-                    Ensure greater safety for life, goods, and services.
+                    Complex designs done in minutes, not days!
                   </p>
                 </div>
               </div>
@@ -44,8 +44,8 @@ export default function VideoTutorial() {
                   />
                   <h5 className="card-title fw-bold pb-1">Optimize Costs</h5>
                   <p className="card-text">
-                    Increase productivity, lower infrastructure investment
-                    costs, and empower your design professionals.
+                    Reduce infrastructure costs, optimize processes and save
+                    valuable time invested in design.
                   </p>
                 </div>
               </div>
@@ -57,12 +57,12 @@ export default function VideoTutorial() {
               <div className="card h-100 text-center shadow">
                 <div className="card-body align-content-center">
                   <FontAwesomeIcon
-                    icon={faStar}
+                    icon={faShieldHalved}
                     className="features-icon-size text-info"
                   />
-                  <h5 className="card-title fw-bold pb-1">Higher Quality</h5>
+                  <h5 className="card-title fw-bold pb-1">Enhance Safety</h5>
                   <p className="card-text">
-                    Stand out in the market with 3D models representation.
+                    Protect lives, assets and services effectively.
                   </p>
                 </div>
               </div>
@@ -72,14 +72,12 @@ export default function VideoTutorial() {
               <div className="card h-100 text-center shadow">
                 <div className="card-body align-content-center">
                   <FontAwesomeIcon
-                    icon={faGaugeHigh}
+                    icon={faStar}
                     className="features-icon-size text-info"
                   />
-                  <h5 className="card-title fw-bold pb-1">
-                    Increases Performance
-                  </h5>
+                  <h5 className="card-title fw-bold pb-1">Higher Quality</h5>
                   <p className="card-text">
-                    Accelerate productivity, speed up design tasks.
+                    Stand out in the market with 3D models representation.
                   </p>
                 </div>
               </div>
