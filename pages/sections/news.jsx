@@ -34,53 +34,55 @@ export default function News() {
 
   return (
     <div className="container-fluid">
-      <div className="d-flex justify-content-between mb-4">
-        <div className="opacity-0 d-none d-md-block">.</div>
-        <h2 className="fw-bold fs-4">Latest News</h2>
+      <div className="row mb-4">
+        <div className="opacity-0 d-none d-md-block col">.</div>
+        <h2 className="fw-bold fs-4 col text-center">Latest News</h2>
 
         {/* Language */}
-        <div className="btn-group">
-          <button
-            type="button"
-            className="btn btn-primary dropdown-toggle w-10rem"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            {language === "es-CO" ? "Español" : "English"}
-          </button>
+        <div className="col d-flex justify-content-end">
+          <div className="btn-group">
+            <button
+              type="button"
+              className="btn btn-primary dropdown-toggle w-10rem"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              {language === "es-CO" ? "Español" : "English"}
+            </button>
 
-          <ul className="dropdown-menu">
-            <li>
-              <button
-                className="dropdown-item d-flex align-items-center"
-                onClick={() => setLanguage("es-CO")}
-              >
-                <Image
-                  src="/es-flag.svg"
-                  alt="es-flag"
-                  width={28}
-                  height={28}
-                  className="me-2"
-                />
-                <span>Español</span>
-              </button>
-            </li>
-            <li>
-              <button
-                className="dropdown-item d-flex align-items-center"
-                onClick={() => setLanguage("en-US")}
-              >
-                <Image
-                  src="/uk-flag.svg"
-                  alt="uk-flag"
-                  width={28}
-                  height={28}
-                  className="me-2"
-                />
-                <span>English</span>
-              </button>
-            </li>
-          </ul>
+            <ul className="dropdown-menu">
+              <li>
+                <button
+                  className="dropdown-item d-flex align-items-center"
+                  onClick={() => setLanguage("es-CO")}
+                >
+                  <Image
+                    src="/es-flag.svg"
+                    alt="es-flag"
+                    width={28}
+                    height={28}
+                    className="me-2"
+                  />
+                  <span>Español</span>
+                </button>
+              </li>
+              <li>
+                <button
+                  className="dropdown-item d-flex align-items-center"
+                  onClick={() => setLanguage("en-US")}
+                >
+                  <Image
+                    src="/uk-flag.svg"
+                    alt="uk-flag"
+                    width={28}
+                    height={28}
+                    className="me-2"
+                  />
+                  <span>English</span>
+                </button>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
 
@@ -116,6 +118,7 @@ export default function News() {
                             width={24}
                             height={24}
                             alt="star"
+                            className="mx-auto"
                           />
                         ) : (
                           <FontAwesomeIcon icon={icon} />
