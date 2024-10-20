@@ -36,7 +36,7 @@ export default function News() {
     <div className="container-fluid">
       <div className="row mb-4">
         <div className="opacity-0 d-none d-md-block col">.</div>
-        <h2 className="fw-bold fs-4 col text-center">~ Latest News ~</h2>
+        <h2 className="fw-bold fs-4 col text-center">Latest News</h2>
 
         {/* Language */}
         <div className="col d-flex justify-content-end">
