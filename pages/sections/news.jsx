@@ -125,7 +125,7 @@ export default function News() {
                         )}
                       </span>
                     ) : (
-                      <span className="fa-layers fa-fw h-100 d-flex flex-column justify-content-center fs-4">
+                      <span className="fa-layers fa-fw h-100 d-flex flex-column justify-content-center fs-4 mx-auto">
                         {/* Triángulo amarillo */}
                         <FontAwesomeIcon
                           icon={faPlay}
