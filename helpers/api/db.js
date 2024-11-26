@@ -120,20 +120,17 @@ function packModel(sequelize) {
       primaryKey: true,
     },
     id_user: { type: DataTypes.BIGINT, allowNull: false },
-    alias: { type: DataTypes.STRING, allowNull: false },
+    alias: { type: DataTypes.STRING, allowNull: false, unique: true },
     paid: { type: DataTypes.BOOLEAN, allowNull: true, defaultValue: false },
     licenses_available: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-      defaultValue: 1,
+      allowNull: true,
     },
     sessionIdStripe: { type: DataTypes.STRING, allowNull: true },
     expiration_date: {
       type: DataTypes.DATE,
       allowNull: false,
-      defaultValue: Sequelize.literal(
-        `DATE_ADD(CURRENT_DATE, INTERVAL 45 DAY)`
-      ),
+      defaultValue: Sequelize.literal(`DATE_SUB(CURRENT_DATE, INTERVAL 5 DAY)`),
     },
     createdAtTimeCol: { type: DataTypes.STRING, allowNull: false },
   };
@@ -161,10 +158,10 @@ function licenseModel(sequelize) {
       defaultValue: false,
     },
     s43ghr: { type: DataTypes.INTEGER, allowNull: true, defaultValue: 0 },
-    l88hgnb9m: { type: DataTypes.STRING, allowNull: true, defaultValue: "NA" },
-    l87ybf5p: { type: DataTypes.STRING, allowNull: true, defaultValue: "NA" },
-    lhf838os: { type: DataTypes.STRING, allowNull: true, defaultValue: "NA" },
-    p8326h77n: { type: DataTypes.STRING, allowNull: true, defaultValue: "NA" },
+    l88hgnb9m: { type: DataTypes.STRING, allowNull: true, defaultValue: "" },
+    l87ybf5p: { type: DataTypes.STRING, allowNull: true, defaultValue: "" },
+    lhf838os: { type: DataTypes.STRING, allowNull: true, defaultValue: "" },
+    p8326h77n: { type: DataTypes.STRING, allowNull: true, defaultValue: "" },
     s23hjg8t: {
       type: DataTypes.DATE,
       allowNull: true,
@@ -195,9 +192,9 @@ function licenseModel(sequelize) {
       allowNull: true,
       defaultValue: new Date(new Date().getTime() - 24 * 60 * 60 * 1000),
     },
-    y55232jps7: { type: DataTypes.INTEGER, allowNull: true, defaultValue: 37 },
-    j8h38ff2v: { type: DataTypes.BOOLEAN, allowNull: true, defaultValue: true },
-    pik87678fh3: { type: DataTypes.INTEGER, allowNull: true, defaultValue: 73 },
+    y55232jps7: { type: DataTypes.INTEGER, allowNull: true },
+    j8h38ff2v: { type: DataTypes.INTEGER, allowNull: true },
+    pik87678fh3: { type: DataTypes.INTEGER, allowNull: true },
   };
 
   const options = {};

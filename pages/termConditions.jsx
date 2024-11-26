@@ -226,10 +226,10 @@ function TermConditions() {
         <h2 className="fs-2 fw-bold">Privacy Policy</h2>
         <p>
           When making purchases through our websites, we use payment processors
-          (Mercado Pago and PayPal) and do not store credit card information or
-          other financial data (apart from payment confirmation for a specific
-          amount). We or our payment processors collect contact and account
-          information from the user to facilitate the transaction.
+          (Stripe) and do not store credit card information or other financial
+          data (apart from payment confirmation for a specific amount). We or
+          our payment processors collect contact and account information from
+          the user to facilitate the transaction.
         </p>
         <p>
           We collect information directly from the user, for example, when
