@@ -129,8 +129,7 @@ function packModel(sequelize) {
     sessionIdStripe: { type: DataTypes.STRING, allowNull: true },
     expiration_date: {
       type: DataTypes.DATE,
-      allowNull: false,
-      defaultValue: Sequelize.literal(`DATE_SUB(CURRENT_DATE, INTERVAL 5 DAY)`),
+      allowNull: true,
     },
     createdAtTimeCol: { type: DataTypes.STRING, allowNull: false },
   };
