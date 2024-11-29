@@ -228,3 +228,7 @@ body {
     height: 50%;
   }
 }
+
+.top-6 {
+  top: 6rem;
+}

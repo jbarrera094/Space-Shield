@@ -39,10 +39,11 @@ function Nav() {
 
   return (
     <nav
-      className={`navbar navbar-expand-lg py-2 px-md-5 position-absolute top-0 start-0 z-index-10 w-100 ${customBg.includes(router.pathname)
-        ? "bg-dark bg-opacity-50"
-        : "bg-main-nav"
-        }`}
+      className={`navbar navbar-expand-lg py-2 px-md-5 position-absolute top-0 start-0 z-1 w-100 ${
+        customBg.includes(router.pathname)
+          ? "bg-dark bg-opacity-50"
+          : "bg-main-nav"
+      }`}
     >
       <div className="container-fluid">
         <NavLink className="navbar-brand text-white d-flex " exact href="/">
@@ -55,7 +56,9 @@ function Nav() {
           />
           <div className="ms-1 d-flex flex-column">
             <span className="fs-4">LPS CAD</span>
-            <span style={{ marginTop: '-0.5rem', fontSize: '0.75rem' }}>3D Lightning Protection System</span>
+            <span style={{ marginTop: "-0.5rem", fontSize: "0.75rem" }}>
+              3D Lightning Protection System
+            </span>
           </div>
         </NavLink>
         <button
@@ -91,8 +94,8 @@ function Nav() {
                 !user
                   ? "d-none"
                   : user.licenses_available > 0
-                    ? "btn btn-link nav-item nav-link text-white"
-                    : "d-none"
+                  ? "btn btn-link nav-item nav-link text-white"
+                  : "d-none"
               }
             >
               Licencias
@@ -124,12 +127,25 @@ function Nav() {
           </ul>
 
           <div className="dropdown">
-            <button className="btn btn-outline-light d-hiden-movile dropdown-toggle w-10rem" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <button
+              className="btn btn-outline-light d-hiden-movile dropdown-toggle w-10rem"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
               Free Download
             </button>
             <ul className="dropdown-menu">
-              <li><a className="dropdown-item" href="/LPS.zip">Download Setup</a></li>
-              <li><a className="dropdown-item" href="/LPS_ManualInstallation.zip">Manual Installer</a></li>
+              <li>
+                <a className="dropdown-item" href="/LPS.zip">
+                  Download Setup
+                </a>
+              </li>
+              <li>
+                <a className="dropdown-item" href="/LPS_ManualInstallation.zip">
+                  Manual Installer
+                </a>
+              </li>
             </ul>
           </div>
 

@@ -80,7 +80,6 @@ async function create(params) {
     alias: saved_user.email,
     paid: true,
     licenses_available: 1,
-    expiration_date: "",
     createdAtTimeCol: formattedDateTime,
   });
 

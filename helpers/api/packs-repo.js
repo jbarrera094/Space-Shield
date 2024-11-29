@@ -50,6 +50,9 @@ async function create(params) {
       .replace("T", " ");
     params["createdAtTimeCol"] = formattedDateTime;
 
+    // remove expiration_date from params before saving
+    delete params.expiration_date;
+
     const pack = new db.Pack(params);
 
     // Update licenses available
@@ -76,7 +79,7 @@ async function update(id, params) {
   if (!pack) throw "Pack not found";
   if (
     await db.Pack.findOne({
-      where: { alias: params.alias, id_user: params.id_user },
+      where: { alias: params.alias },
     })
   ) {
     throw 'Pack "' + params.alias + '" is already taken';
