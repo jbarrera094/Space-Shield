@@ -39,7 +39,7 @@ function Nav() {
 
   return (
     <nav
-      className={`navbar navbar-expand-lg py-2 px-md-5 position-absolute top-0 start-0 z-1 w-100 ${
+      className={`navbar navbar-expand-lg py-2 px-md-5 position-absolute top-0 start-0 w-100 hero-nav ${
         customBg.includes(router.pathname)
           ? "bg-dark bg-opacity-50"
           : "bg-main-nav"
@@ -126,7 +126,7 @@ function Nav() {
             </NavLink>
           </ul>
 
-          <div className="dropdown">
+          <div className="dropdown free-download-cta">
             <button
               className="btn btn-outline-light d-hiden-movile dropdown-toggle w-10rem"
               type="button"
