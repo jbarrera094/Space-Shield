@@ -2,6 +2,7 @@ import Carousel from "components/Carousel";
 import Status from "components/Status";
 import VideoTutorial from "./sections/videoTutorial";
 import News from "./sections/news";
+import BentoGrid from "./sections/bentoGrid";
 import Contact from "./sections/contact";
 
 export default Home;
@@ -21,6 +22,8 @@ function Home() {
         </div>
 
         <News />
+
+        <BentoGrid />
 
         <div className="mx-4">
           <hr />

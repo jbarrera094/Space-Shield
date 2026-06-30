@@ -1,6 +1,7 @@
 import {
   faCircleDollarToSlot,
   faGaugeHigh,
+  faListCheck,
   faShieldHalved,
   faStar,
 } from "@fortawesome/free-solid-svg-icons";
@@ -62,7 +63,9 @@ export default function VideoTutorial() {
                   />
                   <h5 className="card-title fw-bold pb-1">Enhance Safety</h5>
                   <p className="card-text">
-                    Protect lives, assets and services effectively.
+                    Supports <strong>Rolling Sphere</strong>,{" "}
+                    <strong>Protection Angle</strong>, and{" "}
+                    <strong>Early Streamer</strong>
                   </p>
                 </div>
               </div>
@@ -72,12 +75,14 @@ export default function VideoTutorial() {
               <div className="card h-100 text-center shadow">
                 <div className="card-body align-content-center">
                   <FontAwesomeIcon
-                    icon={faStar}
+                    icon={faListCheck}
                     className="features-icon-size text-info"
                   />
-                  <h5 className="card-title fw-bold pb-1">Higher Quality</h5>
+                  <h5 className="card-title fw-bold pb-1">
+                    International Standards
+                  </h5>
                   <p className="card-text">
-                    Stand out in the market with 3D models representation.
+                    IEC 62305, NFPA 780, NTC 4552, CTE SUA.
                   </p>
                 </div>
               </div>

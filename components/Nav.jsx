@@ -94,8 +94,8 @@ function Nav() {
                 !user
                   ? "d-none"
                   : user.licenses_available > 0
-                  ? "btn btn-link nav-item nav-link text-white"
-                  : "d-none"
+                    ? "btn btn-link nav-item nav-link text-white"
+                    : "d-none"
               }
             >
               Licencias
@@ -108,7 +108,7 @@ function Nav() {
             >
               Logout
             </button>
-            <NavLink
+            {/* <NavLink
               className={
                 user ? "d-none" : "btn btn-link nav-item nav-link text-white"
               }
@@ -123,7 +123,7 @@ function Nav() {
               href="/account/register"
             >
               Register
-            </NavLink>
+            </NavLink>*/}
           </ul>
 
           <div className="dropdown free-download-cta">
