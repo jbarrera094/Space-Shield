@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { contentfulService } from "services";
 
 export default function Status() {
-  const [aplicationStatus, setAplicationStatus] = useState(false);
+  const [aplicationStatus, setAplicationStatus] = useState(true);
   const [freeTrialStatus, setFreeTrialStatus] = useState(false);
 
   useEffect(() => {
