@@ -59,6 +59,14 @@ function Document() {
               <div className="my-auto d-none d-md-block col-md-4 text-center">
                 <span> © Copyright {new Date().getFullYear()} LPS CAD.</span>
               </div>
+              <div className="col-12 text-center mt-3">
+              <a
+                href="/termConditions"
+                className="text-white text-decoration-underline"
+              >
+                Terms, Privacy & Refund Policy
+              </a>
+              </div>
 
               <div className="my-auto col-12 col-md-4 my-auto">
                 <div className="d-flex flex-column justify-content-center text-center text-decoration-none">
