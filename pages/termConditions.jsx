@@ -5,259 +5,546 @@ function TermConditions() {
     <div className="mt-5">
       <div className="container pt-3">
         <h1 className="fs-2 fw-bold">General Terms and Conditions</h1>
+
+        <p>
+          Last updated: August 2026.
+        </p>
+
         <h2 className="fs-3 fw-bold">1. Acceptance</h2>
+
         <p>
-          By accepting these General Terms and Conditions during the
-          registration or subscription process of your account, as well as by
-          using or accessing our Services, you confirm your acceptance of these
-          General Terms and Conditions and any other applicable Terms and
-          Conditions, and agree to be bound by this binding contract. If you do
-          not agree to these Terms and Conditions, you should not access or use
-          our Services.
+          By registering for, subscribing to, accessing, or using LPS CAD and its
+          related services (the &quot;Service&quot;), you confirm that you have read,
+          understood, and accepted these General Terms and Conditions and any
+          additional terms that may apply to a specific offer or subscription.
+          If you do not agree to these Terms and Conditions, you should not access
+          or use the Service.
         </p>
+
         <p>
-          You accept these Terms and Conditions on behalf of the company or
-          other legal entity on whose behalf you are acting (e.g., as an
-          employee or contractor), or if there is no such company or legal
-          entity, on your own behalf (in any case, &quot;you&quot; or
-          &quot;your&quot;). You represent and warrant that you have the
-          authority and the power (as well as the capacity, for example, being
-          of sufficient legal age) to act on your own behalf and on behalf of
-          such entity, and to bind it (if applicable).
+          The Service is currently intended primarily for businesses and
+          professionals. If you accept these Terms and Conditions on behalf of a
+          company or other legal entity, you represent that you have the authority
+          to bind that entity. If you act on your own behalf, you represent that
+          you have the legal capacity to enter into this agreement.
         </p>
+
+        <p>
+          Nothing in these Terms and Conditions limits any rights that cannot be
+          excluded or restricted under applicable mandatory law.
+        </p>
+
         <h2 className="fs-3 fw-bold">
-          2. Terms and Conditions, Special Offers, Renewals, and Payments
+          2. Offers, Subscriptions, Renewals, and Payments
         </h2>
+
         <p>
-          Some offers may be subject to special terms and conditions that are
-          set forth in the Special Terms and Conditions for each offer, if
-          applicable. You agree to the Special Terms and Conditions, if any, of
-          any offer to which you subscribe, access, or use.
+          Some offers may be subject to additional conditions that will be shown
+          before purchase. The price, billing period, currency, included features,
+          and other relevant subscription details will be presented before the
+          customer completes the order.
         </p>
+
         <p>
-          Each subscription to an offer is for a fixed and limited period of
-          time (the &quot;Offer Period&quot;). The duration of the Offer Period
-          will be indicated in the Offer Identification.
+          Subscriptions may be monthly, annual, or for another billing period
+          expressly indicated at the time of purchase. Unless otherwise stated,
+          recurring subscriptions automatically renew for successive billing
+          periods until cancelled.
         </p>
-        <p>
-          Some subscriptions may automatically renew. If you wish to cancel any
-          automatic renewal, please contact us via email to make the request.
-        </p>
-        {/* <p>The subscription price is based on EUR and is updated every Sunday according to Google Finance. This pricing model ensures that our customers receive the most accurate and up-to-date information regarding the cost of their subscriptions.</p>
-                <p>By relying on the data provided by Google Finance, we ensure that the pricing information reflects the current market conditions and currency exchange rates. This allows us to offer fair and competitive pricing to our customers who subscribe to our services.</p>
-                <p>The weekly updates provide transparency and flexibility, allowing our customers to make informed decisions based on the most recent pricing information available. We understand the importance of staying updated in a dynamic market environment, and our partnership with Google Finance enables us to deliver reliable and timely information to our subscribers.</p>
-                <p>It`&apos;`s worth noting that the subscription price is denominated in EUR, the common currency used in many European countries. This standardization allows us to cater to a broader customer base and simplify the pricing process. However, we also consider currency exchange rates to ensure that customers from different regions have a clear understanding of the subscription cost in their local currency.</p>
-                <p>At our company, we prioritize transparency, accuracy, and responsiveness in providing subscription pricing information. By leveraging the resources and expertise of Google Finance, we aim to offer a seamless and reliable subscription experience for our customers, allowing them to stay updated with the latest pricing information in their preferred currency.</p> */}
+
         <div className="ps-4">
           <h3 className="fs-4 fw-bold">2.1. Payment processing</h3>
+
           <p>
-            Payments are made through the web platform using the links and
-            buttons defined for this purpose, which will redirect you to the
-            Mercado Pago and PayPal platforms.
+            LPS CAD may use different payment and billing providers depending on
+            the date and channel through which a subscription was purchased.
+            Existing subscriptions may continue to be processed through Stripe,
+            while new subscriptions may be processed through Paddle.
           </p>
-          <h3 className="fs-4 fw-bold">2.2. Online payment processing</h3>
+
           <p>
-            The licenses obtained will be granted for administration within a
-            maximum period of 24 hours after payment. If this time is exceeded,
-            please use the following link to contact us to resolve any
-            unforeseen issues.
+            For subscriptions processed through Stripe, Stripe provides payment
+            processing services. Unless otherwise expressly stated in the
+            applicable checkout or invoice, the legal provider of LPS CAD remains
+            responsible for providing the Service to the customer.
           </p>
+
+          <p>
+            For purchases processed through Paddle, Paddle acts as the authorized
+            reseller and Merchant of Record for the transaction. This means that
+            the customer purchases the subscription transaction from Paddle,
+            while LPS CAD remains responsible for providing, operating, and
+            supporting the software Service. Paddle is responsible for the
+            transaction, payment collection, applicable transaction taxes,
+            transaction receipts or invoices, and other payment-related matters
+            within the scope of its Merchant of Record service.
+          </p>
+
+          <p>
+            The payment provider applicable to a particular subscription will be
+            identifiable from the checkout, payment confirmation, receipt, invoice,
+            or billing communication associated with that subscription.
+          </p>
+
+          <p>
+            LPS CAD does not store complete payment card numbers. Payment
+            credentials are collected and processed by the applicable payment
+            provider according to its own security and privacy practices.
+          </p>
+
+          <h3 className="fs-4 fw-bold">2.2. Service activation</h3>
+
+          <p>
+            Access to LPS CAD is activated manually after successful payment and
+            payment confirmation. Activation is therefore not instantaneous. We
+            will activate access as soon as reasonably possible after payment is
+            confirmed. If access has not been activated within a reasonable time,
+            please contact us through the support channels indicated on our
+            website.
+          </p>
+
           <h3 className="fs-4 fw-bold">2.3. Taxes and fees</h3>
+
           <p>
-            LPS CAD conducts electronic sales from the Republic of Colombia. BS
-            Energy and Automation is legally obligated to collect value-added
-            tax (VAT). This VAT may not be itemized during the payment process,
-            in which case it is included in the product price (price including
-            VAT).
+            For transactions processed through Paddle, Paddle acts as Merchant of
+            Record and is responsible for calculating, collecting, and remitting
+            applicable sales taxes, VAT, GST, or similar transaction taxes where
+            required. Depending on the customer&apos;s location and applicable
+            rules, taxes may be included in the displayed price or added during
+            checkout. Paddle provides the applicable transaction receipt or
+            invoice.
           </p>
-          <h3 className="fs-4 fw-bold">2.4. Renewals</h3>
+
           <p>
-            Subscriptions will be renewed periodically according to the
-            established time in the purchased package.
+            For existing subscriptions processed through Stripe, applicable taxes
+            and billing treatment will be determined according to the information
+            shown in the applicable checkout or invoice and the law applicable to
+            that transaction.
           </p>
-          <h3 className="fs-4 fw-bold">2.5. Upgrading my current package</h3>
+
           <p>
-            Upgrades to packages are made through the option available in the
-            account administration panel. If you decide to upgrade to a higher
-            package, the new validity date will start from the moment the
-            upgrade is made, and the price for the upgrade will be reduced by
-            the value of the remaining days in the current subscription period.
+            Business customers are responsible for providing accurate billing,
+            company, and tax identification information when requested. Each
+            customer remains responsible for its own accounting, reporting, and
+            tax obligations that are not transaction taxes collected by the
+            applicable payment provider.
+          </p>
+
+          <h3 className="fs-4 fw-bold">2.4. Renewals and cancellation</h3>
+
+          <p>
+            Recurring subscriptions renew automatically according to the billing
+            period selected at purchase unless they are cancelled before the next
+            renewal.
+          </p>
+
+          <p>
+            For existing subscriptions processed through Stripe, cancellation may
+            be requested by sending an email through the support channel indicated
+            on our website. These requests are processed manually. We recommend
+            submitting the request before the next scheduled renewal date. We will
+            confirm once the cancellation has been processed.
+          </p>
+
+          <p>
+            For subscriptions processed through Paddle, customers may manage or
+            cancel their subscription through the subscription management link or
+            buyer portal provided by Paddle in the purchase confirmation or
+            receipt. Unless otherwise required by law or expressly agreed,
+            cancellation stops future renewals and access continues until the end
+            of the already-paid billing period.
+          </p>
+
+          <h3 className="fs-4 fw-bold">2.5. Changes to a subscription</h3>
+
+          <p>
+            Upgrades, downgrades, changes in billing period, and other subscription
+            changes may be available depending on the plan and payment provider.
+            Any price adjustment, credit, proration, or new billing date applicable
+            to a change will be communicated before the change is completed or
+            reflected in the applicable billing system.
           </p>
         </div>
+
         <h2 className="fs-3 fw-bold">3. Refund Policy</h2>
+
         <p>
-          During a limited period of 15 days from the moment of purchase or
-          renewal, you will have the opportunity to generate a refund case by
-          notifying us via email through the following link [Contact Us]. Once
-          the case is generated, a response will be provided within the
-          following 5 business days. The refund request should demonstrate that
-          the reason for the refund is due to a major issue that could not be
-          overcome, such as technical, technological, or connectivity problems.
+          LPS CAD is currently offered primarily to businesses and professionals.
+          Except where mandatory law provides otherwise, payments are generally
+          non-refundable once access to the Service has been provided.
         </p>
+
+        <p>
+          As an additional service commitment, a customer may contact us within
+          15 calendar days of the affected initial purchase or renewal if a
+          material technical problem prevents reasonable use of the Service and
+          the problem cannot be resolved through reasonable technical support.
+          Refund requests are reviewed based on the circumstances of the case.
+        </p>
+
+        <p>
+          For transactions processed through Paddle, any refund must be processed
+          through Paddle. Paddle&apos;s Buyer Terms and Refund Policy apply to the
+          transaction, including any statutory withdrawal or refund rights that
+          may apply. LPS CAD may assist the customer with a product-related issue
+          or communicate an agreed refund request to Paddle, but LPS CAD will not
+          make a separate direct repayment for a transaction sold by Paddle.
+        </p>
+
+        <p>
+          For existing subscriptions processed through Stripe, eligible refunds,
+          if any, will be handled through the original payment channel whenever
+          reasonably possible.
+        </p>
+
+        <p>
+          Nothing in this Refund Policy limits mandatory rights that may apply to
+          a customer under applicable law. If a purchaser is legally considered a
+          consumer despite the business-oriented nature of the Service, any
+          non-waivable consumer rights remain fully applicable.
+        </p>
+
         <h2 className="fs-3 fw-bold">4. Account</h2>
+
         <p>
-          You are responsible for anyone who obtains, accesses, or uses the
-          Offers through you or your account (including your authorized users)
-          and their compliance with these Terms and Conditions as if each of
-          them were you. In certain cases, your authorized users may be required
-          to set up individual accounts or accept the applicable terms and
-          conditions to obtain, access, or use the Offers, but you remain
-          responsible. You also agree to protect and not share your user IDs or
-          passwords (except with authorized account administrators). If you
-          suspect unauthorized use of your account, please contact us [Contact
-          Us].
+          You are responsible for maintaining the confidentiality of your account
+          credentials and for activity performed through your account or by users
+          that you authorize. You must not share credentials with unauthorized
+          persons. If you suspect unauthorized access, please contact us as soon as
+          possible through the support channels indicated on our website.
         </p>
+
+        <p>
+          You are responsible for ensuring that the information associated with
+          your account is accurate and kept up to date, particularly billing,
+          company, and contact information.
+        </p>
+
         <h2 className="fs-3 fw-bold">5. Privacy</h2>
+
         <p>
-          LPS CAD is committed to protecting your privacy and informing you
-          about what will be done with your personal data. The Privacy Statement
-          sets out how personal data about you or related to you may be
-          collected, used, stored, and processed.
+          LPS CAD is committed to protecting personal data and providing
+          information about how personal data is collected, used, stored, and
+          otherwise processed. The Privacy Policy included below forms part of the
+          information made available to users of the Service.
         </p>
+
         <h2 className="fs-3 fw-bold">6. Trial Versions</h2>
+
         <p>
-          Trial versions that enable all the full features of the program are
-          managed directly by LPS CAD and must be acquired through email by
-          using the contact form [Contact Us]. Trial periods and access keys
-          will be agreed upon for this purpose.
+          Trial versions or temporary access may be offered directly by LPS CAD.
+          The duration, functionality, limitations, and access conditions of a
+          trial will be communicated when the trial is granted. Unless expressly
+          stated otherwise, trial access does not guarantee continued access after
+          the trial period ends.
         </p>
+
         <h2 className="fs-3 fw-bold">7. Usage Limitations</h2>
+
         <p>
-          LPS CAD is a tool intended solely to assist you with your design,
-          analysis, simulation, estimation, verification, and other activities,
-          and it is not a substitute for your professional judgment or your own
-          independent design, analysis, simulation, estimation, verification, or
-          other activities, including, for example, those related to the
-          strength, safety, and utility of the product. You acknowledge that
-          this tool may not have been designed or tested for your specific use,
-          and the tool and the result may not be as desired due to their
-          limitations. It is your responsibility to (a) determine whether the
-          use of the tool is appropriate for your purposes, (b) determine the
-          appropriate use of the tool, and (c) select the tool and other
-          computer programs and materials, in each case, to help achieve the
-          intended product or result. You also acknowledge that, between you and
-          LPS CAD (BS Energy and Automation), you are solely responsible for (i)
-          your use of the tools (including your authorized users) and any
-          product produced by the tool, including any result, and (ii)
-          establishing the adequacy of independent procedures for testing the
-          reliability, safety, accuracy, integrity, compliance with applicable
-          legal requirements and industry standards, and other characteristics
-          of any result, including ideas, recommendations, and all elements
-          designed with the help of the tool. BS Energy and Automation will not
-          be liable or have any obligation in any case for the results obtained
-          through the use of the tool, including any result.
+          LPS CAD is a tool intended to assist users with design, analysis,
+          simulation, estimation, verification, and related professional
+          activities. It is not a substitute for professional judgment,
+          independent engineering review, verification, testing, or compliance
+          with applicable laws, regulations, codes, standards, or project-specific
+          requirements.
         </p>
+
+        <p>
+          Users are responsible for determining whether the Service is appropriate
+          for their intended purpose, reviewing and validating outputs, and
+          establishing adequate independent procedures to verify the reliability,
+          safety, accuracy, integrity, and suitability of any result produced with
+          the assistance of the Service. Users remain responsible for decisions,
+          designs, calculations, documents, products, or other results created or
+          used with the assistance of LPS CAD.
+        </p>
+
         <h2 className="fs-3 fw-bold">
           8. Limited Warranty, Disclaimers, and Limitations of Liability
         </h2>
+
         <p>
-          LPS CAD shall have no liability (directly or indirectly) for
-          incidental, special, indirect, consequential, or punitive damages; for
-          loss of profits or revenue; for business interruption or loss of use;
-          for the cost of acquiring substitute goods or services or other
-          coverage; for failures or defects in the result; for the loss, damage,
-          or deletion (or failure to delete) of data or its content; or for
-          damages resulting from force majeure. The liability of LPS CAD will in
-          no event exceed the amount paid for the software license, subject to a
-          case study according to what is mentioned in section 3.
+          To the maximum extent permitted by applicable law, LPS CAD is provided
+          on an &quot;as available&quot; basis and may contain limitations,
+          interruptions, or errors. We do not guarantee that every result generated
+          or assisted by the Service will be suitable for every project, use case,
+          jurisdiction, or professional purpose.
         </p>
+
+        <p>
+          To the maximum extent permitted by applicable law, LPS CAD and the legal
+          provider of the Service will not be liable for indirect, incidental,
+          special, consequential, or punitive damages, loss of profits or revenue,
+          business interruption, loss of use, or losses resulting from a user&apos;s
+          failure to independently review or verify results produced with the
+          Service.
+        </p>
+
+        <p>
+          Where liability cannot lawfully be excluded, any limitation of liability
+          will apply only to the extent permitted by mandatory law. Nothing in
+          these Terms excludes liability that cannot legally be excluded or limits
+          mandatory rights available to the customer.
+        </p>
+
         <h2 className="fs-3 fw-bold">9. Term, Termination, and Suspension</h2>
+
         <p>
-          These Terms and Conditions shall become effective on the first date
-          accepted in accordance with section 1 (Acceptance) above and shall
-          remain in effect indefinitely unless terminated in accordance with the
-          provisions of these Terms and Conditions, including this section.
+          These Terms and Conditions become effective when accepted or when you
+          first access or use the Service and remain applicable while you maintain
+          an account, subscription, or other right to use LPS CAD.
         </p>
+
         <div className="ps-4">
-          <h3 className="fs-4 fw-bold">9.1 Your Right to Terminate</h3>
+          <h3 className="fs-4 fw-bold">9.1. Your Right to Cancel</h3>
+
           <p>
-            You may terminate your subscriptions and these Terms and Conditions
-            if LPS CAD materially breaches these Terms and Conditions and fails
-            to remedy such breach within 30 days after written notice of the
-            breach.
+            You may cancel the renewal of a recurring subscription at any time
+            using the cancellation method applicable to your payment provider as
+            described in Section 2.4. Unless otherwise required by law, ordinary
+            cancellation takes effect at the end of the current paid billing
+            period and does not automatically create a right to a refund for the
+            period already paid.
           </p>
+
           <h3 className="fs-4 fw-bold">
-            9.2 LPS CAD&apos;s Right to Cancel or Suspend a Subscription or
-            Account
+            9.2. LPS CAD&apos;s Right to Suspend or Terminate Access
           </h3>
+
           <p>
-            LPS CAD may terminate (or disable or suspend your access and use of)
-            any or all subscriptions you have subscribed to or terminate these
-            Terms and Conditions and your account if: (a) you do not have any
-            current paid subscriptions; (b) you have not timely paid any amounts
-            (including fees and taxes) owed to LPS CAD; (c) you (including any
-            of your authorized users) otherwise materially breach these Terms
-            and Conditions and fail to remedy such breach within 30 days after
-            written notice of the breach; or (d) you become subject to
-            bankruptcy or insolvency proceedings, are declared insolvent, reach
-            an agreement with your creditors affecting them (including an
-            assignment for the benefit of creditors), or initiate liquidation
-            proceedings. These Terms and Conditions shall be automatically
-            terminated without notice or action by LPS CAD if you enter into
-            liquidation. Additionally, LPS CAD may immediately disable or
-            suspend access and use of accounts.
+            LPS CAD may suspend or terminate access to the Service where reasonably
+            necessary because of non-payment, suspected fraud, unauthorized use,
+            misuse of the Service, material breach of these Terms and Conditions,
+            security risks, legal or regulatory requirements, or conduct that may
+            harm LPS CAD, its users, its infrastructure, or third parties.
           </p>
-          <h3 className="fs-4 fw-bold">
-            9.3 Effect of Subscription Termination
-          </h3>
+
           <p>
-            Upon expiration or termination of a subscription for any reason,
-            your rights with respect to that subscription, including any
-            Software license and related Benefits, will cease. At that time, LPS
-            CAD may, if required, delete the accounts associated with your
-            subscription.
+            Where appropriate and legally permitted, we will provide reasonable
+            notice and an opportunity to remedy a breach before termination.
+            Immediate suspension may be used where necessary to address security,
+            fraud, unlawful activity, or a material risk to the Service or third
+            parties.
           </p>
+
           <h3 className="fs-4 fw-bold">
-            9.4 Effect of Termination of Terms and Conditions or Account
+            9.3. Effect of Subscription Termination
           </h3>
+
           <p>
-            Upon termination of these Terms and Conditions for any reason: (a)
-            your account and your subscriptions, including those of your
-            authorized users, will be terminated immediately; and (b) the
-            effects described above with respect to expiration or termination of
-            a subscription will apply to all subscriptions associated with your
-            account. Regardless of the reasons, your payment obligations and
-            your responsibility for anyone who obtains, uses, or accesses
-            subscriptions through you or your account (including your authorized
-            users) will survive the termination (including the responsibility
-            described in Section 4 (Account)).
+            When a subscription expires or terminates, the right to use paid
+            features associated with that subscription ends. For an ordinary
+            cancellation, access normally remains available until the end of the
+            already-paid billing period. Access may end sooner where a subscription
+            is terminated for fraud, unlawful activity, serious misuse, or another
+            ground that permits immediate termination.
+          </p>
+
+          <h3 className="fs-4 fw-bold">
+            9.4. Account and Data After Termination
+          </h3>
+
+          <p>
+            After termination, LPS CAD may deactivate or delete accounts and
+            associated data when no longer required to provide the Service, subject
+            to applicable legal, security, backup, accounting, and record-retention
+            requirements. Provisions that by their nature should survive
+            termination, including payment obligations already incurred,
+            responsibility for prior use, and applicable limitations of liability,
+            will continue to apply.
           </p>
         </div>
-        <h2 className="fs-2 fw-bold">Privacy Policy</h2>
+
+        <h2 className="fs-3 fw-bold">10. Provider and Support Information</h2>
+
+        {/* IMPORTANT:
+            Before final production use, replace the placeholders below with the
+            final legal provider identity and address after deciding whether LPS CAD
+            will operate through an individual/sole trader or a company.
+        */}
+
         <p>
-          When making purchases through our websites, we use payment processors
-          (Stripe) and do not store credit card information or other financial
-          data (apart from payment confirmation for a specific amount). We or
-          our payment processors collect contact and account information from
-          the user to facilitate the transaction.
+          LPS CAD is the commercial name of the software Service. The legal
+          provider responsible for operating and supplying LPS CAD is:
+          [LEGAL PROVIDER NAME]. Registered or professional address:
+          [LEGAL PROVIDER ADDRESS]. Tax or registration identification, if
+          applicable: [LEGAL/TAX ID].
         </p>
+
         <p>
-          We collect information directly from the user, for example, when
-          creating an account or using our offers, registering a product or
-          service, subscribing to our blog, enrolling in one of our events or
-          interacting in them, in surveys, activities, or social networks, or by
-          contacting us in any other way. The following types of information we
-          may collect from the user are described below:
+          For product and technical support, customers may use the contact channels
+          available on our website. Business support is also available by telephone
+          and WhatsApp at 616453084.
         </p>
+
+        <p>
+          Billing questions relating to a Paddle transaction may also be handled
+          through the Paddle buyer support and subscription management channels
+          provided in the customer&apos;s transaction confirmation or receipt.
+        </p>
+
+        <h1 className="fs-2 fw-bold">Privacy Policy</h1>
+
+        <h2 className="fs-3 fw-bold">1. Who is responsible for your data</h2>
+
+        <p>
+          The legal provider identified in Section 10 is responsible for personal
+          data processed directly in connection with operating LPS CAD, except
+          where another service provider acts as an independent controller for its
+          own activities, such as a payment provider processing a transaction under
+          its own terms and privacy notice.
+        </p>
+
+        <h2 className="fs-3 fw-bold">2. Information we may collect</h2>
+
+        <p>
+          We may collect information that you provide directly when creating or
+          managing an account, requesting support, purchasing or using the Service,
+          or otherwise communicating with us.
+        </p>
+
         <div className="ps-4">
           <p>
-            Identifiers: such as name, phone number, mailing address and/or
-            email address, IP address, username, and account password.
+            Account and contact information: such as name, company name, email
+            address, telephone number, username, and billing or business contact
+            details.
           </p>
+
           <p>
-            Geolocation information: such as your region, country, state, or
-            postal code.
+            Account security information: such as authentication credentials and
+            information necessary to protect account access. Passwords should be
+            stored using appropriate security protections and are not intended to
+            be accessible in plain text.
           </p>
+
           <p>
-            Electronic information: such as information about operating systems,
-            device types, browsers, automatic updates, technical errors, and
-            information about the user&apos;s use of our offers.
+            Transaction information: such as the payment provider used, payment
+            status, subscription status, amount, currency, plan, transaction
+            reference, and billing information made available to us by the
+            applicable payment provider.
+          </p>
+
+          <p>
+            Technical and usage information: such as IP address, browser, device
+            type, operating system, technical errors, security events, and
+            information about the use of the Service where this information is
+            necessary to operate, secure, maintain, or improve LPS CAD.
+          </p>
+
+          <p>
+            Location-related information: such as country, region, state, or postal
+            code when provided by the user, derived from an IP address at an
+            approximate level, or supplied through the payment process. We do not
+            intentionally require precise geolocation for normal use of LPS CAD
+            unless this is specifically disclosed and necessary for a feature.
           </p>
         </div>
+
+        <h2 className="fs-3 fw-bold">3. How we use personal data</h2>
+
         <p>
-          Information that may be considered sensitive under applicable law:
-          such as usernames and passwords used to access your account and
-          precise geolocation information.
+          Personal data may be used to create and administer accounts, provide and
+          activate subscriptions, authenticate users, provide customer and
+          technical support, communicate about the Service, manage subscriptions,
+          maintain security, prevent fraud and abuse, troubleshoot errors, comply
+          with legal obligations, maintain accounting and operational records, and
+          improve the reliability and functionality of LPS CAD.
+        </p>
+
+        <p>
+          Depending on the applicable law and the specific processing activity,
+          processing may be based on performance of a contract, compliance with a
+          legal obligation, legitimate interests in operating and protecting the
+          Service, or consent where consent is required.
+        </p>
+
+        <h2 className="fs-3 fw-bold">4. Payment providers</h2>
+
+        <p>
+          Existing subscriptions may be processed through Stripe. New
+          subscriptions may be processed through Paddle. LPS CAD does not store
+          complete credit or debit card numbers. The applicable payment provider
+          collects and processes payment information according to its own terms,
+          security requirements, and privacy notice.
+        </p>
+
+        <p>
+          For transactions processed through Paddle, Paddle acts as Merchant of
+          Record and processes buyer information necessary to complete and manage
+          the transaction. Paddle may provide LPS CAD with information necessary
+          to deliver the Service, manage the customer relationship, provide
+          support, and maintain subscription records.
+        </p>
+
+        <h2 className="fs-3 fw-bold">5. Sharing of personal data</h2>
+
+        <p>
+          Personal data may be shared with service providers where reasonably
+          necessary to host, operate, secure, support, communicate about, or
+          maintain LPS CAD, as well as with professional advisers or public
+          authorities where required by law. We do not sell personal data as part
+          of the ordinary operation of LPS CAD.
+        </p>
+
+        <p>
+          We require service providers that process personal data on our behalf to
+          handle that information consistently with applicable data-protection
+          requirements and the purpose for which it was provided.
+        </p>
+
+        <h2 className="fs-3 fw-bold">6. International data transfers</h2>
+
+        <p>
+          Some technology or payment providers may process information in
+          countries different from the customer&apos;s country. Where applicable
+          data-protection law requires safeguards for an international transfer,
+          appropriate contractual, legal, or other recognized safeguards will be
+          used.
+        </p>
+
+        <h2 className="fs-3 fw-bold">7. Data retention</h2>
+
+        <p>
+          Personal data is retained for as long as reasonably necessary to provide
+          the Service, maintain an account or subscription, resolve disputes,
+          protect the Service, comply with legal and accounting obligations, and
+          enforce applicable agreements. Retention periods may vary depending on
+          the type of information and the legal requirements that apply.
+        </p>
+
+        <h2 className="fs-3 fw-bold">8. Your privacy rights</h2>
+
+        <p>
+          Depending on the law applicable to you, you may have rights to request
+          access to, correction of, deletion of, restriction of, objection to, or
+          portability of personal data, and to withdraw consent where processing
+          is based on consent. You may exercise applicable rights through the
+          contact channels available on our website.
+        </p>
+
+        <p>
+          Where applicable, you may also have the right to lodge a complaint with
+          the competent data-protection authority in your country or region.
+        </p>
+
+        <h2 className="fs-3 fw-bold">9. Security</h2>
+
+        <p>
+          We use reasonable technical and organizational measures intended to
+          protect personal data against unauthorized access, loss, misuse,
+          alteration, or disclosure. No internet-based system can be guaranteed to
+          be completely secure, and users are also responsible for protecting
+          their account credentials.
+        </p>
+
+        <h2 className="fs-3 fw-bold">10. Updates to this Privacy Policy</h2>
+
+        <p>
+          We may update this Privacy Policy when our Service, payment providers,
+          legal requirements, or data-processing practices change. The latest
+          version will be published on this page together with an updated date
+          where appropriate.
         </p>
       </div>
     </div>
