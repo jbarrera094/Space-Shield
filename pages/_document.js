@@ -60,12 +60,12 @@ function Document() {
                 <span> © Copyright {new Date().getFullYear()} LPS CAD.</span>
               </div>
               <div className="col-12 text-center mt-3">
-              <a
+              <Link
                 href="/termConditions"
                 className="text-white text-decoration-underline"
               >
                 Terms, Privacy & Refund Policy
-              </a>
+              </Link>
               </div>
 
               <div className="my-auto col-12 col-md-4 my-auto">
