@@ -6,9 +6,7 @@ function TermConditions() {
       <div className="container pt-3">
         <h1 className="fs-2 fw-bold">General Terms and Conditions</h1>
 
-        <p>
-          Last updated: August 2026.
-        </p>
+        <p>Last updated: August 2026.</p>
 
         <h2 className="fs-3 fw-bold">1. Acceptance</h2>
 
@@ -64,20 +62,22 @@ function TermConditions() {
 
           <p>
             For subscriptions processed through Stripe, Stripe provides payment
-            processing services. Unless otherwise expressly stated in the
-            applicable checkout or invoice, the legal provider of LPS CAD remains
-            responsible for providing the Service to the customer.
+            processing services. BS Energy and Automation remains responsible for
+            providing, operating, maintaining, and supporting the LPS CAD software
+            Service.
           </p>
 
           <p>
             For purchases processed through Paddle, Paddle acts as the authorized
-            reseller and Merchant of Record for the transaction. This means that
-            the customer purchases the subscription transaction from Paddle,
-            while LPS CAD remains responsible for providing, operating, and
-            supporting the software Service. Paddle is responsible for the
-            transaction, payment collection, applicable transaction taxes,
-            transaction receipts or invoices, and other payment-related matters
-            within the scope of its Merchant of Record service.
+            reseller and Merchant of Record for the transaction. Paddle is
+            responsible for payment collection, applicable transaction taxes,
+            transaction receipts or invoices, refunds, and other payment-related
+            matters within the scope of its Merchant of Record service.
+          </p>
+
+          <p>
+            BS Energy and Automation remains responsible for providing, operating,
+            maintaining, and supporting the LPS CAD software Service.
           </p>
 
           <p>
@@ -184,11 +184,11 @@ function TermConditions() {
 
         <p>
           For transactions processed through Paddle, any refund must be processed
-          through Paddle. Paddle&apos;s Buyer Terms and Refund Policy apply to the
-          transaction, including any statutory withdrawal or refund rights that
-          may apply. LPS CAD may assist the customer with a product-related issue
-          or communicate an agreed refund request to Paddle, but LPS CAD will not
-          make a separate direct repayment for a transaction sold by Paddle.
+          through Paddle. Paddle&apos;s Buyer Terms and applicable refund rules apply
+          to the transaction, including any statutory withdrawal or refund rights
+          that may apply. LPS CAD may assist the customer with a product-related
+          issue or communicate an agreed refund request to Paddle, but LPS CAD will
+          not make a separate direct repayment for a transaction sold by Paddle.
         </p>
 
         <p>
@@ -273,12 +273,11 @@ function TermConditions() {
         </p>
 
         <p>
-          To the maximum extent permitted by applicable law, LPS CAD and the legal
-          provider of the Service will not be liable for indirect, incidental,
-          special, consequential, or punitive damages, loss of profits or revenue,
-          business interruption, loss of use, or losses resulting from a user&apos;s
-          failure to independently review or verify results produced with the
-          Service.
+          To the maximum extent permitted by applicable law, LPS CAD and BS Energy
+          and Automation will not be liable for indirect, incidental, special,
+          consequential, or punitive damages, loss of profits or revenue, business
+          interruption, loss of use, or losses resulting from a user&apos;s failure
+          to independently review or verify results produced with the Service.
         </p>
 
         <p>
@@ -358,30 +357,33 @@ function TermConditions() {
 
         <h2 className="fs-3 fw-bold">10. Provider and Support Information</h2>
 
-        {/* IMPORTANT:
-            Before final production use, replace the placeholders below with the
-            final legal provider identity and address after deciding whether LPS CAD
-            will operate through an individual/sole trader or a company.
-        */}
+        <p>
+          <strong>LPS CAD is a software product owned and operated by BS Energy
+          and Automation, Colombia.</strong>
+        </p>
 
         <p>
-          LPS CAD is the commercial name of the software Service. The legal
-          provider responsible for operating and supplying LPS CAD is:
-          [LEGAL PROVIDER NAME]. Registered or professional address:
-          [LEGAL PROVIDER ADDRESS]. Tax or registration identification, if
-          applicable: [LEGAL/TAX ID].
+          BS Energy and Automation is responsible for the development, operation,
+          maintenance, and technical support of LPS CAD.
         </p>
 
         <p>
           For product and technical support, customers may use the contact channels
-          available on our website. Business support is also available by telephone
-          and WhatsApp at 616453084.
+          available on our website.
         </p>
 
         <p>
-          Billing questions relating to a Paddle transaction may also be handled
-          through the Paddle buyer support and subscription management channels
-          provided in the customer&apos;s transaction confirmation or receipt.
+          Email: <strong>lps@bsenergy.co</strong>
+          <br />
+          Telephone / WhatsApp: <strong>(+34) 616453084</strong>
+        </p>
+
+        <p>
+          For purchases processed through Paddle, Paddle acts as the authorized
+          reseller and Merchant of Record. Billing, payment, subscription
+          management, and refund-related matters may also be handled through the
+          Paddle channels provided with the customer&apos;s purchase confirmation or
+          receipt.
         </p>
 
         <h1 className="fs-2 fw-bold">Privacy Policy</h1>
@@ -389,11 +391,15 @@ function TermConditions() {
         <h2 className="fs-3 fw-bold">1. Who is responsible for your data</h2>
 
         <p>
-          The legal provider identified in Section 10 is responsible for personal
-          data processed directly in connection with operating LPS CAD, except
-          where another service provider acts as an independent controller for its
-          own activities, such as a payment provider processing a transaction under
-          its own terms and privacy notice.
+          BS Energy and Automation is responsible for personal data processed
+          directly in connection with the operation, provision, maintenance, and
+          support of LPS CAD, except where another service provider acts
+          independently for its own activities.
+        </p>
+
+        <p>
+          Payment providers such as Paddle and Stripe process certain information
+          according to their own terms and privacy notices.
         </p>
 
         <h2 className="fs-3 fw-bold">2. Information we may collect</h2>
@@ -462,19 +468,24 @@ function TermConditions() {
         <h2 className="fs-3 fw-bold">4. Payment providers</h2>
 
         <p>
-          Existing subscriptions may be processed through Stripe. New
-          subscriptions may be processed through Paddle. LPS CAD does not store
-          complete credit or debit card numbers. The applicable payment provider
-          collects and processes payment information according to its own terms,
-          security requirements, and privacy notice.
+          Existing subscriptions may be processed through Stripe, while new
+          subscriptions may be processed through Paddle.
         </p>
 
         <p>
-          For transactions processed through Paddle, Paddle acts as Merchant of
-          Record and processes buyer information necessary to complete and manage
-          the transaction. Paddle may provide LPS CAD with information necessary
-          to deliver the Service, manage the customer relationship, provide
-          support, and maintain subscription records.
+          LPS CAD does not store complete credit or debit card numbers. Payment
+          information is collected and processed by the applicable payment
+          provider according to its own terms, security requirements, and privacy
+          notice.
+        </p>
+
+        <p>
+          For transactions processed through Paddle, Paddle acts as the authorized
+          reseller and Merchant of Record and processes buyer information necessary
+          to complete and manage the transaction. Paddle may provide BS Energy and
+          Automation with information necessary to provide the Service, maintain
+          subscription records, provide support, and manage the customer
+          relationship.
         </p>
 
         <h2 className="fs-3 fw-bold">5. Sharing of personal data</h2>
@@ -550,3 +561,4 @@ function TermConditions() {
     </div>
   );
 }
+
