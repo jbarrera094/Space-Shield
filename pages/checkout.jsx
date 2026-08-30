@@ -1,6 +1,8 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function Checkout() {
+  const [paddleReady, setPaddleReady] = useState(false);
+
   useEffect(() => {
     if (typeof window !== "undefined" && window.Paddle) {
       window.Paddle.Environment.set("sandbox");
@@ -11,17 +13,41 @@ export default function Checkout() {
           settings: {
             displayMode: "overlay",
             theme: "light",
-            locale: "en"
-          }
-        }
+            locale: "en",
+          },
+        },
       });
+
+      setPaddleReady(true);
     }
   }, []);
 
+  const openCheckout = () => {
+    if (!window.Paddle || !paddleReady) return;
+
+    window.Paddle.Checkout.open({
+      items: [
+        {
+          priceId: "pri_01m1a2d28bp2fbdfagae2fzwba",
+          quantity: 1,
+        },
+      ],
+    });
+  };
+
   return (
-    <div className="container mt-5 pt-5">
+    <div className="container mt-5 pt-5 text-center">
       <h1 className="fs-3 fw-bold">LPS CAD Checkout</h1>
-      <p>Loading secure checkout...</p>
+
+      <p>Secure subscription checkout.</p>
+
+      <button
+        className="btn btn-primary mt-3"
+        onClick={openCheckout}
+        disabled={!paddleReady}
+      >
+        Test Basic Plan - €99/month
+      </button>
     </div>
   );
 }
