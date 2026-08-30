@@ -59,6 +59,7 @@ function App({ Component, pageProps }) {
       "/awaitSuccess",
       "/termConditions",
       "/packages",
+      "/checkout",
     ];
     const path = url.split("?")[0];
     if (!userService.userValue && !publicPaths.includes(path)) {
