@@ -1,8 +1,8 @@
 # Usar la imagen base de Node.js
 FROM node:20-alpine
 
-# Instalar pnpm globalmente
-RUN npm install -g pnpm
+# Instalar una versión fija de pnpm
+RUN npm install -g pnpm@10.30.3
 
 # Establecer el directorio de trabajo
 WORKDIR /app
