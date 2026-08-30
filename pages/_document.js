@@ -18,6 +18,9 @@ function Document() {
     <Html lang="en" className="style-scrollbar">
       <Head>
         <link rel="icon" href="/logo.png" />
+
+        <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
