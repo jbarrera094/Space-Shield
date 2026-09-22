@@ -96,7 +96,7 @@ function Document() {
                       />
                     </Link>
                     <Link
-                      href="http://www.linkedin.com/in/lpscad"
+                      href="https://www.linkedin.com/company/lpscad/posts/?feedView=all"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
