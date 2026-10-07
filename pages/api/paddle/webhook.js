@@ -1,4 +1,5 @@
 import { createHmac, timingSafeEqual } from "crypto";
+import { paddleLicensesRepo } from "../../../helpers/api/paddle-licenses-repo";
 
 export const config = {
   api: {
@@ -120,6 +121,12 @@ export default async function handler(req, res) {
       "Verified Paddle webhook received:",
       event.event_type,
       event.data?.id
+    );
+    const dbTest = await paddleLicensesRepo.testConnection();
+
+    console.log(
+    "MariaDB connection OK. licensesV2 rows:",
+    dbTest.total
     );
 
     return res.status(200).json({
