@@ -1,6 +1,12 @@
 import { createHmac, timingSafeEqual } from "crypto";
 import { paddleLicensesRepo } from "../../../helpers/api/paddle-licenses-repo";
 
+const PLAN_BY_PRICE_ID = {
+  pri_01m1a2d28bp2fbdfagae2fzwba: "basic",
+  pri_01m1a2marwbhapxkp6bv6hptzd: "professional",
+  pri_01m1a2q6zq5vg0cr4e8znb3c49: "corporate",
+};
+
 export const config = {
   api: {
     bodyParser: false,
@@ -18,7 +24,7 @@ function verifyPaddleSignature(rawBody, signatureHeader, secret) {
   const signatures = [];
 
   for (const part of parts) {
-    const [key, value] = part.split("=");
+    const [key, value] = part.trim().split("=");
 
     if (key === "ts") {
       timestamp = value;
@@ -39,7 +45,6 @@ function verifyPaddleSignature(rawBody, signatureHeader, secret) {
     return false;
   }
 
-  // Evita aceptar eventos antiguos o reutilizados.
   const currentTime = Math.floor(Date.now() / 1000);
 
   if (Math.abs(currentTime - timestampNumber) > 5) {
@@ -67,6 +72,31 @@ function verifyPaddleSignature(rawBody, signatureHeader, secret) {
 
     return timingSafeEqual(receivedBuffer, expectedBuffer);
   });
+}
+
+function getPlanFromSubscription(subscription) {
+  if (!Array.isArray(subscription?.items)) {
+    return null;
+  }
+
+  // Actualmente LPS CAD espera exactamente un producto por suscripción.
+  if (subscription.items.length !== 1) {
+    return null;
+  }
+
+  const item = subscription.items[0];
+  const priceId = item?.price?.id;
+
+  if (!priceId) {
+    return null;
+  }
+
+  // Paddle quantity debe permanecer en 1.
+  if (Number(item.quantity) !== 1) {
+    return null;
+  }
+
+  return PLAN_BY_PRICE_ID[priceId] || null;
 }
 
 export default async function handler(req, res) {
@@ -122,20 +152,100 @@ export default async function handler(req, res) {
       event.event_type,
       event.data?.id
     );
-    const dbTest = await paddleLicensesRepo.testConnection();
 
-    console.log(
-    "MariaDB connection OK. licensesV2 rows:",
-    dbTest.total
-    );
+    // Por ahora solo subscription.created crea licencias.
+    if (event.event_type !== "subscription.created") {
+      return res.status(200).json({
+        received: true,
+        processed: false,
+      });
+    }
+
+    const subscription = event.data;
+    const subscriptionId = subscription?.id;
+    const customData = subscription?.custom_data || {};
+
+    const empresa =
+      typeof customData.empresa === "string"
+        ? customData.empresa.trim()
+        : "";
+
+    const prefijo =
+      typeof customData.prefijo === "string"
+        ? customData.prefijo.trim().toUpperCase()
+        : "";
+
+    // El plan se determina por el Price ID real enviado por Paddle.
+    // No confiamos en custom_data.plan para decidir cuántas licencias crear.
+    const plan = getPlanFromSubscription(subscription);
+
+    if (
+      !subscriptionId?.startsWith("sub_") ||
+      !empresa ||
+      !/^[A-Z]{3}$/.test(prefijo) ||
+      !plan
+    ) {
+      console.error(
+        "Subscription ignored because required provisioning data is invalid:",
+        subscriptionId
+      );
+
+      return res.status(200).json({
+        received: true,
+        processed: false,
+        reason: "invalid_provisioning_data",
+      });
+    }
+
+    // Si custom_data.plan existe pero no coincide con el Price ID,
+    // lo registramos, pero manda siempre el Price ID de Paddle.
+    if (
+      typeof customData.plan === "string" &&
+      customData.plan.trim().toLowerCase() !== plan
+    ) {
+      console.warn(
+        "Paddle custom_data plan does not match price ID:",
+        subscriptionId
+      );
+    }
+
+    const result =
+      await paddleLicensesRepo.createSubscriptionLicenses({
+        subscriptionId,
+        empresa,
+        prefijo,
+        plan,
+      });
+
+    if (result.created) {
+      console.log(
+        "LPS CAD licenses created:",
+        subscriptionId,
+        "plan:",
+        plan,
+        "licenses:",
+        result.licenseCount,
+        "id_pack:",
+        result.idPack
+      );
+    } else {
+      console.log(
+        "Subscription already processed:",
+        subscriptionId
+      );
+    }
 
     return res.status(200).json({
       received: true,
+      processed: result.created,
+      reason: result.reason || null,
     });
   } catch (error) {
     console.error("Paddle webhook error:", error);
 
-    return res.status(400).json({
+    // Un error de servidor/base de datos debe devolver 500
+    // para que Paddle pueda volver a intentar la entrega.
+    return res.status(500).json({
       received: false,
     });
   }
