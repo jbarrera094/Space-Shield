@@ -268,29 +268,82 @@ function renderPage({
       </button>
     </form>
 
-    ${
-      checkoutUrl
-        ? `
-          <div class="result">
-            <strong>Checkout creado correctamente</strong>
+${
+  checkoutUrl
+    ? `
+      <div class="result">
+        <strong>Checkout creado correctamente</strong>
 
-            <a
-              class="checkout-link"
-              href="${safeCheckoutUrl}"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              ${safeCheckoutUrl}
-            </a>
+        <a
+          class="checkout-link"
+          href="${safeCheckoutUrl}"
+          target="_blank"
+          rel="noopener noreferrer"
+          id="checkout-link"
+        >
+          ${safeCheckoutUrl}
+        </a>
 
-            <div class="transaction">
-              Transaction: ${safeTransactionId}
-            </div>
-          </div>
-        `
-        : ""
-    }
+        <button
+          type="button"
+          id="copy-button"
+          style="margin-top: 16px;"
+        >
+          Copiar enlace
+        </button>
+
+        <div
+          id="copy-status"
+          style="
+            margin-top: 8px;
+            font-size: 13px;
+            color: #166534;
+            display: none;
+          "
+        >
+          Enlace copiado
+        </div>
+
+        <div class="transaction">
+          Transaction: ${safeTransactionId}
+        </div>
+      </div>
+    `
+    : ""
+}
   </div>
+  <script>
+  const copyButton = document.getElementById("copy-button");
+  const checkoutLink = document.getElementById("checkout-link");
+  const copyStatus = document.getElementById("copy-status");
+
+  if (copyButton && checkoutLink) {
+    copyButton.addEventListener("click", async function () {
+      try {
+        await navigator.clipboard.writeText(checkoutLink.href);
+
+        copyButton.textContent = "Copiado ✓";
+
+        if (copyStatus) {
+          copyStatus.style.display = "block";
+        }
+
+        setTimeout(function () {
+          copyButton.textContent = "Copiar enlace";
+
+          if (copyStatus) {
+            copyStatus.style.display = "none";
+          }
+        }, 2000);
+      } catch (error) {
+        window.prompt(
+          "Copia el enlace:",
+          checkoutLink.href
+        );
+      }
+    });
+  }
+</script>
 </body>
 </html>
 `;
