@@ -1,27 +1,59 @@
 import { useEffect } from "react";
 
-export default function Checkout() {
+export default function Checkout({
+  paddleEnvironment,
+  clientToken,
+}) {
   useEffect(() => {
-    if (typeof window !== "undefined" && window.Paddle) {
-      window.Paddle.Environment.set("sandbox");
-
-      window.Paddle.Initialize({
-        token: "test_b11ea0158066749b3a24e9df5b8",
-        checkout: {
-          settings: {
-            displayMode: "overlay",
-            theme: "light",
-            locale: "en",
-          },
-        },
-      });
+    if (!window.Paddle || !clientToken) {
+      return;
     }
-  }, []);
+
+    /*
+     * Paddle usa Live por defecto.
+     * Solo debemos activar explícitamente Sandbox
+     * cuando estamos trabajando en Sandbox.
+     */
+    if (paddleEnvironment === "sandbox") {
+      window.Paddle.Environment.set("sandbox");
+    }
+
+    window.Paddle.Initialize({
+      token: clientToken,
+    });
+  }, [paddleEnvironment, clientToken]);
 
   return (
-    <div className="container mt-5 pt-5 text-center">
-      <h1 className="fs-3 fw-bold">LPS CAD Checkout</h1>
-      <p>Loading secure checkout...</p>
-    </div>
+    <div
+      style={{
+        minHeight: "100vh",
+        background: "#f5f5f5",
+      }}
+    />
   );
+}
+
+export async function getServerSideProps() {
+  const paddleEnvironment =
+    process.env.PADDLE_ENV === "live"
+      ? "live"
+      : "sandbox";
+
+  const clientToken =
+    paddleEnvironment === "live"
+      ? process.env.PADDLE_CLIENT_TOKEN_LIVE
+      : process.env.PADDLE_CLIENT_TOKEN_SANDBOX;
+
+  if (!clientToken) {
+    console.error(
+      `Paddle client token is missing for environment: ${paddleEnvironment}`
+    );
+  }
+
+  return {
+    props: {
+      paddleEnvironment,
+      clientToken: clientToken || "",
+    },
+  };
 }
