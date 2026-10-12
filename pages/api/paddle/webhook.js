@@ -2,9 +2,15 @@ import { createHmac, timingSafeEqual } from "crypto";
 import { paddleLicensesRepo } from "../../../helpers/api/paddle-licenses-repo";
 
 const PLAN_BY_PRICE_ID = {
+  // Sandbox
   pri_01m1a2d28bp2fbdfagae2fzwba: "basic",
   pri_01m1a2marwbhapxkp6bv6hptzd: "professional",
   pri_01m1a2q6zq5vg0cr4e8znb3c49: "corporate",
+
+  // Live
+  pri_01m4r14yghc3c23rcnbdgq6ren: "basic",
+  pri_01m4r1dgkgh1hm9nqt6avzjg5h: "professional",
+  pri_01m4r1meq3y0ynf7b6yr501z52: "corporate",
 };
 
 export const config = {
@@ -121,21 +127,26 @@ export default async function handler(req, res) {
       ? req.headers["paddle-signature"][0]
       : req.headers["paddle-signature"];
 
-    const secret = process.env.PADDLE_WEBHOOK_SECRET;
+    const webhookSecrets = [
+  process.env.PADDLE_WEBHOOK_SECRET,
+  process.env.PADDLE_WEBHOOK_SECRET_LIVE,
+].filter(Boolean);
 
-    if (!secret) {
-      console.error("PADDLE_WEBHOOK_SECRET is not configured");
+if (webhookSecrets.length === 0) {
+  console.error("No Paddle webhook secrets are configured");
 
-      return res.status(500).json({
-        received: false,
-      });
-    }
+  return res.status(500).json({
+    received: false,
+  });
+}
 
-    const isValid = verifyPaddleSignature(
-      rawBody,
-      signatureHeader,
-      secret
-    );
+const isValid = webhookSecrets.some((secret) =>
+  verifyPaddleSignature(
+    rawBody,
+    signatureHeader,
+    secret
+  )
+);
 
     if (!isValid) {
       console.error("Invalid Paddle webhook signature");
