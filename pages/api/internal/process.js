@@ -1,10 +1,44 @@
 import { timingSafeEqual } from "crypto";
 
-const PRICE_IDS = {
-  basic: "pri_01m1a2d28bp2fbdfagae2fzwba",
-  professional: "pri_01m1a2marwbhapxkp6bv6hptzd",
-  corporate: "pri_01m1a2q6zq5vg0cr4e8znb3c49",
+const PADDLE_CONFIG = {
+  sandbox: {
+    apiUrl: "https://sandbox-api.paddle.com",
+    apiKeyEnv: "PADDLE_API_KEY",
+
+    prices: {
+      basic: "pri_01m1a2d28bp2fbdfagae2fzwba",
+      professional: "pri_01m1a2marwbhapxkp6bv6hptzd",
+      corporate: "pri_01m1a2q6zq5vg0cr4e8znb3c49",
+    },
+  },
+
+  live: {
+    apiUrl: "https://api.paddle.com",
+    apiKeyEnv: "PADDLE_API_KEY_LIVE",
+
+    prices: {
+      basic: "pri_01m4r14yghc3c23rcnbdgq6ren",
+      professional: "pri_01m4r1dgkgh1hm9nqt6avzjg5h",
+      corporate: "pri_01m4r1meq3y0ynf7b6yr501z52",
+    },
+  },
 };
+
+function getPaddleConfig() {
+  const environment =
+    process.env.PADDLE_ENV === "live"
+      ? "live"
+      : "sandbox";
+
+  const config = PADDLE_CONFIG[environment];
+
+  return {
+    environment,
+    apiUrl: config.apiUrl,
+    apiKey: process.env[config.apiKeyEnv],
+    prices: config.prices,
+  };
+}
 
 function safeCompare(a, b) {
   if (typeof a !== "string" || typeof b !== "string") {
@@ -399,18 +433,21 @@ export default async function handler(req, res) {
     });
   }
 
-  if (
-    !process.env.PADDLE_API_KEY ||
-    !process.env.PADDLE_ADMIN_TOKEN
-  ) {
-    console.error(
-      "Paddle server configuration is incomplete"
-    );
+const paddle = getPaddleConfig();
 
-    return res.status(500).json({
-      error: "Server configuration error",
-    });
-  }
+if (
+  !paddle.apiKey ||
+  !process.env.PADDLE_ADMIN_TOKEN
+) {
+  console.error(
+    "Paddle server configuration is incomplete:",
+    paddle.environment
+  );
+
+  return res.status(500).json({
+    error: "Server configuration error",
+  });
+}
 
   try {
     const { empresa, prefijo, plan } = req.body || {};
@@ -500,7 +537,7 @@ export default async function handler(req, res) {
       });
     }
 
-    const priceId = PRICE_IDS[normalizedPlan];
+const priceId = paddle.prices[normalizedPlan];
 
     if (!priceId) {
       if (isBrowserRequest) {
@@ -525,13 +562,13 @@ export default async function handler(req, res) {
     }
 
     const paddleResponse = await fetch(
-      "https://sandbox-api.paddle.com/transactions",
+      `${paddle.apiUrl}/transactions`,
       {
         method: "POST",
 
         headers: {
           Authorization:
-            `Bearer ${process.env.PADDLE_API_KEY}`,
+            `Bearer ${paddle.apiKey}`,
           "Content-Type": "application/json",
           "Paddle-Version": "1",
         },
